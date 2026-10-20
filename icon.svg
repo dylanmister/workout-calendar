@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><radialGradient id="g" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#fffaf0"/><stop offset="1" stop-color="#e6d3a6"/></radialGradient></defs>
+  <circle cx="32" cy="32" r="30" fill="url(#g)" stroke="#7b5532" stroke-width="3"/>
+  <circle cx="32" cy="32" r="23" fill="none" stroke="#a87b22" stroke-width="1.4" opacity=".6"/>
+  <g fill="#a87b22">
+    <ellipse cx="32" cy="19" rx="4.6" ry="10.5"/>
+    <ellipse cx="32" cy="19" rx="4.6" ry="10.5" transform="rotate(45 32 32)"/>
+    <ellipse cx="32" cy="19" rx="4.6" ry="10.5" transform="rotate(90 32 32)"/>
+    <ellipse cx="32" cy="19" rx="4.6" ry="10.5" transform="rotate(135 32 32)"/>
+    <ellipse cx="32" cy="19" rx="4.6" ry="10.5" transform="rotate(180 32 32)"/>
+    <ellipse cx="32" cy="19" rx="4.6" ry="10.5" transform="rotate(225 32 32)"/>
+    <ellipse cx="32" cy="19" rx="4.6" ry="10.5" transform="rotate(270 32 32)"/>
+    <ellipse cx="32" cy="19" rx="4.6" ry="10.5" transform="rotate(315 32 32)"/>
+  </g>
+  <circle cx="32" cy="32" r="5.5" fill="#fffaf0" stroke="#7b5532" stroke-width="2"/>
+</svg>

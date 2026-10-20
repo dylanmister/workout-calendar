@@ -1,0 +1,12 @@
+{
+  "name": "white-lotus-training-arc",
+  "private": true,
+  "description": "Convex backend for The White Lotus Training Arc. The site itself is static HTML/CSS/JS with no build step.",
+  "scripts": {
+    "convex:dev": "convex dev",
+    "convex:deploy": "convex deploy"
+  },
+  "dependencies": {
+    "convex": "1.46.0"
+  }
+}

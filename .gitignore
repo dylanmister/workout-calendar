@@ -1,0 +1,14 @@
+
+.env.local
+.env*.local
+
+# dependencies and tool caches
+node_modules/
+__pycache__/
+*.pyc
+tools/.cache/
+
+# local tooling / OS files
+.vercel
+.DS_Store
+Thumbs.db

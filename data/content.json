@@ -1,0 +1,1921 @@
+{
+ "quotes": [
+  {
+   "id": 0,
+   "character": "Uncle Iroh",
+   "text": "Every great journey begins the same way: plant your feet and choose a direction. Today, you chose.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 1,
+   "character": "Sokka",
+   "text": "Back day is my favorite day. I can't see my back, so I'm assuming it's incredible.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 2,
+   "character": "Uncle Iroh",
+   "text": "Fire is the element of power, but power without breath burns out. Breathe first, then push.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 3,
+   "character": "Momo",
+   "text": "(Momo's thoughts) Stretching. Stretching. Is that a melon? No. More stretching.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 4,
+   "character": "Sokka",
+   "text": "Leg day? More like why-does-everything-hurt-and-who-moved-the-stairs day.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 5,
+   "character": "Katara",
+   "text": "Water is the most adaptable element. Change the plan when you need to, but never the goal.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 6,
+   "character": "Sokka",
+   "text": "Chest day is the only day I'm qualified to give advice. My advice: more chest.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 7,
+   "character": "Aang",
+   "text": "When you let go of what you're carrying, you can finally fly. Rest days are how you let go.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 8,
+   "character": "Toph",
+   "text": "The ground tells me everything. Plant your feet like you mean it and nobody will push you around.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 9,
+   "character": "Sokka",
+   "text": "I pulled so hard on that last row, I think I'm related to a polar bear dog now.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 10,
+   "character": "Zuko",
+   "text": "I spent years chasing someone else's idea of honor. Real honor is doing the hard work for the right reasons.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 11,
+   "character": "Sokka",
+   "text": "Rest day! The best day! Wait, there's foam rolling? A foam roller is just a log that hates me!",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 12,
+   "character": "The Cabbage Merchant",
+   "text": "I stacked my cabbages into the perfect squat rack. Then the Avatar rolled through. Again.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 13,
+   "character": "Master Pakku",
+   "text": "Precision is a form of respect. Respect the movement and it will respect you back.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 14,
+   "character": "Zuko",
+   "text": "I practiced a whole speech about warming up properly. ...Warm up. Properly. Okay, it went better in my head.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 15,
+   "character": "Monk Gyatso",
+   "text": "The mind must be free before the body can follow. Breathe, and begin.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 16,
+   "character": "Uncle Iroh",
+   "text": "A mountain is only a pile of small stones that refused to quit. Add one stone today.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 17,
+   "character": "Katara",
+   "text": "Sokka, you do not get bigger biceps by flexing at every puddle you walk past.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 18,
+   "character": "Jeong Jeong",
+   "text": "Respect the fire. A wild flame destroys; a controlled flame forges.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 19,
+   "character": "Aang",
+   "text": "Appa says rest days are his favorite. Appa says every day is his favorite. Appa mostly says grrrrr.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 20,
+   "character": "Toph",
+   "text": "I can't see your form, Twinkletoes, but I can feel it. It's shaking like a nervous badgermole.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 21,
+   "character": "Princess Yue",
+   "text": "Even the moon has phases. Rest is not falling behind; it is part of the light.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 22,
+   "character": "Uncle Iroh",
+   "text": "A man needs three things: a good pot of tea, a warm fire, and a spotter who isn't watching the clouds.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 23,
+   "character": "Guru Pathik",
+   "text": "Energy flows best through a body that is not knotted with worry. Untie one knot today.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 24,
+   "character": "Avatar Kyoshi",
+   "text": "Balance is not something you find. It is something you build, rep by rep, until it holds you.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 25,
+   "character": "Huu",
+   "text": "Life is like a swamp: smelly, mysterious, and somehow great for your forearms.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 26,
+   "character": "Avatar Roku",
+   "text": "The heat that tests you is the same heat that tempers you.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 27,
+   "character": "Monk Gyatso",
+   "text": "The secret to a good mobility session is the same as the secret to a good fruit pie: patience, and no sneaking bites.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 28,
+   "character": "King Bumi",
+   "text": "A hundred and twelve years old and I have never once skipped leg day. Because I am a MAD GENIUS!",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 29,
+   "character": "Chief Hakoda",
+   "text": "A strong crew pulls together. Your back is the crew that keeps every swing on course.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 30,
+   "character": "Ty Lee",
+   "text": "My aura is pink today! That means push-ups! Okay, my aura means push-ups every day.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 31,
+   "character": "Avatar Yangchen",
+   "text": "Air is freedom, and freedom grows out of discipline, not the other way around.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 32,
+   "character": "Haru",
+   "text": "My father taught me that patience is the strength of stone. It doesn't rush, and it doesn't break.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 33,
+   "character": "Sokka",
+   "text": "Pull-ups are a boomerang for your whole body. You go up. You come back. Repeat.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 34,
+   "character": "Master Piandao",
+   "text": "A blade is only as good as the patience that shaped it. You are being shaped.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 35,
+   "character": "Teo",
+   "text": "I can't stretch my legs much, but I can glide right past you while you foam roll. Hi!",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 36,
+   "character": "The Boulder",
+   "text": "The Boulder has a confession. The Boulder skipped leg day once. The Boulder could not climb into the ring.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 37,
+   "character": "Gran Gran",
+   "text": "I have seen many winters, child. Every one of them ended. Keep pulling through yours.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 38,
+   "character": "Mai",
+   "text": "Lateral raises. Wow. Thrilling. I'll try to contain my excitement.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 39,
+   "character": "Aang",
+   "text": "Letting go doesn't mean you stop caring. It means you trust the process enough to breathe.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 40,
+   "character": "Toph",
+   "text": "You don't need to see the bar to lift it. Feel the floor and trust what it tells you.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 41,
+   "character": "Master Pakku",
+   "text": "In my day we did curls with buckets of ice water. Uphill. Both ways. In a blizzard.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 42,
+   "character": "Uncle Iroh",
+   "text": "Lighting the spark is easy. Keeping the flame alive through winter is the true test.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 43,
+   "character": "Uncle Iroh",
+   "text": "Foam rolling is like tea: painful when it is too hot, wonderful when you are patient.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 44,
+   "character": "Sokka",
+   "text": "My plan: squat heavy, eat meat, repeat. Is it a good plan? It's a plan with meat in it.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 45,
+   "character": "Katara",
+   "text": "Push and pull are the same breath. You can't hit hard if you can't bring your arm back home.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 46,
+   "character": "Zuko",
+   "text": "Uncle says my push press looks like an angry turtle-duck. I'm choosing to take that as a compliment.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 47,
+   "character": "Uncle Iroh",
+   "text": "Rest is not the absence of training. It is training for the spirit.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 48,
+   "character": "Uncle Iroh",
+   "text": "Roots grow in the dark long before anyone admires the tree. Do the quiet work.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 49,
+   "character": "Sokka",
+   "text": "My training philosophy has three pillars: meat, sarcasm and lat pulldowns.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 50,
+   "character": "Zuko",
+   "text": "Getting knocked down isn't the end. It's the part of the story where you find out who you are.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 51,
+   "character": "Sokka",
+   "text": "I tried yoga once. The downward dog bit me.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 52,
+   "character": "The Cabbage Merchant",
+   "text": "You call that a lunge? I've seen cabbages roll downhill with better form!",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 53,
+   "character": "Uncle Iroh",
+   "text": "Water is soft, yet it carves mountains. Gentle, steady effort is the strongest force there is.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 54,
+   "character": "Lieutenant Jee",
+   "text": "I've served under many commanders. None of them skipped shoulder prehab. Well, one did. We don't talk about him.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 55,
+   "character": "Monk Gyatso",
+   "text": "Patience is a sky without edges. Your progress has all the room it needs to grow.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 56,
+   "character": "Avatar Kyoshi",
+   "text": "Strength without control is just noise. Control without strength is just hope. Train both.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 57,
+   "character": "Gran Gran",
+   "text": "When I was young we didn't have face pulls. We had icebergs, and we pulled them.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 58,
+   "character": "Ty Lee",
+   "text": "Energy goes where your attention goes. Pay attention to your shoulders and they'll pay you back.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 59,
+   "character": "The Mechanist",
+   "text": "I invented a machine that does your stretches for you. It exploded. Please do your own stretches.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 60,
+   "character": "Toph",
+   "text": "Rule one of earthbending: never let a staircase know you're afraid of it.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 61,
+   "character": "Master Pakku",
+   "text": "Your form should move like a river: no wasted motion, no hurry, no stopping.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 62,
+   "character": "Uncle Iroh",
+   "text": "Never underestimate the power of a triceps pushdown, or of the jasmine tea afterward.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 63,
+   "character": "Guru Pathik",
+   "text": "To open the air chakra, release grief. To open your hips, release your hurry.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 64,
+   "character": "Suki",
+   "text": "Warriors aren't made on the battlefield. They're made in the thousand practices nobody watches.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 65,
+   "character": "Sokka",
+   "text": "I named my left bicep Boomerang. It always comes back to the gym.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 66,
+   "character": "Avatar Roku",
+   "text": "Strength used carelessly becomes a debt. Strength used wisely becomes a gift.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 67,
+   "character": "Aang",
+   "text": "I'm a hundred and twelve years old and I still can't touch my toes on the first try. Okay, I can. But still.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 68,
+   "character": "Xin Fu",
+   "text": "In this corner, your quads! In the other corner, the hack squat! Place your bets!",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 69,
+   "character": "Princess Yue",
+   "text": "Strength isn't always loud. Sometimes it is the quiet choice to show up again tomorrow.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 70,
+   "character": "Sokka",
+   "text": "Plyo push-ups are just push-ups that got scared and jumped.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 71,
+   "character": "Aang",
+   "text": "Waking early, stretching, breathing. It isn't glamorous. It's how monks become masters.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 72,
+   "character": "Toph",
+   "text": "Being strong isn't about never getting knocked down. It's about how fast you find your feet again.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 73,
+   "character": "Katara",
+   "text": "Sokka, if you grunt any louder on that row, the whole North Pole is going to answer.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 74,
+   "character": "Uncle Iroh",
+   "text": "Shoulder health is like a good pot of tea. Tend it gently and it will warm you for years.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 75,
+   "character": "Momo",
+   "text": "(Momo's thoughts) Why is the human lying on the floor with his legs up the wall? Is he hunting bugs? I love bugs.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 76,
+   "character": "Earth King Kuei",
+   "text": "Bosco and I did walking lunges around the palace today. Bosco won. Bosco is a bear.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 77,
+   "character": "Huu",
+   "text": "Everything is connected. How you sleep, eat and breathe shows up in how you pull.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 78,
+   "character": "Combustion Man",
+   "text": "(Says nothing. Does forty clap push-ups. Leaves.)",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 79,
+   "character": "Teo",
+   "text": "My glider taught me the wind does most of the work if you're set up right. So does good mobility.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 80,
+   "character": "Earth King Kuei",
+   "text": "I spent years behind walls believing I was safe. True safety is knowing you can stand on your own.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 81,
+   "character": "Bato",
+   "text": "Hakoda once rowed a canoe for three days straight, then complained his biceps weren't pumped enough.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 82,
+   "character": "Jeong Jeong",
+   "text": "The fire does not fear the water. It simply knows when to rest.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 83,
+   "character": "Sokka",
+   "text": "Active recovery is just regular exercise that's trying to be polite.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 84,
+   "character": "Sokka",
+   "text": "I'm not saying sand sprints are hard, but my ancestors just filed a complaint.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 85,
+   "character": "Katara",
+   "text": "Healing is training too. Caring for your shoulders today keeps you on the court tomorrow.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 86,
+   "character": "Zuko",
+   "text": "I was banished for three years and I still came back for chest day. That's commitment.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 87,
+   "character": "Avatar Yangchen",
+   "text": "A light heart travels far. Carry less resentment and your legs will carry you farther.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 88,
+   "character": "Haru",
+   "text": "Even a small stone, thrown with intent, can change the course of a river.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 89,
+   "character": "Sokka",
+   "text": "Hammer curls? I don't even own a hammer. I own a boomerang and a dream.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 90,
+   "character": "Zuko",
+   "text": "I used to think strength meant never asking for help. Asking is what made me stronger.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 91,
+   "character": "Monk Gyatso",
+   "text": "Remember, Aang: if a sky bison sits on your foam roller, it is now the sky bison's foam roller.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 92,
+   "character": "The Boulder",
+   "text": "The Boulder is conflicted. The Boulder wants to squat. The Boulder also wants a nap.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 93,
+   "character": "Chief Hakoda",
+   "text": "Prepare for the storm while the sea is calm. That is what posture work is for.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 94,
+   "character": "The Ember Island Players",
+   "text": "And now, a dramatic reenactment of your final set! (The actor collapses. The crowd weeps.)",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 95,
+   "character": "Monk Gyatso",
+   "text": "One step at a time is still flying, as long as you keep taking them.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 96,
+   "character": "Uncle Iroh",
+   "text": "The best stance is the one you can hold when life pushes back. Practice it on the easy days.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 97,
+   "character": "Huu",
+   "text": "The swamp spirits say do one more set. Or that's just the swamp gas. Hard to tell.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 98,
+   "character": "Master Piandao",
+   "text": "Style is just the shape your discipline takes. Keep showing up and your style will find you.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 99,
+   "character": "Guru Pathik",
+   "text": "Drink this onion and banana juice. It will open your chakras. It will also open your eyes. Very wide.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 100,
+   "character": "Toph",
+   "text": "Deadlifts are just earthbending with extra steps and a lot more grunting. Love it.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 101,
+   "character": "Gran Gran",
+   "text": "Hope is something you carry. Pack it with you every morning, like fresh water.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 102,
+   "character": "Ty Lee",
+   "text": "If your shoulder blades won't squeeze together, I could chi-block them together! Kidding. Mostly.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 103,
+   "character": "Uncle Iroh",
+   "text": "Sleep is the cheapest and most powerful potion in all four nations.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 104,
+   "character": "Toph",
+   "text": "Earthbending is staying steady when everything else isn't. So is life. So is the fourth set.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 105,
+   "character": "Sokka",
+   "text": "Face pulls are great for your shoulders and terrible for your dignity.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 106,
+   "character": "Uncle Iroh",
+   "text": "Explosive power comes from a calm center. The quieter the mind, the faster the hands.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 107,
+   "character": "Uncle Iroh",
+   "text": "A day without training is simply a day with more time for tea. I see no problem here.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 108,
+   "character": "The Cabbage Merchant",
+   "text": "My cabbages are more stable than your single-leg RDL, and they don't even have legs!",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 109,
+   "character": "Master Pakku",
+   "text": "A waterbender who rushes spills. Slow the lowering and keep everything in the cup.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 110,
+   "character": "Uncle Iroh",
+   "text": "Lightning can be redirected. Sadly, so can a bench press that wasn't racked properly.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 111,
+   "character": "Guru Pathik",
+   "text": "Your body keeps every promise you make it. Make it gentle promises today.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 112,
+   "character": "Avatar Kyoshi",
+   "text": "A strong foundation forgives a hundred mistakes built on top of it.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 113,
+   "character": "Princess Yue",
+   "text": "I am literally the moon, and even I can see that pull-up wasn't full range.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 114,
+   "character": "Avatar Roku",
+   "text": "Friendship and strength are built the same way: by showing up for years.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 115,
+   "character": "Sokka",
+   "text": "Hip mobility is crucial for volleyball. And for running away from Fire Nation ships.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 116,
+   "character": "Joo Dee",
+   "text": "There are no sore legs in Ba Sing Se. Here, we all walk down stairs very comfortably.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 117,
+   "character": "Uncle Iroh",
+   "text": "The river does not fight the rock. It goes around, over and through, and it always arrives.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 118,
+   "character": "Sokka",
+   "text": "Master Piandao says I have potential. He was looking at my triceps. I think.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 119,
+   "character": "Aang",
+   "text": "Air Nomads travel in circles. Every return makes the circle a little wider.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 120,
+   "character": "Uncle Iroh",
+   "text": "Do not envy the oak. It was once an acorn that simply held its ground.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 121,
+   "character": "Katara",
+   "text": "Sokka tried to waterbend his dumbbells. They did not move. Neither did his ego.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 122,
+   "character": "Zuko",
+   "text": "My uncle told me to look inward. The strongest press starts with a stable core.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 123,
+   "character": "Aang",
+   "text": "Monk Tashi once meditated so long he forgot his own name. That's dedication. Or a really good nap.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 124,
+   "character": "Sokka",
+   "text": "Calf raises? I've been raising calves my whole life. It's a tundra joke. Nobody laughs.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 125,
+   "character": "Katara",
+   "text": "You don't have to be the strongest. You have to be the one who doesn't give up.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 126,
+   "character": "Mai",
+   "text": "I threw a hundred knives today. My rotator cuff would like to file a formal complaint.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 127,
+   "character": "Monk Gyatso",
+   "text": "One calm breath before the serve is worth more than a thousand clenched teeth.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 128,
+   "character": "Suki",
+   "text": "Speed is useless if your footing is weak. Earn your quickness from the ground up.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 129,
+   "character": "Master Pakku",
+   "text": "Your rows are sloppy. Like a penguin trying to sled uphill.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 130,
+   "character": "The Sun Warrior Chief",
+   "text": "Fire is life, not destruction. Let your training warm you, not burn you down.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 131,
+   "character": "Toph",
+   "text": "Rest day? Fine. But if anyone touches my foam roller, they're getting a rock to the shin.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 132,
+   "character": "King Bumi",
+   "text": "Box jumps! I love a good box. I love a good jump. Put them together? GENIUS!",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 133,
+   "character": "Princess Yue",
+   "text": "The ocean is patient with the shore. Be that patient with your progress.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 134,
+   "character": "Zuko",
+   "text": "Ugh! Why is the dip station always taken by someone just standing on it?!",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 135,
+   "character": "Avatar Yangchen",
+   "text": "Peace is not something you wait for. It is a practice, like any other stance.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 136,
+   "character": "Toph",
+   "text": "Listen with your feet. The sand tells you where to go before the ball does.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 137,
+   "character": "Sokka",
+   "text": "Hydration tip from a Water Tribe warrior: drink water. That's it. I'm a genius.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 138,
+   "character": "Uncle Iroh",
+   "text": "When frustration flares, pour that fire into the next rep, not into yourself.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 139,
+   "character": "Momo",
+   "text": "(Momo's thoughts) The human does box breathing. I do box sitting. Inside the box. Very relaxing.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 140,
+   "character": "Toph",
+   "text": "My secret to explosive legs? Pure stubbornness. And squats. Okay, mostly squats.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 141,
+   "character": "Huu",
+   "text": "Under the swamp, all the roots are one tree. Your grip, your back and your swing are one, too.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 142,
+   "character": "June",
+   "text": "Nyla and I have a rule: nobody leaves until their arms shake like a shirshu's whiskers.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 143,
+   "character": "Aang",
+   "text": "Flexibility isn't only for your hamstrings. Bend your plans and you won't break.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 144,
+   "character": "King Bumi",
+   "text": "The secret to great power is knowing when to wait. Wait... wait... then move like an avalanche.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 145,
+   "character": "Chief Hakoda",
+   "text": "Sokka keeps asking me to spot his curls. Son, nobody spots curls.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 146,
+   "character": "Master Piandao",
+   "text": "The master is not the one who never misses. The master is the one who resets and tries again.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 147,
+   "character": "Sokka",
+   "text": "My mobility routine: stretch, think about meat, stretch, think about meat again.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 148,
+   "character": "The Boulder",
+   "text": "The Boulder respects the trap bar. The trap bar does not respect the Boulder's lower back.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 149,
+   "character": "Chief Hakoda",
+   "text": "Leading isn't shouting orders. It's being the first one on the boat, every single day.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 150,
+   "character": "Uncle Iroh",
+   "text": "The Fire Nation has many great inventions. Pre-workout tea is my personal favorite.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 151,
+   "character": "Guru Pathik",
+   "text": "Let the stretch arrive on its own. You cannot pull a flower open.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 152,
+   "character": "Haru",
+   "text": "Don't measure yourself against the mountain. Measure yourself against yesterday's pebble.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 153,
+   "character": "The Cabbage Merchant",
+   "text": "I rowed my cabbage boat across the whole bay and still had the arms to shake my fist at the Avatar!",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 154,
+   "character": "Avatar Roku",
+   "text": "Balance your push with your pull, and your fire will burn for a lifetime.",
+   "tone": "wise",
+   "element": "fire"
+  },
+  {
+   "id": 155,
+   "character": "Aang",
+   "text": "Appa wants you to know the beach walk is mandatory. Appa also wants six hundred pounds of hay.",
+   "tone": "funny",
+   "element": "air"
+  },
+  {
+   "id": 156,
+   "character": "The Cabbage Merchant",
+   "text": "I don't do cardio. I do chasing my runaway cabbage cart down a mountain. Same thing.",
+   "tone": "funny",
+   "element": "earth"
+  },
+  {
+   "id": 157,
+   "character": "Master Pakku",
+   "text": "Mastery is not a destination. It is a promise you renew with every repetition.",
+   "tone": "wise",
+   "element": "water"
+  },
+  {
+   "id": 158,
+   "character": "Sokka",
+   "text": "My overhead press strategy: look determined, breathe loudly, and hope my arms catch up.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 159,
+   "character": "Uncle Iroh",
+   "text": "The leaf does not argue with the wind. It dances, and arrives exactly where it should.",
+   "tone": "wise",
+   "element": "air"
+  },
+  {
+   "id": 160,
+   "character": "Avatar Kyoshi",
+   "text": "I grew tall by treating every single day as if it mattered. It always did.",
+   "tone": "wise",
+   "element": "earth"
+  },
+  {
+   "id": 161,
+   "character": "Sokka",
+   "text": "Grip training is important. You never know when you'll need to hang off a flying bison for an hour.",
+   "tone": "funny",
+   "element": "water"
+  },
+  {
+   "id": 162,
+   "character": "Zuko",
+   "text": "Fine. I'll admit it. The external rotations were worth it. Do not tell Uncle I said that.",
+   "tone": "funny",
+   "element": "fire"
+  },
+  {
+   "id": 163,
+   "character": "Aang",
+   "text": "One hundred sixty-four days. Every element, every breath. You didn't just train. You became someone new.",
+   "tone": "wise",
+   "element": "air"
+  }
+ ],
+ "daily": [
+  {
+   "day": 1,
+   "quote": 0
+  },
+  {
+   "day": 2,
+   "quote": 1
+  },
+  {
+   "day": 3,
+   "quote": 2
+  },
+  {
+   "day": 4,
+   "quote": 3
+  },
+  {
+   "day": 5,
+   "quote": 4
+  },
+  {
+   "day": 6,
+   "quote": 5
+  },
+  {
+   "day": 7,
+   "quote": 6
+  },
+  {
+   "day": 8,
+   "quote": 7
+  },
+  {
+   "day": 9,
+   "quote": 8
+  },
+  {
+   "day": 10,
+   "quote": 9
+  },
+  {
+   "day": 11,
+   "quote": 10
+  },
+  {
+   "day": 12,
+   "quote": 11
+  },
+  {
+   "day": 13,
+   "quote": 12
+  },
+  {
+   "day": 14,
+   "quote": 13
+  },
+  {
+   "day": 15,
+   "quote": 14
+  },
+  {
+   "day": 16,
+   "quote": 15
+  },
+  {
+   "day": 17,
+   "quote": 16
+  },
+  {
+   "day": 18,
+   "quote": 17
+  },
+  {
+   "day": 19,
+   "quote": 18
+  },
+  {
+   "day": 20,
+   "quote": 19
+  },
+  {
+   "day": 21,
+   "quote": 20
+  },
+  {
+   "day": 22,
+   "quote": 21
+  },
+  {
+   "day": 23,
+   "quote": 22
+  },
+  {
+   "day": 24,
+   "quote": 23
+  },
+  {
+   "day": 25,
+   "quote": 24
+  },
+  {
+   "day": 26,
+   "quote": 25
+  },
+  {
+   "day": 27,
+   "quote": 26
+  },
+  {
+   "day": 28,
+   "quote": 27
+  },
+  {
+   "day": 29,
+   "quote": 28
+  },
+  {
+   "day": 30,
+   "quote": 29
+  },
+  {
+   "day": 31,
+   "quote": 30
+  },
+  {
+   "day": 32,
+   "quote": 31
+  },
+  {
+   "day": 33,
+   "quote": 32
+  },
+  {
+   "day": 34,
+   "quote": 33
+  },
+  {
+   "day": 35,
+   "quote": 34
+  },
+  {
+   "day": 36,
+   "quote": 35
+  },
+  {
+   "day": 37,
+   "quote": 36
+  },
+  {
+   "day": 38,
+   "quote": 37
+  },
+  {
+   "day": 39,
+   "quote": 38
+  },
+  {
+   "day": 40,
+   "quote": 39
+  },
+  {
+   "day": 41,
+   "quote": 40
+  },
+  {
+   "day": 42,
+   "quote": 41
+  },
+  {
+   "day": 43,
+   "quote": 42
+  },
+  {
+   "day": 44,
+   "quote": 43
+  },
+  {
+   "day": 45,
+   "quote": 44
+  },
+  {
+   "day": 46,
+   "quote": 45
+  },
+  {
+   "day": 47,
+   "quote": 46
+  },
+  {
+   "day": 48,
+   "quote": 47
+  },
+  {
+   "day": 49,
+   "quote": 48
+  },
+  {
+   "day": 50,
+   "quote": 49
+  },
+  {
+   "day": 51,
+   "quote": 50
+  },
+  {
+   "day": 52,
+   "quote": 51
+  },
+  {
+   "day": 53,
+   "quote": 52
+  },
+  {
+   "day": 54,
+   "quote": 53
+  },
+  {
+   "day": 55,
+   "quote": 54
+  },
+  {
+   "day": 56,
+   "quote": 55
+  },
+  {
+   "day": 57,
+   "quote": 56
+  },
+  {
+   "day": 58,
+   "quote": 57
+  },
+  {
+   "day": 59,
+   "quote": 58
+  },
+  {
+   "day": 60,
+   "quote": 59
+  },
+  {
+   "day": 61,
+   "quote": 60
+  },
+  {
+   "day": 62,
+   "quote": 61
+  },
+  {
+   "day": 63,
+   "quote": 62
+  },
+  {
+   "day": 64,
+   "quote": 63
+  },
+  {
+   "day": 65,
+   "quote": 64
+  },
+  {
+   "day": 66,
+   "quote": 65
+  },
+  {
+   "day": 67,
+   "quote": 66
+  },
+  {
+   "day": 68,
+   "quote": 67
+  },
+  {
+   "day": 69,
+   "quote": 68
+  },
+  {
+   "day": 70,
+   "quote": 69
+  },
+  {
+   "day": 71,
+   "quote": 70
+  },
+  {
+   "day": 72,
+   "quote": 71
+  },
+  {
+   "day": 73,
+   "quote": 72
+  },
+  {
+   "day": 74,
+   "quote": 73
+  },
+  {
+   "day": 75,
+   "quote": 74
+  },
+  {
+   "day": 76,
+   "quote": 75
+  },
+  {
+   "day": 77,
+   "quote": 76
+  },
+  {
+   "day": 78,
+   "quote": 77
+  },
+  {
+   "day": 79,
+   "quote": 78
+  },
+  {
+   "day": 80,
+   "quote": 79
+  },
+  {
+   "day": 81,
+   "quote": 80
+  },
+  {
+   "day": 82,
+   "quote": 81
+  },
+  {
+   "day": 83,
+   "quote": 82
+  },
+  {
+   "day": 84,
+   "quote": 83
+  },
+  {
+   "day": 85,
+   "quote": 84
+  },
+  {
+   "day": 86,
+   "quote": 85
+  },
+  {
+   "day": 87,
+   "quote": 86
+  },
+  {
+   "day": 88,
+   "quote": 87
+  },
+  {
+   "day": 89,
+   "quote": 88
+  },
+  {
+   "day": 90,
+   "quote": 89
+  },
+  {
+   "day": 91,
+   "quote": 90
+  },
+  {
+   "day": 92,
+   "quote": 91
+  },
+  {
+   "day": 93,
+   "quote": 92
+  },
+  {
+   "day": 94,
+   "quote": 93
+  },
+  {
+   "day": 95,
+   "quote": 94
+  },
+  {
+   "day": 96,
+   "quote": 95
+  },
+  {
+   "day": 97,
+   "quote": 96
+  },
+  {
+   "day": 98,
+   "quote": 97
+  },
+  {
+   "day": 99,
+   "quote": 98
+  },
+  {
+   "day": 100,
+   "quote": 99
+  },
+  {
+   "day": 101,
+   "quote": 100
+  },
+  {
+   "day": 102,
+   "quote": 101
+  },
+  {
+   "day": 103,
+   "quote": 102
+  },
+  {
+   "day": 104,
+   "quote": 103
+  },
+  {
+   "day": 105,
+   "quote": 104
+  },
+  {
+   "day": 106,
+   "quote": 105
+  },
+  {
+   "day": 107,
+   "quote": 106
+  },
+  {
+   "day": 108,
+   "quote": 107
+  },
+  {
+   "day": 109,
+   "quote": 108
+  },
+  {
+   "day": 110,
+   "quote": 109
+  },
+  {
+   "day": 111,
+   "quote": 110
+  },
+  {
+   "day": 112,
+   "quote": 111
+  },
+  {
+   "day": 113,
+   "quote": 112
+  },
+  {
+   "day": 114,
+   "quote": 113
+  },
+  {
+   "day": 115,
+   "quote": 114
+  },
+  {
+   "day": 116,
+   "quote": 115
+  },
+  {
+   "day": 117,
+   "quote": 116
+  },
+  {
+   "day": 118,
+   "quote": 117
+  },
+  {
+   "day": 119,
+   "quote": 118
+  },
+  {
+   "day": 120,
+   "quote": 119
+  },
+  {
+   "day": 121,
+   "quote": 120
+  },
+  {
+   "day": 122,
+   "quote": 121
+  },
+  {
+   "day": 123,
+   "quote": 122
+  },
+  {
+   "day": 124,
+   "quote": 123
+  },
+  {
+   "day": 125,
+   "quote": 124
+  },
+  {
+   "day": 126,
+   "quote": 125
+  },
+  {
+   "day": 127,
+   "quote": 126
+  },
+  {
+   "day": 128,
+   "quote": 127
+  },
+  {
+   "day": 129,
+   "quote": 128
+  },
+  {
+   "day": 130,
+   "quote": 129
+  },
+  {
+   "day": 131,
+   "quote": 130
+  },
+  {
+   "day": 132,
+   "quote": 131
+  },
+  {
+   "day": 133,
+   "quote": 132
+  },
+  {
+   "day": 134,
+   "quote": 133
+  },
+  {
+   "day": 135,
+   "quote": 134
+  },
+  {
+   "day": 136,
+   "quote": 135
+  },
+  {
+   "day": 137,
+   "quote": 136
+  },
+  {
+   "day": 138,
+   "quote": 137
+  },
+  {
+   "day": 139,
+   "quote": 138
+  },
+  {
+   "day": 140,
+   "quote": 139
+  },
+  {
+   "day": 141,
+   "quote": 140
+  },
+  {
+   "day": 142,
+   "quote": 141
+  },
+  {
+   "day": 143,
+   "quote": 142
+  },
+  {
+   "day": 144,
+   "quote": 143
+  },
+  {
+   "day": 145,
+   "quote": 144
+  },
+  {
+   "day": 146,
+   "quote": 145
+  },
+  {
+   "day": 147,
+   "quote": 146
+  },
+  {
+   "day": 148,
+   "quote": 147
+  },
+  {
+   "day": 149,
+   "quote": 148
+  },
+  {
+   "day": 150,
+   "quote": 149
+  },
+  {
+   "day": 151,
+   "quote": 150
+  },
+  {
+   "day": 152,
+   "quote": 151
+  },
+  {
+   "day": 153,
+   "quote": 152
+  },
+  {
+   "day": 154,
+   "quote": 153
+  },
+  {
+   "day": 155,
+   "quote": 154
+  },
+  {
+   "day": 156,
+   "quote": 155
+  },
+  {
+   "day": 157,
+   "quote": 156
+  },
+  {
+   "day": 158,
+   "quote": 157
+  },
+  {
+   "day": 159,
+   "quote": 158
+  },
+  {
+   "day": 160,
+   "quote": 159
+  },
+  {
+   "day": 161,
+   "quote": 160
+  },
+  {
+   "day": 162,
+   "quote": 161
+  },
+  {
+   "day": 163,
+   "quote": 162
+  },
+  {
+   "day": 164,
+   "quote": 163
+  }
+ ],
+ "humor": {
+  "loading": [
+   "Brewing a pot of jasmine tea…",
+   "Sokka is drawing the map. It has a lot of arrows.",
+   "Consulting the Pai Sho masters…",
+   "Appa is shedding on the scrolls again. One moment…",
+   "Rebuilding the cabbage cart…",
+   "Unrolling the scroll the right way up…",
+   "Aligning the four elements…",
+   "Toph is feeling the vibrations of your progress…",
+   "Calibrating the Avatar State. Please do not glow yet.",
+   "Momo stole the schedule. Retrieving it…",
+   "Asking the Boulder for a spot…",
+   "Lighting the dragon's flame…"
+  ],
+  "empty": {
+   "noLogs": "No sets logged yet. The scroll is as empty as Sokka's battle plans.",
+   "noLogsSub": "Log a set on any workout and your best lifts will appear here.",
+   "firstTime": "First time on this one. No pressure. Okay, a little pressure. That's how adaptation works.",
+   "noCompletions": "No elements mastered yet. Even Aang started with marbles.",
+   "noStreak": "Every streak begins with one day. Today looks suspiciously available.",
+   "gapTitle": "Rest stop",
+   "gapText": "You pushed this day back, so it's officially tea time. Training resumes on the next scroll.",
+   "notes": "How did it feel? Jump heights, PRs, cabbage-related incidents…",
+   "beforeStart": "The training arc begins in {n} days. Hydrate. Sharpen your boomerang.",
+   "afterEnd": "The arc is complete. You are fully realized. (Season Two not yet announced.)"
+  },
+  "completion": {
+   "earth": [
+    "Toph would call that barely adequate, which from her is a standing ovation.",
+    "The Boulder is proud. The Boulder is also tired, and he only watched.",
+    "Your legs are now legally classified as boulders.",
+    "Somewhere, a badgermole nods in respect.",
+    "King Bumi is laughing maniacally in approval."
+   ],
+   "water": [
+    "Your back is now wider than the Northern Water Tribe's wall.",
+    "Katara says you can stop flexing at your reflection now.",
+    "Even the Moon Spirit noticed those pull-ups.",
+    "Master Pakku grudgingly admits that was precise.",
+    "You flowed like water. Sweaty, sweaty water."
+   ],
+   "fire": [
+    "Uncle Iroh has prepared celebratory tea.",
+    "Zuko says that was honorable. He's very intense about it.",
+    "Your triceps are now officially a fire hazard.",
+    "That press could redirect lightning.",
+    "Jeong Jeong approves, but asks that you respect the fire... and stretch."
+   ],
+   "air": [
+    "Light as a leaf on the wind.",
+    "Monk Gyatso would have baked you a celebratory fruit pie.",
+    "Your hips are now 12% more Air Nomad.",
+    "Appa approves this message: grrrrr.",
+    "Momo stole your water bottle in celebration."
+   ]
+  },
+  "shift": [
+   "The schedule bends like water. Everything moved forward one day.",
+   "Cabbage cart rerouted. The arc now ends {end}.",
+   "Even the Avatar spent a century in an iceberg. One day is fine."
+  ],
+  "undo": [
+   "Undone. The cabbages have been restored.",
+   "Time reversed. Don't tell Wan Shi Tong."
+  ],
+  "streak": [
+   [
+    0,
+    "Every streak starts at zero. Even Aang's."
+   ],
+   [
+    1,
+    "One day down. The journey of a thousand miles, et cetera."
+   ],
+   [
+    3,
+    "Three in a row! Sokka is drawing you a celebratory map."
+   ],
+   [
+    7,
+    "A full week. Toph says you're not completely useless."
+   ],
+   [
+    14,
+    "Two weeks strong. The Boulder is impressed."
+   ],
+   [
+    30,
+    "Thirty days! You're basically a Kyoshi Warrior now."
+   ],
+   [
+    60,
+    "Sixty days. Uncle Iroh is writing a proverb about you."
+   ],
+   [
+    100,
+    "One hundred days. The Order of the White Lotus has taken notice."
+   ]
+  ],
+  "io": {
+   "exported": "Scroll saved. Guard it like the Earth King guards Bosco.",
+   "imported": "Import complete. Welcome back, traveler.",
+   "badFile": "That scroll is unreadable. Even Wan Shi Tong couldn't make sense of it.",
+   "resetConfirm": "This erases every check, log and shift on this device. Even the cabbage merchant would hesitate.",
+   "resetDone": "Fresh scroll. The arc begins anew."
+  }
+ },
+ "notes": {
+  "quotes": "Original lines written in the voice of Avatar: The Last Airbender characters. Fan homage, not affiliated."
+ }
+}

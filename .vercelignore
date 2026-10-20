@@ -1,0 +1,9 @@
+# Vercel serves the static site only. The Convex backend deploys separately (npx convex deploy).
+node_modules
+convex
+tools
+package.json
+package-lock.json
+README.md
+.env*
+.gitignore

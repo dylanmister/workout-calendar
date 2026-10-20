@@ -1,0 +1,4588 @@
+{
+ "exercises": [
+  {
+   "id": "90-90-hamstring",
+   "name": "90/90 Hamstring Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "On your back, thigh vertical; slowly straighten the knee.",
+    "Keep the other leg relaxed; pulse gently."
+   ],
+   "image": "images/90-90-hamstring.webp",
+   "imageAlt": "images/90-90-hamstring-2.webp",
+   "thumb": "images/thumbs/90-90-hamstring.webp",
+   "imageType": "photo",
+   "source": "fedb:90_90_Hamstring"
+  },
+  {
+   "id": "90-90-switch",
+   "name": "90/90 Hip Switch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Sit tall with both knees at 90°; rotate the knees side to side.",
+    "Hands-free if you can, and lead with the hips."
+   ],
+   "desc": "Seated with both legs bent at 90° (front leg and back leg), rotate the knees to switch sides without using your hands.",
+   "image": "images/placeholders/90-90-switch.svg",
+   "thumb": "images/placeholders/90-90-switch.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "ab-roller",
+   "name": "Ab Wheel Rollout",
+   "element": "water",
+   "category": "Core",
+   "equipment": "Ab wheel",
+   "cues": [
+    "Ribs down, glutes tight; roll out until you're about to lose it.",
+    "Pull back with the abs, not the hips."
+   ],
+   "image": "images/ab-roller.webp",
+   "imageAlt": "images/ab-roller-2.webp",
+   "thumb": "images/thumbs/ab-roller.webp",
+   "imageType": "photo",
+   "source": "fedb:Ab_Roller"
+  },
+  {
+   "id": "ankle-circles",
+   "name": "Ankle Circles",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Big, slow circles; draw the biggest wheel you can.",
+    "Both directions; feel every degree of the ankle."
+   ],
+   "image": "images/ankle-circles.webp",
+   "imageAlt": "images/ankle-circles-2.webp",
+   "thumb": "images/thumbs/ankle-circles.webp",
+   "imageType": "photo",
+   "source": "fedb:Ankle_Circles"
+  },
+  {
+   "id": "approach-jump",
+   "name": "Volleyball Approach Jump",
+   "element": "earth",
+   "category": "Sport",
+   "equipment": "Sand",
+   "cues": [
+    "Accelerate into the last two steps: left-right-left for righties.",
+    "Big arm swing, plant the heels, turn speed into height.",
+    "Long penultimate step, then a quick close. Swing both arms up hard."
+   ],
+   "desc": "Your full spike approach and jump without a ball (or with a toss). Maximal intent every rep.",
+   "image": "images/approach-jump.webp",
+   "thumb": "images/thumbs/approach-jump.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "arm-circles",
+   "name": "Arm Circles",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Start small and grow bigger, forward then back.",
+    "Relaxed shoulders, long arms."
+   ],
+   "image": "images/arm-circles.webp",
+   "imageAlt": "images/arm-circles-2.webp",
+   "thumb": "images/thumbs/arm-circles.webp",
+   "imageType": "photo",
+   "source": "fedb:Arm_Circles"
+  },
+  {
+   "id": "arnold-press",
+   "name": "Arnold Press",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Start palms in; rotate out as you press.",
+    "Smooth rotation, no jerking."
+   ],
+   "image": "images/arnold-press.webp",
+   "imageAlt": "images/arnold-press-2.webp",
+   "thumb": "images/thumbs/arnold-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Arnold_Dumbbell_Press"
+  },
+  {
+   "id": "back-extension",
+   "name": "45° Back Extension",
+   "element": "water",
+   "category": "Posture",
+   "equipment": "Back-extension bench",
+   "cues": [
+    "Hinge at the hips over the pad with a neutral spine.",
+    "Squeeze the glutes to rise; stop at a straight line, no over-arching."
+   ],
+   "image": "images/back-extension.webp",
+   "imageAlt": "images/back-extension-2.webp",
+   "thumb": "images/thumbs/back-extension.webp",
+   "imageType": "photo",
+   "source": "fedb:Hyperextensions_Back_Extensions"
+  },
+  {
+   "id": "back-squat",
+   "name": "Barbell Back Squat",
+   "element": "earth",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Big breath into the brace, then sit straight down between your hips.",
+    "Screw your feet into the floor; knees chase your pinky toes.",
+    "Drive up chest-first so hips and shoulders rise together."
+   ],
+   "image": "images/back-squat.webp",
+   "imageAlt": "images/back-squat-2.webp",
+   "thumb": "images/thumbs/back-squat.webp",
+   "imageType": "photo",
+   "source": "fedb:Barbell_Full_Squat"
+  },
+  {
+   "id": "backpedal-sprint",
+   "name": "Backpedal to Sprint",
+   "element": "earth",
+   "category": "Sport",
+   "equipment": "Sand",
+   "cues": [
+    "Quick backpedal with your chest over your toes.",
+    "Open the hips on the cue and sprint. React, don't think."
+   ],
+   "desc": "Backpedal 5 m, then plant, open the hips and sprint forward 10 m, like chasing a shanked pass.",
+   "image": "images/placeholders/backpedal-sprint.svg",
+   "thumb": "images/placeholders/backpedal-sprint.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "backward-sled-drag",
+   "name": "Backward Sled Drag",
+   "element": "earth",
+   "category": "Resilience",
+   "equipment": "Sled",
+   "cues": [
+    "Lean back and take short, fast steps. Knee-friendly quad burn.",
+    "Stay on the balls of the feet the whole way."
+   ],
+   "image": "images/backward-sled-drag.webp",
+   "imageAlt": "images/backward-sled-drag-2.webp",
+   "thumb": "images/thumbs/backward-sled-drag.webp",
+   "imageType": "photo",
+   "source": "fedb:Backward_Drag"
+  },
+  {
+   "id": "backward-throw",
+   "name": "Backward Med-Ball Throw",
+   "element": "water",
+   "category": "Power",
+   "equipment": "Medicine ball",
+   "cues": [
+    "Squat, then explode, launching the ball overhead behind you.",
+    "Hips do the work; arms just steer."
+   ],
+   "image": "images/backward-throw.webp",
+   "imageAlt": "images/backward-throw-2.webp",
+   "thumb": "images/thumbs/backward-throw.webp",
+   "imageType": "photo",
+   "source": "fedb:Backward_Medicine_Ball_Throw"
+  },
+  {
+   "id": "ball-leg-curl",
+   "name": "Stability Ball Leg Curl",
+   "element": "earth",
+   "category": "Resilience",
+   "equipment": "Stability ball",
+   "cues": [
+    "Bridge up first, then curl the ball in without dropping the hips.",
+    "Slow on the way out; that's where hamstrings get armor."
+   ],
+   "image": "images/ball-leg-curl.webp",
+   "imageAlt": "images/ball-leg-curl-2.webp",
+   "thumb": "images/thumbs/ball-leg-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Ball_Leg_Curl"
+  },
+  {
+   "id": "band-bench",
+   "name": "Banded Speed Bench",
+   "element": "fire",
+   "category": "Power",
+   "equipment": "Barbell + bands",
+   "cues": [
+    "Light bar with bands; accelerate through the whole rep.",
+    "Fast down (controlled), faster up."
+   ],
+   "image": "images/band-bench.webp",
+   "imageAlt": "images/band-bench-2.webp",
+   "thumb": "images/thumbs/band-bench.webp",
+   "imageType": "photo",
+   "source": "fedb:Bench_Press_-_With_Bands"
+  },
+  {
+   "id": "band-pull-apart",
+   "name": "Band Pull-Apart",
+   "element": "water",
+   "category": "Shoulder health",
+   "equipment": "Band",
+   "cues": [
+    "Arms straight; pull the band to the chest by squeezing the shoulder blades.",
+    "Slow return. The rear delts are the hitting arm's brakes."
+   ],
+   "image": "images/band-pull-apart.webp",
+   "imageAlt": "images/band-pull-apart-2.webp",
+   "thumb": "images/thumbs/band-pull-apart.webp",
+   "imageType": "photo",
+   "source": "fedb:Band_Pull_Apart"
+  },
+  {
+   "id": "bar-pushdown",
+   "name": "Triceps Pushdown",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Cable + bar",
+   "cues": [
+    "Lean slightly forward; elbows stay at your sides.",
+    "Squeeze at lockout for one second."
+   ],
+   "image": "images/bar-pushdown.webp",
+   "imageAlt": "images/bar-pushdown-2.webp",
+   "thumb": "images/thumbs/bar-pushdown.webp",
+   "imageType": "photo",
+   "source": "fedb:Triceps_Pushdown"
+  },
+  {
+   "id": "barbell-bulgarian",
+   "name": "Barbell Bulgarian Split Squat",
+   "element": "earth",
+   "category": "Single-leg",
+   "equipment": "Barbell",
+   "cues": [
+    "Set the stance first; the front shin stays close to vertical.",
+    "Control the descent and stand up through the front foot."
+   ],
+   "image": "images/barbell-bulgarian.webp",
+   "imageAlt": "images/barbell-bulgarian-2.webp",
+   "thumb": "images/thumbs/barbell-bulgarian.webp",
+   "imageType": "photo",
+   "source": "fedb:One_Leg_Barbell_Squat"
+  },
+  {
+   "id": "barbell-curl",
+   "name": "Barbell Curl",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Barbell",
+   "cues": [
+    "Elbows pinned; curl without swinging the hips.",
+    "Squeeze at the top and lower in two seconds."
+   ],
+   "image": "images/barbell-curl.webp",
+   "imageAlt": "images/barbell-curl-2.webp",
+   "thumb": "images/thumbs/barbell-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Barbell_Curl"
+  },
+  {
+   "id": "barbell-row",
+   "name": "Barbell Bent-Over Row",
+   "element": "water",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Hinge to about 45°, brace, and row the bar to the lower ribs.",
+    "No hip-humping; the torso angle stays locked."
+   ],
+   "image": "images/barbell-row.webp",
+   "imageAlt": "images/barbell-row-2.webp",
+   "thumb": "images/thumbs/barbell-row.webp",
+   "imageType": "photo",
+   "source": "fedb:Bent_Over_Barbell_Row"
+  },
+  {
+   "id": "barefoot-sand-walk",
+   "name": "Barefoot Sand Walk",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Sand",
+   "cues": [
+    "Easy pace and nasal breathing; let the sand massage your feet.",
+    "Walk tall and swing the arms loose. This is moving meditation."
+   ],
+   "desc": "An easy walk barefoot on soft sand. Strengthens feet and ankles while flushing the legs.",
+   "image": "images/barefoot-sand-walk.webp",
+   "thumb": "images/thumbs/barefoot-sand-walk.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "battle-ropes",
+   "name": "Battle Ropes",
+   "element": "fire",
+   "category": "Conditioning",
+   "equipment": "Ropes",
+   "cues": [
+    "Athletic stance, fast alternating waves from the shoulders.",
+    "Breathe. Keep the waves all the way to the anchor."
+   ],
+   "image": "images/battle-ropes.webp",
+   "imageAlt": "images/battle-ropes-2.webp",
+   "thumb": "images/thumbs/battle-ropes.webp",
+   "imageType": "photo",
+   "source": "fedb:Battling_Ropes"
+  },
+  {
+   "id": "bear-crawl",
+   "name": "Bear Crawl",
+   "element": "earth",
+   "category": "Conditioning",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Knees hover an inch off the ground; opposite hand and foot move together.",
+    "Keep the back flat enough to balance a cup of tea."
+   ],
+   "desc": "On hands and feet with knees just off the ground, crawl forward with opposite hand and foot moving together.",
+   "image": "images/bear-crawl.webp",
+   "thumb": "images/thumbs/bear-crawl.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "bench-dip",
+   "name": "Bench Dip",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Bench",
+   "cues": [
+    "Hands on the bench behind you; lower to 90°.",
+    "Shoulders stay down and back, away from the ears."
+   ],
+   "image": "images/bench-dip.webp",
+   "imageAlt": "images/bench-dip-2.webp",
+   "thumb": "images/thumbs/bench-dip.webp",
+   "imageType": "photo",
+   "source": "fedb:Bench_Dips"
+  },
+  {
+   "id": "bench-press",
+   "name": "Barbell Bench Press",
+   "element": "fire",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Shoulder blades pinned, feet driving; bar to the lower chest.",
+    "Bend the bar and push yourself away from it.",
+    "Touch soft, then drive explosively. Same groove every rep."
+   ],
+   "image": "images/bench-press.webp",
+   "imageAlt": "images/bench-press-2.webp",
+   "thumb": "images/thumbs/bench-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Barbell_Bench_Press_-_Medium_Grip"
+  },
+  {
+   "id": "bike-easy",
+   "name": "Easy Stationary Bike",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Bike",
+   "cues": [
+    "Zone 1 easy, enough to hold a conversation.",
+    "High cadence, low resistance; legs flush, mind clears."
+   ],
+   "image": "images/bike-easy.webp",
+   "imageAlt": "images/bike-easy-2.webp",
+   "thumb": "images/thumbs/bike-easy.webp",
+   "imageType": "photo",
+   "source": "fedb:Bicycling_Stationary"
+  },
+  {
+   "id": "bird-dog",
+   "name": "Bird Dog",
+   "element": "air",
+   "category": "Core",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Reach the opposite arm and leg long; hips stay level.",
+    "Pause and exhale. Balance a cup of tea on the low back."
+   ],
+   "desc": "On hands and knees, extend the opposite arm and leg, pause, and return with control.",
+   "image": "images/bird-dog.webp",
+   "thumb": "images/thumbs/bird-dog.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "block-jump",
+   "name": "Block Jump",
+   "element": "earth",
+   "category": "Sport",
+   "equipment": "Sand / net",
+   "cues": [
+    "Hands high and in front; quick dip, press over the net.",
+    "Land balanced and ready to move. No drifting."
+   ],
+   "desc": "Stand at the net with hands at shoulder height, dip and jump straight up, pressing hands over the tape. Land in place.",
+   "image": "images/block-jump.webp",
+   "thumb": "images/thumbs/block-jump.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "bottoms-up-clean",
+   "name": "Bottoms-Up Kettlebell Clean",
+   "element": "fire",
+   "category": "Shoulder health",
+   "equipment": "Kettlebell",
+   "cues": [
+    "Crush the handle and clean the bell upside-down to the shoulder.",
+    "Balance it. The cuff lights up to keep it steady."
+   ],
+   "image": "images/bottoms-up-clean.webp",
+   "imageAlt": "images/bottoms-up-clean-2.webp",
+   "thumb": "images/thumbs/bottoms-up-clean.webp",
+   "imageType": "photo",
+   "source": "fedb:Bottoms-Up_Clean_From_The_Hang_Position"
+  },
+  {
+   "id": "box-breathing",
+   "name": "Box Breathing",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "None",
+   "cues": [
+    "Inhale 4, hold 4, exhale 4, hold 4.",
+    "Shoulders heavy, jaw loose. Breath is the root of all bending."
+   ],
+   "desc": "Seated or lying, breathe in a square: inhale for 4 seconds, hold 4, exhale 4, hold 4.",
+   "image": "images/box-breathing.webp",
+   "thumb": "images/thumbs/box-breathing.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "box-jump",
+   "name": "Box Jump",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Plyo box",
+   "cues": [
+    "Arm swing, explode, land soft and quiet in a half squat.",
+    "Step down. Save the knees for jumping, not landing."
+   ],
+   "image": "images/box-jump.webp",
+   "imageAlt": "images/box-jump-2.webp",
+   "thumb": "images/thumbs/box-jump.webp",
+   "imageType": "photo",
+   "source": "fedb:Front_Box_Jump"
+  },
+  {
+   "id": "box-squat",
+   "name": "Box Squat",
+   "element": "earth",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Sit back to the box and stay tight; no plopping.",
+    "Pause with the brace on, then explode off the box."
+   ],
+   "image": "images/box-squat.webp",
+   "imageAlt": "images/box-squat-2.webp",
+   "thumb": "images/thumbs/box-squat.webp",
+   "imageType": "photo",
+   "source": "fedb:Box_Squat"
+  },
+  {
+   "id": "broad-jump",
+   "name": "Broad Jump",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Big arm swing; jump out, not up, and stick the landing.",
+    "Land in an athletic stance and hold for two seconds."
+   ],
+   "image": "images/broad-jump.webp",
+   "imageAlt": "images/broad-jump-2.webp",
+   "thumb": "images/thumbs/broad-jump.webp",
+   "imageType": "photo",
+   "source": "fedb:Standing_Long_Jump"
+  },
+  {
+   "id": "bulgarian-split-squat",
+   "name": "Bulgarian Split Squat",
+   "element": "earth",
+   "category": "Single-leg",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Most of the weight on the front foot; the back foot is a kickstand.",
+    "Drop the back knee straight down, drive up through the front heel.",
+    "Lean the torso slightly forward to load the glute."
+   ],
+   "image": "images/bulgarian-split-squat.webp",
+   "imageAlt": "images/bulgarian-split-squat-2.webp",
+   "thumb": "images/thumbs/bulgarian-split-squat.webp",
+   "imageType": "photo",
+   "source": "fedb:Split_Squat_with_Dumbbells"
+  },
+  {
+   "id": "cable-crossover",
+   "name": "Cable Crossover",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "Slight forward lean; hug a tree and cross the hands.",
+    "Big stretch, controlled squeeze."
+   ],
+   "image": "images/cable-crossover.webp",
+   "imageAlt": "images/cable-crossover-2.webp",
+   "thumb": "images/thumbs/cable-crossover.webp",
+   "imageType": "photo",
+   "source": "fedb:Cable_Crossover"
+  },
+  {
+   "id": "cable-crunch",
+   "name": "Cable Crunch",
+   "element": "water",
+   "category": "Core",
+   "equipment": "Cable + rope",
+   "cues": [
+    "Hips still; crunch the ribs toward the pelvis.",
+    "Round the spine; this isn't a hip hinge."
+   ],
+   "image": "images/cable-crunch.webp",
+   "imageAlt": "images/cable-crunch-2.webp",
+   "thumb": "images/thumbs/cable-crunch.webp",
+   "imageType": "photo",
+   "source": "fedb:Cable_Crunch"
+  },
+  {
+   "id": "cable-curl",
+   "name": "Cable Curl",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "Step back for tension at the bottom; elbows still.",
+    "Squeeze and hold the top for one second."
+   ],
+   "image": "images/cable-curl.webp",
+   "imageAlt": "images/cable-curl-2.webp",
+   "thumb": "images/thumbs/cable-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Standing_Biceps_Cable_Curl"
+  },
+  {
+   "id": "cable-hip-adduction",
+   "name": "Cable Hip Adduction",
+   "element": "earth",
+   "category": "Resilience",
+   "equipment": "Cable",
+   "cues": [
+    "Stand tall and sweep the leg across your body with control.",
+    "Slow return; don't let the cable yank you open."
+   ],
+   "image": "images/cable-hip-adduction.webp",
+   "imageAlt": "images/cable-hip-adduction-2.webp",
+   "thumb": "images/thumbs/cable-hip-adduction.webp",
+   "imageType": "photo",
+   "source": "fedb:Cable_Hip_Adduction"
+  },
+  {
+   "id": "cable-lateral-raise",
+   "name": "Single-Arm Cable Lateral Raise",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "Cable behind you for tension at the bottom; raise to shoulder height.",
+    "Slow negative and no shrug."
+   ],
+   "image": "images/cable-lateral-raise.webp",
+   "imageAlt": "images/cable-lateral-raise-2.webp",
+   "thumb": "images/thumbs/cable-lateral-raise.webp",
+   "imageType": "photo",
+   "source": "fedb:Standing_Low-Pulley_Deltoid_Raise"
+  },
+  {
+   "id": "cable-lift",
+   "name": "Cable Low-to-High Lift",
+   "element": "water",
+   "category": "Core",
+   "equipment": "Cable",
+   "cues": [
+    "Low to high across the body, finishing tall.",
+    "Brace first, then rotate; control the return."
+   ],
+   "image": "images/cable-lift.webp",
+   "imageAlt": "images/cable-lift-2.webp",
+   "thumb": "images/thumbs/cable-lift.webp",
+   "imageType": "photo",
+   "source": "fedb:Standing_Cable_Lift"
+  },
+  {
+   "id": "cable-rear-delt-fly",
+   "name": "Cable Rear Delt Fly",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "Cross the cables and sweep back wide at shoulder height.",
+    "No shrugging; the neck stays long."
+   ],
+   "image": "images/cable-rear-delt-fly.webp",
+   "imageAlt": "images/cable-rear-delt-fly-2.webp",
+   "thumb": "images/thumbs/cable-rear-delt-fly.webp",
+   "imageType": "photo",
+   "source": "fedb:Cable_Rear_Delt_Fly"
+  },
+  {
+   "id": "calf-stretch",
+   "name": "Wall Calf Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Wall",
+   "cues": [
+    "Back heel down, knee straight; lean into the wall.",
+    "Hold, then bend the knee slightly to find the soleus."
+   ],
+   "image": "images/calf-stretch.webp",
+   "imageAlt": "images/calf-stretch-2.webp",
+   "thumb": "images/thumbs/calf-stretch.webp",
+   "imageType": "photo",
+   "source": "fedb:Calf_Stretch_Hands_Against_Wall"
+  },
+  {
+   "id": "carioca",
+   "name": "Carioca",
+   "element": "earth",
+   "category": "Warm-up",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Quick hips; the back foot crosses behind with a high knee.",
+    "Stay light and rhythmic, arms relaxed."
+   ],
+   "image": "images/carioca.webp",
+   "imageAlt": "images/carioca-2.webp",
+   "thumb": "images/thumbs/carioca.webp",
+   "imageType": "photo",
+   "source": "fedb:Carioca_Quick_Step"
+  },
+  {
+   "id": "cat-cow",
+   "name": "Cat-Cow",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Round up as you exhale, arch as you inhale.",
+    "Move one vertebra at a time."
+   ],
+   "image": "images/cat-cow.webp",
+   "imageAlt": "images/cat-cow-2.webp",
+   "thumb": "images/thumbs/cat-cow.webp",
+   "imageType": "photo",
+   "source": "fedb:Cat_Stretch"
+  },
+  {
+   "id": "chest-dip",
+   "name": "Weighted Chest Dip",
+   "element": "fire",
+   "category": "Strength",
+   "equipment": "Dip bars + belt",
+   "cues": [
+    "Lean forward slightly and lower until the shoulders are just below the elbows.",
+    "Press up and squeeze the chest; no shoulder shrug."
+   ],
+   "image": "images/chest-dip.webp",
+   "imageAlt": "images/chest-dip-2.webp",
+   "thumb": "images/thumbs/chest-dip.webp",
+   "imageType": "photo",
+   "source": "fedb:Dips_-_Chest_Version"
+  },
+  {
+   "id": "chest-pass",
+   "name": "Med-Ball Chest Pass",
+   "element": "fire",
+   "category": "Power",
+   "equipment": "Medicine ball",
+   "cues": [
+    "Step and throw from the chest as hard as you can.",
+    "Thumbs down on the follow-through; full arm extension."
+   ],
+   "image": "images/chest-pass.webp",
+   "imageAlt": "images/chest-pass-2.webp",
+   "thumb": "images/thumbs/chest-pass.webp",
+   "imageType": "photo",
+   "source": "fedb:Medicine_Ball_Chest_Pass"
+  },
+  {
+   "id": "chest-push-sprint",
+   "name": "Med-Ball Chest Push to Sprint",
+   "element": "fire",
+   "category": "Power",
+   "equipment": "Medicine ball + sand",
+   "cues": [
+    "Throw from a low athletic stance and chase it immediately.",
+    "Transfer push power into acceleration."
+   ],
+   "image": "images/chest-push-sprint.webp",
+   "imageAlt": "images/chest-push-sprint-2.webp",
+   "thumb": "images/thumbs/chest-push-sprint.webp",
+   "imageType": "photo",
+   "source": "fedb:Chest_Push_with_Run_Release"
+  },
+  {
+   "id": "chest-supported-t-bar",
+   "name": "Chest-Supported T-Bar Row",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Machine",
+   "cues": [
+    "Chest stays on the pad; pull with the back, not momentum.",
+    "Full stretch at the bottom, hard squeeze at the top."
+   ],
+   "image": "images/chest-supported-t-bar.webp",
+   "imageAlt": "images/chest-supported-t-bar-2.webp",
+   "thumb": "images/thumbs/chest-supported-t-bar.webp",
+   "imageType": "photo",
+   "source": "fedb:Lying_T-Bar_Row"
+  },
+  {
+   "id": "childs-pose",
+   "name": "Child's Pose",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Knees wide, hips to the heels, arms long.",
+    "Breathe into the back of the ribs."
+   ],
+   "image": "images/childs-pose.webp",
+   "imageAlt": "images/childs-pose-2.webp",
+   "thumb": "images/thumbs/childs-pose.webp",
+   "imageType": "photo",
+   "source": "fedb:Childs_Pose"
+  },
+  {
+   "id": "chin-up",
+   "name": "Chin-Up",
+   "element": "water",
+   "category": "Strength",
+   "equipment": "Pull-up bar",
+   "cues": [
+    "Palms facing you; pull the chest to the bar.",
+    "Squeeze the biceps and lats together at the top."
+   ],
+   "image": "images/chin-up.webp",
+   "imageAlt": "images/chin-up-2.webp",
+   "thumb": "images/thumbs/chin-up.webp",
+   "imageType": "photo",
+   "source": "fedb:Chin-Up"
+  },
+  {
+   "id": "clean-pull",
+   "name": "Clean Pull",
+   "element": "earth",
+   "category": "Olympic",
+   "equipment": "Barbell",
+   "cues": [
+    "Same path as the clean: patient off the floor, explosive at the hip.",
+    "Finish tall on the toes with a big shrug and long arms."
+   ],
+   "image": "images/clean-pull.webp",
+   "imageAlt": "images/clean-pull-2.webp",
+   "thumb": "images/thumbs/clean-pull.webp",
+   "imageType": "photo",
+   "source": "fedb:Clean_Pull"
+  },
+  {
+   "id": "close-grip-bench",
+   "name": "Close-Grip Bench Press",
+   "element": "fire",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Hands just inside shoulder width; elbows tucked.",
+    "Touch the lower chest and drive with the triceps."
+   ],
+   "image": "images/close-grip-bench.webp",
+   "imageAlt": "images/close-grip-bench-2.webp",
+   "thumb": "images/thumbs/close-grip-bench.webp",
+   "imageType": "photo",
+   "source": "fedb:Close-Grip_Barbell_Bench_Press"
+  },
+  {
+   "id": "close-grip-pulldown",
+   "name": "Close-Grip Pulldown",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "Tall chest; pull the handle to the sternum.",
+    "Full stretch overhead between reps."
+   ],
+   "image": "images/close-grip-pulldown.webp",
+   "imageAlt": "images/close-grip-pulldown-2.webp",
+   "thumb": "images/thumbs/close-grip-pulldown.webp",
+   "imageType": "photo",
+   "source": "fedb:Close-Grip_Front_Lat_Pulldown"
+  },
+  {
+   "id": "close-push-up",
+   "name": "Close-Grip Push-Up",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Hands under the shoulders, elbows brushing the ribs.",
+    "Triceps finish; full lockout each rep."
+   ],
+   "image": "images/close-push-up.webp",
+   "imageAlt": "images/close-push-up-2.webp",
+   "thumb": "images/thumbs/close-push-up.webp",
+   "imageType": "photo",
+   "source": "fedb:Push-Ups_-_Close_Triceps_Position"
+  },
+  {
+   "id": "cmj",
+   "name": "Countermovement Jump",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Fast dip, full arm swing, reach for the ceiling.",
+    "Treat each rep like a max attempt, then reset."
+   ],
+   "image": "images/cmj.webp",
+   "imageAlt": "images/cmj-2.webp",
+   "thumb": "images/thumbs/cmj.webp",
+   "imageType": "photo",
+   "source": "fedb:Rocket_Jump"
+  },
+  {
+   "id": "cobra",
+   "name": "Cobra Pose",
+   "element": "air",
+   "category": "Yoga",
+   "equipment": "Mat",
+   "cues": [
+    "Hips down, press the chest forward and up.",
+    "Shoulders away from the ears; gentle back bend."
+   ],
+   "desc": "Lying face down, press through the hands to lift the chest while hips stay on the floor.",
+   "image": "images/cobra.webp",
+   "thumb": "images/thumbs/cobra.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "concentration-curl",
+   "name": "Concentration Curl",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbell",
+   "cues": [
+    "Elbow braced on the inner thigh; curl to the shoulder.",
+    "Supinate hard at the top."
+   ],
+   "image": "images/concentration-curl.webp",
+   "imageAlt": "images/concentration-curl-2.webp",
+   "thumb": "images/thumbs/concentration-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Concentration_Curls"
+  },
+  {
+   "id": "copenhagen-plank",
+   "name": "Copenhagen Plank",
+   "element": "earth",
+   "category": "Resilience",
+   "equipment": "Bench",
+   "cues": [
+    "Top leg on the bench, hips stacked, body in one straight line.",
+    "Squeeze the bench with your inner thigh; no sagging."
+   ],
+   "desc": "Side plank with your top leg resting on a bench (knee or ankle) and the bottom leg free. Lifts the hips using the adductors. Elite groin insurance for lateral movers.",
+   "image": "images/placeholders/copenhagen-plank.svg",
+   "thumb": "images/placeholders/copenhagen-plank.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "cossack-squat",
+   "name": "Cossack Squat",
+   "element": "earth",
+   "category": "Mobility",
+   "equipment": "Bodyweight / Kettlebell",
+   "cues": [
+    "Sit deep into one heel; the straight leg's toes point up.",
+    "Shift side to side slowly while staying low."
+   ],
+   "desc": "Wide stance. Shift your weight and squat deep over one leg while the other stays straight with toes pointing up, then switch sides.",
+   "image": "images/cossack-squat.webp",
+   "thumb": "images/thumbs/cossack-squat.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "cross-body-hammer",
+   "name": "Cross-Body Hammer Curl",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Curl across the body toward the opposite shoulder.",
+    "Control the descent; no swinging."
+   ],
+   "image": "images/cross-body-hammer.webp",
+   "imageAlt": "images/cross-body-hammer-2.webp",
+   "thumb": "images/thumbs/cross-body-hammer.webp",
+   "imageType": "photo",
+   "source": "fedb:Cross_Body_Hammer_Curl"
+  },
+  {
+   "id": "cross-body-stretch",
+   "name": "Cross-Body Shoulder Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Pull the arm across the chest below shoulder height.",
+    "Keep the shoulder blade down; gentle stretch."
+   ],
+   "image": "images/cross-body-stretch.webp",
+   "imageAlt": "images/cross-body-stretch-2.webp",
+   "thumb": "images/thumbs/cross-body-stretch.webp",
+   "imageType": "photo",
+   "source": "fedb:Shoulder_Stretch"
+  },
+  {
+   "id": "crossover-lunge",
+   "name": "Crossover Reverse Lunge",
+   "element": "earth",
+   "category": "Single-leg",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Step back and across like a curtsy; front knee stays over the foot.",
+    "Feel the outer glute working to keep the pelvis level."
+   ],
+   "image": "images/crossover-lunge.webp",
+   "imageAlt": "images/crossover-lunge-2.webp",
+   "thumb": "images/thumbs/crossover-lunge.webp",
+   "imageType": "photo",
+   "source": "fedb:Crossover_Reverse_Lunge"
+  },
+  {
+   "id": "cuban-press",
+   "name": "Cuban Press",
+   "element": "fire",
+   "category": "Shoulder health",
+   "equipment": "Light dumbbells / barbell",
+   "cues": [
+    "Upright row to 90°, rotate up, then press overhead.",
+    "Featherweight load; this is cuff and posture work."
+   ],
+   "image": "images/cuban-press.webp",
+   "imageAlt": "images/cuban-press-2.webp",
+   "thumb": "images/thumbs/cuban-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Cuban_Press"
+  },
+  {
+   "id": "db-bench",
+   "name": "Dumbbell Bench Press",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Deep stretch at the bottom, press up and slightly in.",
+    "Wrists stacked over the elbows."
+   ],
+   "image": "images/db-bench.webp",
+   "imageAlt": "images/db-bench-2.webp",
+   "thumb": "images/thumbs/db-bench.webp",
+   "imageType": "photo",
+   "source": "fedb:Dumbbell_Bench_Press"
+  },
+  {
+   "id": "db-calf-raise",
+   "name": "Dumbbell Calf Raise (Step)",
+   "element": "earth",
+   "category": "Resilience",
+   "equipment": "Dumbbells + step",
+   "cues": [
+    "Heels sink below the step, then rise onto the big toe.",
+    "Three seconds down; the eccentric is where the armor forms."
+   ],
+   "image": "images/db-calf-raise.webp",
+   "imageAlt": "images/db-calf-raise-2.webp",
+   "thumb": "images/thumbs/db-calf-raise.webp",
+   "imageType": "photo",
+   "source": "fedb:Standing_Dumbbell_Calf_Raise"
+  },
+  {
+   "id": "db-floor-press",
+   "name": "Dumbbell Floor Press",
+   "element": "fire",
+   "category": "Shoulder health",
+   "equipment": "Dumbbells",
+   "cues": [
+    "The floor limits range, which is easy on the shoulder.",
+    "Pause at the bottom, press with a neutral wrist."
+   ],
+   "image": "images/db-floor-press.webp",
+   "imageAlt": "images/db-floor-press-2.webp",
+   "thumb": "images/thumbs/db-floor-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Dumbbell_Floor_Press"
+  },
+  {
+   "id": "db-fly",
+   "name": "Dumbbell Fly",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Open wide with soft elbows until you feel the stretch.",
+    "Bring them up like hugging a barrel."
+   ],
+   "image": "images/db-fly.webp",
+   "imageAlt": "images/db-fly-2.webp",
+   "thumb": "images/thumbs/db-fly.webp",
+   "imageType": "photo",
+   "source": "fedb:Dumbbell_Flyes"
+  },
+  {
+   "id": "db-overhead-ext",
+   "name": "Seated Dumbbell Overhead Extension",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbell",
+   "cues": [
+    "Both hands under the top plate; elbows close to the head.",
+    "Lower behind the head, extend fully."
+   ],
+   "image": "images/db-overhead-ext.webp",
+   "imageAlt": "images/db-overhead-ext-2.webp",
+   "thumb": "images/thumbs/db-overhead-ext.webp",
+   "imageType": "photo",
+   "source": "fedb:Seated_Triceps_Press"
+  },
+  {
+   "id": "db-row",
+   "name": "Single-Arm Dumbbell Row",
+   "element": "water",
+   "category": "Strength",
+   "equipment": "Dumbbell + bench",
+   "cues": [
+    "Row the dumbbell to the hip pocket, not the armpit.",
+    "Square shoulders; let the lat stretch at the bottom."
+   ],
+   "image": "images/db-row.webp",
+   "imageAlt": "images/db-row-2.webp",
+   "thumb": "images/thumbs/db-row.webp",
+   "imageType": "photo",
+   "source": "fedb:One-Arm_Dumbbell_Row"
+  },
+  {
+   "id": "db-shoulder-press",
+   "name": "Seated Dumbbell Press",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Elbows slightly forward; press in a smooth arc.",
+    "Lower to ear level under control."
+   ],
+   "image": "images/db-shoulder-press.webp",
+   "imageAlt": "images/db-shoulder-press-2.webp",
+   "thumb": "images/thumbs/db-shoulder-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Dumbbell_Shoulder_Press"
+  },
+  {
+   "id": "dead-bug",
+   "name": "Dead Bug",
+   "element": "air",
+   "category": "Core",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Low back pressed into the floor; extend opposite arm and leg.",
+    "Exhale fully on each rep."
+   ],
+   "image": "images/dead-bug.webp",
+   "imageAlt": "images/dead-bug-2.webp",
+   "thumb": "images/thumbs/dead-bug.webp",
+   "imageType": "photo",
+   "source": "fedb:Dead_Bug"
+  },
+  {
+   "id": "deadlift",
+   "name": "Conventional Deadlift",
+   "element": "earth",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Bar over mid-foot; pull the slack out before it leaves the floor.",
+    "Push the floor, then drive the hips through and squeeze at lockout.",
+    "Keep the bar dragging your legs the whole way up."
+   ],
+   "image": "images/deadlift.webp",
+   "imageAlt": "images/deadlift-2.webp",
+   "thumb": "images/thumbs/deadlift.webp",
+   "imageType": "photo",
+   "source": "fedb:Barbell_Deadlift"
+  },
+  {
+   "id": "deficit-reverse-lunge",
+   "name": "Deficit Reverse Lunge",
+   "element": "earth",
+   "category": "Single-leg",
+   "equipment": "Barbell",
+   "cues": [
+    "Step back off the platform; knee kisses the floor.",
+    "Drive up through the front foot. Big range builds big glutes."
+   ],
+   "image": "images/deficit-reverse-lunge.webp",
+   "imageAlt": "images/deficit-reverse-lunge-2.webp",
+   "thumb": "images/thumbs/deficit-reverse-lunge.webp",
+   "imageType": "photo",
+   "source": "fedb:Elevated_Back_Lunge"
+  },
+  {
+   "id": "depth-jump",
+   "name": "Depth Jump to Box",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Two boxes",
+   "cues": [
+    "Step off (don't jump off), touch, and rebound instantly.",
+    "Minimal ground time. The floor is lava."
+   ],
+   "image": "images/depth-jump.webp",
+   "imageAlt": "images/depth-jump-2.webp",
+   "thumb": "images/thumbs/depth-jump.webp",
+   "imageType": "photo",
+   "source": "fedb:Depth_Jump_Leap"
+  },
+  {
+   "id": "diagonal-bound",
+   "name": "Diagonal Bound",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Drive the knee forward and across; cover distance and height.",
+    "Land balanced and go again rhythmically."
+   ],
+   "image": "images/diagonal-bound.webp",
+   "imageAlt": "images/diagonal-bound-2.webp",
+   "thumb": "images/thumbs/diagonal-bound.webp",
+   "imageType": "photo",
+   "source": "fedb:Alternate_Leg_Diagonal_Bound"
+  },
+  {
+   "id": "dowel-pass-through",
+   "name": "Dowel Shoulder Pass-Through",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "PVC / broomstick",
+   "cues": [
+    "Wide grip; arc the stick overhead and behind with straight arms.",
+    "Narrow the grip a little each week."
+   ],
+   "image": "images/dowel-pass-through.webp",
+   "imageAlt": "images/dowel-pass-through-2.webp",
+   "thumb": "images/thumbs/dowel-pass-through.webp",
+   "imageType": "photo",
+   "source": "fedb:Round_The_World_Shoulder_Stretch"
+  },
+  {
+   "id": "downward-dog",
+   "name": "Downward Dog",
+   "element": "air",
+   "category": "Yoga",
+   "equipment": "Mat",
+   "cues": [
+    "Hips high, push the floor away; heels reach down.",
+    "Pedal the feet to wake up the calves."
+   ],
+   "desc": "From hands and knees, lift the hips up and back into an inverted V.",
+   "image": "images/downward-dog.webp",
+   "thumb": "images/thumbs/downward-dog.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "drag-curl",
+   "name": "Drag Curl",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Barbell",
+   "cues": [
+    "Drag the bar up the torso as the elbows travel back.",
+    "Squeeze hard at the top; slow on the way down."
+   ],
+   "image": "images/drag-curl.webp",
+   "imageAlt": "images/drag-curl-2.webp",
+   "thumb": "images/thumbs/drag-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Drag_Curl"
+  },
+  {
+   "id": "drop-push-up",
+   "name": "Depth Drop Push-Up",
+   "element": "fire",
+   "category": "Power",
+   "equipment": "Two low boxes",
+   "cues": [
+    "Drop from the boxes, absorb, and explode back up.",
+    "Minimal ground time; stay stiff through the trunk."
+   ],
+   "image": "images/drop-push-up.webp",
+   "imageAlt": "images/drop-push-up-2.webp",
+   "thumb": "images/thumbs/drop-push-up.webp",
+   "imageType": "photo",
+   "source": "fedb:Drop_Push"
+  },
+  {
+   "id": "easy-swim",
+   "name": "Easy Swim",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Pool",
+   "cues": [
+    "Long, relaxed strokes; easy enough to smile.",
+    "Mix in backstroke to open the chest and shoulders."
+   ],
+   "desc": "Continuous easy swimming. Light, conversational effort that flushes the shoulders and legs.",
+   "image": "images/easy-swim.webp",
+   "thumb": "images/thumbs/easy-swim.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "external-rotation-band",
+   "name": "Band External Rotation",
+   "element": "water",
+   "category": "Shoulder health",
+   "equipment": "Band",
+   "cues": [
+    "Elbow at your side; rotate out against the band.",
+    "Keep the shoulder blade set down and back."
+   ],
+   "image": "images/external-rotation-band.webp",
+   "imageAlt": "images/external-rotation-band-2.webp",
+   "thumb": "images/thumbs/external-rotation-band.webp",
+   "imageType": "photo",
+   "source": "fedb:External_Rotation_with_Band"
+  },
+  {
+   "id": "external-rotation-cable",
+   "name": "Cable External Rotation",
+   "element": "water",
+   "category": "Shoulder health",
+   "equipment": "Cable",
+   "cues": [
+    "Towel under the elbow and rotate out without the elbow drifting.",
+    "Two seconds out, three seconds back."
+   ],
+   "image": "images/external-rotation-cable.webp",
+   "imageAlt": "images/external-rotation-cable-2.webp",
+   "thumb": "images/thumbs/external-rotation-cable.webp",
+   "imageType": "photo",
+   "source": "fedb:External_Rotation_with_Cable"
+  },
+  {
+   "id": "external-rotation-db",
+   "name": "Side-Lying External Rotation",
+   "element": "water",
+   "category": "Shoulder health",
+   "equipment": "Light dumbbell",
+   "cues": [
+    "Elbow pinned to the side at 90°; rotate the forearm up.",
+    "Slow both ways. If you need momentum, it's too heavy."
+   ],
+   "image": "images/external-rotation-db.webp",
+   "imageAlt": "images/external-rotation-db-2.webp",
+   "thumb": "images/thumbs/external-rotation-db.webp",
+   "imageType": "photo",
+   "source": "fedb:External_Rotation"
+  },
+  {
+   "id": "ez-curl",
+   "name": "EZ-Bar Curl",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "EZ bar",
+   "cues": [
+    "Wrist-friendly grip; full range every rep.",
+    "Don't let the elbows drift forward at the top."
+   ],
+   "image": "images/ez-curl.webp",
+   "imageAlt": "images/ez-curl-2.webp",
+   "thumb": "images/thumbs/ez-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:EZ-Bar_Curl"
+  },
+  {
+   "id": "face-pull",
+   "name": "Face Pull",
+   "element": "water",
+   "category": "Shoulder health",
+   "equipment": "Cable + rope",
+   "cues": [
+    "Pull to the eyebrows with elbows high and thumbs back.",
+    "Finish like a double-biceps pose: rotate the hands back."
+   ],
+   "image": "images/face-pull.webp",
+   "imageAlt": "images/face-pull-2.webp",
+   "thumb": "images/thumbs/face-pull.webp",
+   "imageType": "photo",
+   "source": "fedb:Face_Pull"
+  },
+  {
+   "id": "farmers-walk",
+   "name": "Farmer's Walk",
+   "element": "water",
+   "category": "Carry",
+   "equipment": "Dumbbells / handles",
+   "cues": [
+    "Tall posture, shoulders packed, short quick steps.",
+    "Crush the handles; grip is shoulder health."
+   ],
+   "image": "images/farmers-walk.webp",
+   "imageAlt": "images/farmers-walk-2.webp",
+   "thumb": "images/thumbs/farmers-walk.webp",
+   "imageType": "photo",
+   "source": "fedb:Farmers_Walk"
+  },
+  {
+   "id": "fast-skips",
+   "name": "Fast Skips",
+   "element": "earth",
+   "category": "Warm-up",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Low, quick skips that minimize air time.",
+    "Punch the arms and stay on the balls of the feet."
+   ],
+   "image": "images/fast-skips.webp",
+   "imageAlt": "images/fast-skips-2.webp",
+   "thumb": "images/thumbs/fast-skips.webp",
+   "imageType": "photo",
+   "source": "fedb:Fast_Skipping"
+  },
+  {
+   "id": "feet-elevated-push-up",
+   "name": "Feet-Elevated Push-Up",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Bench",
+   "cues": [
+    "Feet on the bench, body straight; chest toward the floor.",
+    "Upper-chest builder. Slow down, fast up."
+   ],
+   "image": "images/feet-elevated-push-up.webp",
+   "imageAlt": "images/feet-elevated-push-up-2.webp",
+   "thumb": "images/thumbs/feet-elevated-push-up.webp",
+   "imageType": "photo",
+   "source": "fedb:Push-Ups_With_Feet_Elevated"
+  },
+  {
+   "id": "figure-four",
+   "name": "Figure-Four Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Ankle over the knee; draw the legs toward you.",
+    "Relax the jaw. Glutes release when you do."
+   ],
+   "image": "images/figure-four.webp",
+   "imageAlt": "images/figure-four-2.webp",
+   "thumb": "images/thumbs/figure-four.webp",
+   "imageType": "photo",
+   "source": "fedb:Ankle_On_The_Knee"
+  },
+  {
+   "id": "floor-press",
+   "name": "Barbell Floor Press",
+   "element": "fire",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Triceps touch the floor softly; pause, then press.",
+    "No bounce. Pure lockout strength."
+   ],
+   "image": "images/floor-press.webp",
+   "imageAlt": "images/floor-press-2.webp",
+   "thumb": "images/thumbs/floor-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Floor_Press"
+  },
+  {
+   "id": "foam-roll-adductors",
+   "name": "Foam Roll: Adductors",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Foam roller",
+   "cues": [
+    "Face down, inner thigh on the roller; roll hip to knee.",
+    "Pause and breathe on the knots."
+   ],
+   "image": "images/foam-roll-adductors.webp",
+   "imageAlt": "images/foam-roll-adductors-2.webp",
+   "thumb": "images/thumbs/foam-roll-adductors.webp",
+   "imageType": "photo",
+   "source": "fedb:Adductor"
+  },
+  {
+   "id": "foam-roll-calves",
+   "name": "Foam Roll: Calves",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Foam roller",
+   "cues": [
+    "Stack the legs; rotate to find the inner and outer calf.",
+    "Sand athletes' calves work overtime. Be generous here."
+   ],
+   "image": "images/foam-roll-calves.webp",
+   "imageAlt": "images/foam-roll-calves-2.webp",
+   "thumb": "images/thumbs/foam-roll-calves.webp",
+   "imageType": "photo",
+   "source": "fedb:Calves-SMR"
+  },
+  {
+   "id": "foam-roll-glutes",
+   "name": "Foam Roll: Glutes & Piriformis",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Foam roller",
+   "cues": [
+    "Sit on the roller, cross the ankle over the knee, lean into that hip.",
+    "Small circles on the tender spots."
+   ],
+   "image": "images/foam-roll-glutes.webp",
+   "imageAlt": "images/foam-roll-glutes-2.webp",
+   "thumb": "images/thumbs/foam-roll-glutes.webp",
+   "imageType": "photo",
+   "source": "fedb:Piriformis-SMR"
+  },
+  {
+   "id": "foam-roll-hamstrings",
+   "name": "Foam Roll: Hamstrings",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Foam roller",
+   "cues": [
+    "Cross one leg over the other for more pressure.",
+    "Breathe out on the tender spots and let them melt."
+   ],
+   "image": "images/foam-roll-hamstrings.webp",
+   "imageAlt": "images/foam-roll-hamstrings-2.webp",
+   "thumb": "images/thumbs/foam-roll-hamstrings.webp",
+   "imageType": "photo",
+   "source": "fedb:Hamstring-SMR"
+  },
+  {
+   "id": "foam-roll-it-band",
+   "name": "Foam Roll: Outer Thigh (IT Band)",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Foam roller",
+   "cues": [
+    "Support with the top leg; roll from hip to just above the knee.",
+    "Go gently. Spend more time on the glute and TFL above it."
+   ],
+   "image": "images/foam-roll-it-band.webp",
+   "imageAlt": "images/foam-roll-it-band-2.webp",
+   "thumb": "images/thumbs/foam-roll-it-band.webp",
+   "imageType": "photo",
+   "source": "fedb:Iliotibial_Tract-SMR"
+  },
+  {
+   "id": "foam-roll-lats",
+   "name": "Foam Roll: Lats",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Foam roller",
+   "cues": [
+    "On your side, arm overhead; roll the armpit to mid-ribs.",
+    "Rotate slightly forward and back to find the fibers."
+   ],
+   "image": "images/foam-roll-lats.webp",
+   "imageAlt": "images/foam-roll-lats-2.webp",
+   "thumb": "images/thumbs/foam-roll-lats.webp",
+   "imageType": "photo",
+   "source": "fedb:Latissimus_Dorsi-SMR"
+  },
+  {
+   "id": "foam-roll-peroneals",
+   "name": "Foam Roll: Outer Calf (Peroneals)",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Foam roller",
+   "cues": [
+    "Turn onto the outside of the lower leg and roll slowly.",
+    "Sand ankles say thank you."
+   ],
+   "image": "images/foam-roll-peroneals.webp",
+   "imageAlt": "images/foam-roll-peroneals-2.webp",
+   "thumb": "images/thumbs/foam-roll-peroneals.webp",
+   "imageType": "photo",
+   "source": "fedb:Peroneals-SMR"
+  },
+  {
+   "id": "foam-roll-quads",
+   "name": "Foam Roll: Quads",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Foam roller",
+   "cues": [
+    "Slow passes, about an inch per second; pause on tender spots.",
+    "Bend the knee on the sticky spots to dig deeper."
+   ],
+   "image": "images/foam-roll-quads.webp",
+   "imageAlt": "images/foam-roll-quads-2.webp",
+   "thumb": "images/thumbs/foam-roll-quads.webp",
+   "imageType": "photo",
+   "source": "fedb:Quadriceps-SMR"
+  },
+  {
+   "id": "foam-roll-shins",
+   "name": "Shin Rolling (Massage Stick)",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Massage stick",
+   "cues": [
+    "Seated, knee bent; roll the stick slowly up and down the front of the shin.",
+    "Light pressure; the tibialis just needs a reset."
+   ],
+   "image": "images/foam-roll-shins.webp",
+   "imageAlt": "images/foam-roll-shins-2.webp",
+   "thumb": "images/thumbs/foam-roll-shins.webp",
+   "imageType": "photo",
+   "source": "fedb:Anterior_Tibialis-SMR"
+  },
+  {
+   "id": "foam-roll-upper-back",
+   "name": "Foam Roll: Upper Back",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Foam roller",
+   "cues": [
+    "Hug yourself to spread the shoulder blades; roll mid to upper back.",
+    "Pause and extend over the roller to open the thoracic spine."
+   ],
+   "image": "images/foam-roll-upper-back.webp",
+   "imageAlt": "images/foam-roll-upper-back-2.webp",
+   "thumb": "images/thumbs/foam-roll-upper-back.webp",
+   "imageType": "photo",
+   "source": "fedb:Rhomboids-SMR"
+  },
+  {
+   "id": "foot-smr",
+   "name": "Foot Rolling (Ball)",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Lacrosse / tennis ball",
+   "cues": [
+    "Roll the arch slowly from heel to toes.",
+    "Pause and press into tender spots for 10 breaths."
+   ],
+   "image": "images/foot-smr.webp",
+   "imageAlt": "images/foot-smr-2.webp",
+   "thumb": "images/thumbs/foot-smr.webp",
+   "imageType": "photo",
+   "source": "fedb:Foot-SMR"
+  },
+  {
+   "id": "forearm-smr",
+   "name": "Foam Roll: Forearms",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Foam roller",
+   "cues": [
+    "Roll the forearm and upper arm on the roller.",
+    "Pass-and-set forearms deserve love too."
+   ],
+   "image": "images/forearm-smr.webp",
+   "imageAlt": "images/forearm-smr-2.webp",
+   "thumb": "images/thumbs/forearm-smr.webp",
+   "imageType": "photo",
+   "source": "fedb:Brachialis-SMR"
+  },
+  {
+   "id": "forearm-stretch",
+   "name": "Kneeling Forearm Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Fingers point toward the knees; lean back gently.",
+    "Hitting arms and passing platforms need this."
+   ],
+   "image": "images/forearm-stretch.webp",
+   "imageAlt": "images/forearm-stretch-2.webp",
+   "thumb": "images/thumbs/forearm-stretch.webp",
+   "imageType": "photo",
+   "source": "fedb:Kneeling_Forearm_Stretch"
+  },
+  {
+   "id": "front-squat",
+   "name": "Front Squat",
+   "element": "earth",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Elbows high, bar on the shelf; fingertips only hold it.",
+    "Sit tall and deep; your torso stays vertical like a stone pillar.",
+    "Knees forward, drive up through the whole foot."
+   ],
+   "image": "images/front-squat.webp",
+   "imageAlt": "images/front-squat-2.webp",
+   "thumb": "images/thumbs/front-squat.webp",
+   "imageType": "photo",
+   "source": "fedb:Front_Squat_Clean_Grip"
+  },
+  {
+   "id": "glute-ham-raise",
+   "name": "Glute-Ham Raise",
+   "element": "earth",
+   "category": "Strength",
+   "equipment": "GHD",
+   "cues": [
+    "Knees just behind the pad; curl up with the hamstrings, not the back.",
+    "Squeeze the glutes the whole time to keep the hips extended."
+   ],
+   "image": "images/glute-ham-raise.webp",
+   "imageAlt": "images/glute-ham-raise-2.webp",
+   "thumb": "images/thumbs/glute-ham-raise.webp",
+   "imageType": "photo",
+   "source": "fedb:Glute_Ham_Raise"
+  },
+  {
+   "id": "goblet-squat",
+   "name": "Goblet Squat",
+   "element": "earth",
+   "category": "Strength",
+   "equipment": "Kettlebell / Dumbbell",
+   "cues": [
+    "Elbows inside the knees at the bottom; pry the hips open.",
+    "Bell tight to the chest, heels heavy, chest proud."
+   ],
+   "image": "images/goblet-squat.webp",
+   "imageAlt": "images/goblet-squat-2.webp",
+   "thumb": "images/thumbs/goblet-squat.webp",
+   "imageType": "photo",
+   "source": "fedb:Goblet_Squat"
+  },
+  {
+   "id": "good-morning",
+   "name": "Good Morning",
+   "element": "earth",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Hinge back with soft knees until your torso nears parallel.",
+    "Stay braced; reverse by driving the hips forward."
+   ],
+   "image": "images/good-morning.webp",
+   "imageAlt": "images/good-morning-2.webp",
+   "thumb": "images/thumbs/good-morning.webp",
+   "imageType": "photo",
+   "source": "fedb:Good_Morning"
+  },
+  {
+   "id": "groin-stretch",
+   "name": "Butterfly Groin Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Soles together; fold forward with a long spine.",
+    "Elbows gently press the knees toward the floor."
+   ],
+   "image": "images/groin-stretch.webp",
+   "imageAlt": "images/groin-stretch-2.webp",
+   "thumb": "images/thumbs/groin-stretch.webp",
+   "imageType": "photo",
+   "source": "fedb:Groin_and_Back_Stretch"
+  },
+  {
+   "id": "hack-squat",
+   "name": "Hack Squat (Machine)",
+   "element": "earth",
+   "category": "Strength",
+   "equipment": "Machine",
+   "cues": [
+    "Feet mid-platform; let the knees travel forward fully.",
+    "Three seconds down, drive up without slamming the lockout."
+   ],
+   "image": "images/hack-squat.webp",
+   "imageAlt": "images/hack-squat-2.webp",
+   "thumb": "images/thumbs/hack-squat.webp",
+   "imageType": "photo",
+   "source": "fedb:Hack_Squat"
+  },
+  {
+   "id": "hammer-curl",
+   "name": "Hammer Curl",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Neutral grip; curl like you're lifting a hammer.",
+    "Builds the brachialis and forearm, an elbow's armor."
+   ],
+   "image": "images/hammer-curl.webp",
+   "imageAlt": "images/hammer-curl-2.webp",
+   "thumb": "images/thumbs/hammer-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Hammer_Curls"
+  },
+  {
+   "id": "hang-clean",
+   "name": "Hang Clean",
+   "element": "earth",
+   "category": "Olympic",
+   "equipment": "Barbell",
+   "cues": [
+    "Hinge to mid-thigh, then jump and shrug.",
+    "Whip the elbows around fast; meet the bar, don't chase it."
+   ],
+   "image": "images/hang-clean.webp",
+   "imageAlt": "images/hang-clean-2.webp",
+   "thumb": "images/thumbs/hang-clean.webp",
+   "imageType": "photo",
+   "source": "fedb:Hang_Clean"
+  },
+  {
+   "id": "hang-snatch",
+   "name": "Hang Snatch",
+   "element": "earth",
+   "category": "Olympic",
+   "equipment": "Barbell",
+   "cues": [
+    "Lats on, bar close; jump the bar off the hip.",
+    "Fast turnover; punch the ceiling."
+   ],
+   "image": "images/hang-snatch.webp",
+   "imageAlt": "images/hang-snatch-2.webp",
+   "thumb": "images/thumbs/hang-snatch.webp",
+   "imageType": "photo",
+   "source": "fedb:Hang_Snatch"
+  },
+  {
+   "id": "hanging-leg-raise",
+   "name": "Hanging Leg Raise",
+   "element": "water",
+   "category": "Core",
+   "equipment": "Pull-up bar",
+   "cues": [
+    "No swinging; curl the pelvis up toward the bar.",
+    "Lower slowly. The eccentric builds the abs."
+   ],
+   "image": "images/hanging-leg-raise.webp",
+   "imageAlt": "images/hanging-leg-raise-2.webp",
+   "thumb": "images/thumbs/hanging-leg-raise.webp",
+   "imageType": "photo",
+   "source": "fedb:Hanging_Leg_Raise"
+  },
+  {
+   "id": "happy-baby",
+   "name": "Happy Baby",
+   "element": "air",
+   "category": "Yoga",
+   "equipment": "Mat",
+   "cues": [
+    "Hold the outside of the feet, knees toward the armpits.",
+    "Rock gently; tailbone stays heavy."
+   ],
+   "desc": "On your back, hold the feet with the knees bent wide toward the armpits.",
+   "image": "images/happy-baby.webp",
+   "thumb": "images/thumbs/happy-baby.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "high-cable-curl",
+   "name": "Overhead Cable Curl",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "Arms out at shoulder height; curl the handles toward your ears.",
+    "Keep the upper arms still and level."
+   ],
+   "image": "images/high-cable-curl.webp",
+   "imageAlt": "images/high-cable-curl-2.webp",
+   "thumb": "images/thumbs/high-cable-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Overhead_Cable_Curl"
+  },
+  {
+   "id": "high-row",
+   "name": "Kneeling High-Pulley Row",
+   "element": "water",
+   "category": "Posture",
+   "equipment": "Cable",
+   "cues": [
+    "Pull to the upper chest with elbows wide and high.",
+    "Finish with the shoulder blades set down and back."
+   ],
+   "image": "images/high-row.webp",
+   "imageAlt": "images/high-row-2.webp",
+   "thumb": "images/thumbs/high-row.webp",
+   "imageType": "photo",
+   "source": "fedb:Kneeling_High_Pulley_Row"
+  },
+  {
+   "id": "hip-circles",
+   "name": "Quadruped Hip Circles",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "On all fours, draw the biggest circle you can with your knee.",
+    "Keep the spine still; only the hip moves."
+   ],
+   "image": "images/hip-circles.webp",
+   "imageAlt": "images/hip-circles-2.webp",
+   "thumb": "images/thumbs/hip-circles.webp",
+   "imageType": "photo",
+   "source": "fedb:Hip_Circles_prone"
+  },
+  {
+   "id": "hip-thrust",
+   "name": "Barbell Hip Thrust",
+   "element": "earth",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Chin tucked, ribs down; finish with the glutes, not the low back.",
+    "Shins vertical at the top; pause one second and squeeze."
+   ],
+   "image": "images/hip-thrust.webp",
+   "imageAlt": "images/hip-thrust-2.webp",
+   "thumb": "images/thumbs/hip-thrust.webp",
+   "imageType": "photo",
+   "source": "fedb:Barbell_Hip_Thrust"
+  },
+  {
+   "id": "hurdle-hops",
+   "name": "Hurdle Hops",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Mini hurdles",
+   "cues": [
+    "Knees up fast; spend as little time on the ground as possible.",
+    "Stay tall and rhythmic between hurdles."
+   ],
+   "image": "images/hurdle-hops.webp",
+   "imageAlt": "images/hurdle-hops-2.webp",
+   "thumb": "images/thumbs/hurdle-hops.webp",
+   "imageType": "photo",
+   "source": "fedb:Hurdle_Hops"
+  },
+  {
+   "id": "inchworm",
+   "name": "Inchworm",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Walk the hands out to a plank, then the feet to the hands.",
+    "Keep the legs as straight as you can."
+   ],
+   "image": "images/inchworm.webp",
+   "imageAlt": "images/inchworm-2.webp",
+   "thumb": "images/thumbs/inchworm.webp",
+   "imageType": "photo",
+   "source": "fedb:Inchworm"
+  },
+  {
+   "id": "incline-bench",
+   "name": "Incline Barbell Bench Press",
+   "element": "fire",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Low incline (about 30°); bar to the upper chest.",
+    "Elbows about 45° from the torso; press up and slightly back."
+   ],
+   "image": "images/incline-bench.webp",
+   "imageAlt": "images/incline-bench-2.webp",
+   "thumb": "images/thumbs/incline-bench.webp",
+   "imageType": "photo",
+   "source": "fedb:Barbell_Incline_Bench_Press_-_Medium_Grip"
+  },
+  {
+   "id": "incline-cable-fly",
+   "name": "Incline Cable Fly",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Cable + incline bench",
+   "cues": [
+    "Arms open wide, chest up, slight elbow bend.",
+    "Squeeze the hands together over the upper chest."
+   ],
+   "image": "images/incline-cable-fly.webp",
+   "imageAlt": "images/incline-cable-fly-2.webp",
+   "thumb": "images/thumbs/incline-cable-fly.webp",
+   "imageType": "photo",
+   "source": "fedb:Incline_Cable_Flye"
+  },
+  {
+   "id": "incline-curl",
+   "name": "Incline Dumbbell Curl",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbells + incline bench",
+   "cues": [
+    "Arms hang behind you; curl from the full stretch.",
+    "Keep the shoulders back against the bench."
+   ],
+   "image": "images/incline-curl.webp",
+   "imageAlt": "images/incline-curl-2.webp",
+   "thumb": "images/thumbs/incline-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Incline_Dumbbell_Curl"
+  },
+  {
+   "id": "incline-db-press",
+   "name": "Incline Dumbbell Press",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Low incline; let the dumbbells sink to a full stretch.",
+    "Press up and together without clanging."
+   ],
+   "image": "images/incline-db-press.webp",
+   "imageAlt": "images/incline-db-press-2.webp",
+   "thumb": "images/thumbs/incline-db-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Incline_Dumbbell_Press"
+  },
+  {
+   "id": "incline-db-row",
+   "name": "Chest-Supported Dumbbell Row",
+   "element": "water",
+   "category": "Posture",
+   "equipment": "Dumbbells + incline bench",
+   "cues": [
+    "Chest on the incline; row and pause with the shoulder blades squeezed.",
+    "Lead with the elbows and keep the neck long."
+   ],
+   "image": "images/incline-db-row.webp",
+   "imageAlt": "images/incline-db-row-2.webp",
+   "thumb": "images/thumbs/incline-db-row.webp",
+   "imageType": "photo",
+   "source": "fedb:Dumbbell_Incline_Row"
+  },
+  {
+   "id": "incline-reverse-fly-er",
+   "name": "Incline Reverse Fly + External Rotation",
+   "element": "water",
+   "category": "Shoulder health",
+   "equipment": "Dumbbells + incline bench",
+   "cues": [
+    "Fly out, then rotate the forearms up at the top.",
+    "Light weight, perfect positions. This protects the serve."
+   ],
+   "image": "images/incline-reverse-fly-er.webp",
+   "imageAlt": "images/incline-reverse-fly-er-2.webp",
+   "thumb": "images/thumbs/incline-reverse-fly-er.webp",
+   "imageType": "photo",
+   "source": "fedb:Reverse_Flyes_With_External_Rotation"
+  },
+  {
+   "id": "incline-walk",
+   "name": "Incline Treadmill Walk",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Treadmill",
+   "cues": [
+    "Moderate incline, easy pace; no holding the rails.",
+    "Nasal breathing only. That's the speed limit."
+   ],
+   "image": "images/incline-walk.webp",
+   "imageAlt": "images/incline-walk-2.webp",
+   "thumb": "images/thumbs/incline-walk.webp",
+   "imageType": "photo",
+   "source": "fedb:Walking_Treadmill"
+  },
+  {
+   "id": "internal-rotation-band",
+   "name": "Band Internal Rotation",
+   "element": "water",
+   "category": "Shoulder health",
+   "equipment": "Band",
+   "cues": [
+    "Elbow at your side; rotate in with control.",
+    "Balance the cuff. Both directions matter for a hitter."
+   ],
+   "image": "images/internal-rotation-band.webp",
+   "imageAlt": "images/internal-rotation-band-2.webp",
+   "thumb": "images/thumbs/internal-rotation-band.webp",
+   "imageType": "photo",
+   "source": "fedb:Internal_Rotation_with_Band"
+  },
+  {
+   "id": "inverted-row",
+   "name": "Inverted Row",
+   "element": "water",
+   "category": "Strength",
+   "equipment": "Bar / Smith",
+   "cues": [
+    "Body in a plank; pull the chest to the bar.",
+    "Squeeze the shoulder blades, then lower slowly."
+   ],
+   "image": "images/inverted-row.webp",
+   "imageAlt": "images/inverted-row-2.webp",
+   "thumb": "images/thumbs/inverted-row.webp",
+   "imageType": "photo",
+   "source": "fedb:Inverted_Row"
+  },
+  {
+   "id": "jm-press",
+   "name": "JM Press",
+   "element": "fire",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Half skull crusher, half close-grip press; bar lowers toward the chin.",
+    "Elbows stay forward; press back up powerfully."
+   ],
+   "image": "images/jm-press.webp",
+   "imageAlt": "images/jm-press-2.webp",
+   "thumb": "images/thumbs/jm-press.webp",
+   "imageType": "photo",
+   "source": "fedb:JM_Press"
+  },
+  {
+   "id": "jump-rope",
+   "name": "Jump Rope",
+   "element": "earth",
+   "category": "Elastic",
+   "equipment": "Rope",
+   "cues": [
+    "Quiet, quick contacts on the balls of the feet.",
+    "Wrists turn the rope; elbows stay close."
+   ],
+   "image": "images/jump-rope.webp",
+   "imageAlt": "images/jump-rope-2.webp",
+   "thumb": "images/thumbs/jump-rope.webp",
+   "imageType": "photo",
+   "source": "fedb:Rope_Jumping"
+  },
+  {
+   "id": "jump-squat",
+   "name": "Barbell Jump Squat",
+   "element": "earth",
+   "category": "Power",
+   "equipment": "Barbell",
+   "cues": [
+    "Light load (20-30% of your squat); every rep is max height.",
+    "Quick dip, explode, land soft and reset before the next rep."
+   ],
+   "image": "images/jump-squat.webp",
+   "imageAlt": "images/jump-squat-2.webp",
+   "thumb": "images/thumbs/jump-squat.webp",
+   "imageType": "photo",
+   "source": "fedb:Weighted_Jump_Squat"
+  },
+  {
+   "id": "kb-halo",
+   "name": "Kettlebell Halo",
+   "element": "fire",
+   "category": "Mobility",
+   "equipment": "Kettlebell",
+   "cues": [
+    "Circle the bell tight around your head, both directions.",
+    "Ribs down; move the shoulders, not the lower back."
+   ],
+   "desc": "Hold a light kettlebell upside-down by the horns and circle it slowly around your head, keeping it close.",
+   "image": "images/placeholders/kb-halo.svg",
+   "thumb": "images/placeholders/kb-halo.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "kb-plyo-push-up",
+   "name": "Kettlebell Plyo Push-Up",
+   "element": "fire",
+   "category": "Power",
+   "equipment": "Kettlebell",
+   "cues": [
+    "Push off the bell, switch hands in the air, land soft.",
+    "Fast and controlled with a tight plank."
+   ],
+   "image": "images/kb-plyo-push-up.webp",
+   "imageAlt": "images/kb-plyo-push-up-2.webp",
+   "thumb": "images/thumbs/kb-plyo-push-up.webp",
+   "imageType": "photo",
+   "source": "fedb:Plyo_Kettlebell_Pushups"
+  },
+  {
+   "id": "kb-push-press",
+   "name": "Single-Arm Kettlebell Push Press",
+   "element": "fire",
+   "category": "Power",
+   "equipment": "Kettlebell",
+   "cues": [
+    "Quick dip and drive; punch the bell to lockout.",
+    "Wrist straight, bicep by the ear at the top."
+   ],
+   "image": "images/kb-push-press.webp",
+   "imageAlt": "images/kb-push-press-2.webp",
+   "thumb": "images/thumbs/kb-push-press.webp",
+   "imageType": "photo",
+   "source": "fedb:One-Arm_Kettlebell_Push_Press"
+  },
+  {
+   "id": "kb-snatch",
+   "name": "Single-Arm Kettlebell Snatch",
+   "element": "earth",
+   "category": "Power",
+   "equipment": "Kettlebell",
+   "cues": [
+    "Hike, snap the hips, punch through as the bell floats.",
+    "Don't let the bell flop onto your wrist."
+   ],
+   "image": "images/kb-snatch.webp",
+   "imageAlt": "images/kb-snatch-2.webp",
+   "thumb": "images/thumbs/kb-snatch.webp",
+   "imageType": "photo",
+   "source": "fedb:One-Arm_Kettlebell_Snatch"
+  },
+  {
+   "id": "kb-swing",
+   "name": "Single-Arm Kettlebell Swing",
+   "element": "earth",
+   "category": "Power",
+   "equipment": "Kettlebell",
+   "cues": [
+    "Hike it back, then snap the hips; the arm is just a rope.",
+    "Plank at the top: glutes tight, ribs down, bell floats."
+   ],
+   "image": "images/kb-swing.webp",
+   "imageAlt": "images/kb-swing-2.webp",
+   "thumb": "images/thumbs/kb-swing.webp",
+   "imageType": "photo",
+   "source": "fedb:One-Arm_Kettlebell_Swings"
+  },
+  {
+   "id": "kb-windmill",
+   "name": "Kettlebell Windmill",
+   "element": "fire",
+   "category": "Shoulder health",
+   "equipment": "Kettlebell",
+   "cues": [
+    "Bell locked overhead, eyes on it; hinge sideways.",
+    "Push the hips out and keep the top arm vertical."
+   ],
+   "image": "images/kb-windmill.webp",
+   "imageAlt": "images/kb-windmill-2.webp",
+   "thumb": "images/thumbs/kb-windmill.webp",
+   "imageType": "photo",
+   "source": "fedb:Kettlebell_Windmill"
+  },
+  {
+   "id": "kickback",
+   "name": "Triceps Kickback",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbell",
+   "cues": [
+    "Upper arm parallel to the floor; extend fully.",
+    "Squeeze at the top for one second."
+   ],
+   "image": "images/kickback.webp",
+   "imageAlt": "images/kickback-2.webp",
+   "thumb": "images/thumbs/kickback.webp",
+   "imageType": "photo",
+   "source": "fedb:Tricep_Dumbbell_Kickback"
+  },
+  {
+   "id": "knee-across",
+   "name": "Supine Twist",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Knee across the body, shoulders flat; look away.",
+    "Let gravity do it; exhale deeper each breath."
+   ],
+   "image": "images/knee-across.webp",
+   "imageAlt": "images/knee-across-2.webp",
+   "thumb": "images/thumbs/knee-across.webp",
+   "imageType": "photo",
+   "source": "fedb:Knee_Across_The_Body"
+  },
+  {
+   "id": "knee-circles",
+   "name": "Knee Circles",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Feet together, hands on the knees; slow circles.",
+    "Gentle warm-up for knees that jump all day."
+   ],
+   "image": "images/knee-circles.webp",
+   "imageAlt": "images/knee-circles-2.webp",
+   "thumb": "images/thumbs/knee-circles.webp",
+   "imageType": "photo",
+   "source": "fedb:Knee_Circles"
+  },
+  {
+   "id": "kneeling-chest-push",
+   "name": "Kneeling Med-Ball Chest Push",
+   "element": "fire",
+   "category": "Power",
+   "equipment": "Medicine ball",
+   "cues": [
+    "From tall kneeling, launch the ball out and fall into a push-up.",
+    "The hips fire first, then the arms punch."
+   ],
+   "image": "images/kneeling-chest-push.webp",
+   "imageAlt": "images/kneeling-chest-push-2.webp",
+   "thumb": "images/thumbs/kneeling-chest-push.webp",
+   "imageType": "photo",
+   "source": "fedb:Chest_Push_single_response"
+  },
+  {
+   "id": "kneeling-hip-flexor",
+   "name": "Half-Kneeling Hip Flexor Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Tuck the pelvis and squeeze the back glute, then shift forward.",
+    "Reach the arm overhead to add the lats."
+   ],
+   "image": "images/kneeling-hip-flexor.webp",
+   "imageAlt": "images/kneeling-hip-flexor-2.webp",
+   "thumb": "images/thumbs/kneeling-hip-flexor.webp",
+   "imageType": "photo",
+   "source": "fedb:Kneeling_Hip_Flexor"
+  },
+  {
+   "id": "kneeling-jump-squat",
+   "name": "Kneeling Jump to Squat",
+   "element": "earth",
+   "category": "Power",
+   "equipment": "Bodyweight / Barbell",
+   "cues": [
+    "Sit back to your heels, then snap the hips to land in a squat.",
+    "Pure hip power: stick the landing with flat feet."
+   ],
+   "image": "images/kneeling-jump-squat.webp",
+   "imageAlt": "images/kneeling-jump-squat-2.webp",
+   "thumb": "images/thumbs/kneeling-jump-squat.webp",
+   "imageType": "photo",
+   "source": "fedb:Kneeling_Jump_Squat"
+  },
+  {
+   "id": "landmine-push-press",
+   "name": "Landmine Push Press",
+   "element": "fire",
+   "category": "Power",
+   "equipment": "Landmine + handle",
+   "cues": [
+    "Dip and drive the bar up with the legs.",
+    "Explode and lock out, then control back down."
+   ],
+   "image": "images/landmine-push-press.webp",
+   "imageAlt": "images/landmine-push-press-2.webp",
+   "thumb": "images/thumbs/landmine-push-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Landmine_Linear_Jammer"
+  },
+  {
+   "id": "landmine-rotation",
+   "name": "Landmine 180",
+   "element": "water",
+   "category": "Core",
+   "equipment": "Landmine",
+   "cues": [
+    "Arms long; arc the bar hip to hip with a pivot.",
+    "Rotate through the hips, not just the arms."
+   ],
+   "image": "images/landmine-rotation.webp",
+   "imageAlt": "images/landmine-rotation-2.webp",
+   "thumb": "images/thumbs/landmine-rotation.webp",
+   "imageType": "photo",
+   "source": "fedb:Landmine_180s"
+  },
+  {
+   "id": "lat-pulldown",
+   "name": "Wide-Grip Lat Pulldown",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "Pull the bar to the upper chest; lead with the elbows.",
+    "Lean back slightly and feel the lats stretch at the top."
+   ],
+   "image": "images/lat-pulldown.webp",
+   "imageAlt": "images/lat-pulldown-2.webp",
+   "thumb": "images/thumbs/lat-pulldown.webp",
+   "imageType": "photo",
+   "source": "fedb:Wide-Grip_Lat_Pulldown"
+  },
+  {
+   "id": "lat-stretch-wall",
+   "name": "Wall Lat Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Wall",
+   "cues": [
+    "Forearm on the wall; lean in and sink the chest.",
+    "Feel the stretch from armpit to hip."
+   ],
+   "image": "images/lat-stretch-wall.webp",
+   "imageAlt": "images/lat-stretch-wall-2.webp",
+   "thumb": "images/thumbs/lat-stretch-wall.webp",
+   "imageType": "photo",
+   "source": "fedb:One_Arm_Against_Wall"
+  },
+  {
+   "id": "lateral-bound",
+   "name": "Lateral Bound",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Push off the outside leg and land on the other; stick it one second.",
+    "Knee over toes on landing; absorb like a spring."
+   ],
+   "image": "images/lateral-bound.webp",
+   "imageAlt": "images/lateral-bound-2.webp",
+   "thumb": "images/thumbs/lateral-bound.webp",
+   "imageType": "photo",
+   "source": "fedb:Lateral_Bound"
+  },
+  {
+   "id": "lateral-broad-jump",
+   "name": "Lateral Broad Jump",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Load the outside hip and jump as far sideways as you can.",
+    "Stick it balanced; the block move starts here."
+   ],
+   "image": "images/lateral-broad-jump.webp",
+   "imageAlt": "images/lateral-broad-jump-2.webp",
+   "thumb": "images/thumbs/lateral-broad-jump.webp",
+   "imageType": "photo",
+   "source": "fedb:Side_Standing_Long_Jump"
+  },
+  {
+   "id": "lateral-raise",
+   "name": "Dumbbell Lateral Raise",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Lead with the elbows to shoulder height.",
+    "Slight forward lean; pour the water out at the top."
+   ],
+   "image": "images/lateral-raise.webp",
+   "imageAlt": "images/lateral-raise-2.webp",
+   "thumb": "images/thumbs/lateral-raise.webp",
+   "imageType": "photo",
+   "source": "fedb:Side_Lateral_Raise"
+  },
+  {
+   "id": "lateral-shuffle",
+   "name": "Lateral Shuffle",
+   "element": "earth",
+   "category": "Sport",
+   "equipment": "Sand",
+   "cues": [
+    "Low hips, wide base; push off the trail leg.",
+    "Never cross your feet; eyes up like you're reading a hitter."
+   ],
+   "desc": "Athletic stance, shuffle sideways without clicking the feet together. Stay low the whole way.",
+   "image": "images/placeholders/lateral-shuffle.svg",
+   "thumb": "images/placeholders/lateral-shuffle.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "lateral-split-squat",
+   "name": "Lateral Split Squat",
+   "element": "earth",
+   "category": "Single-leg",
+   "equipment": "Barbell / Bodyweight",
+   "cues": [
+    "Sit into one hip with the other leg long and chest up.",
+    "Push the floor sideways to return, just like a defensive step."
+   ],
+   "image": "images/lateral-split-squat.webp",
+   "imageAlt": "images/lateral-split-squat-2.webp",
+   "thumb": "images/thumbs/lateral-split-squat.webp",
+   "imageType": "photo",
+   "source": "fedb:Barbell_Side_Split_Squat"
+  },
+  {
+   "id": "lean-away-lateral",
+   "name": "Lean-Away Lateral Raise",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbell",
+   "cues": [
+    "Hold the bench and lean away for a longer range.",
+    "Raise smoothly and pause at the top."
+   ],
+   "image": "images/lean-away-lateral.webp",
+   "imageAlt": "images/lean-away-lateral-2.webp",
+   "thumb": "images/thumbs/lean-away-lateral.webp",
+   "imageType": "photo",
+   "source": "fedb:One-Arm_Side_Laterals"
+  },
+  {
+   "id": "leg-extension",
+   "name": "Leg Extension",
+   "element": "earth",
+   "category": "Resilience",
+   "equipment": "Machine",
+   "cues": [
+    "Slow and smooth; this is tendon work for jumper's knee prevention.",
+    "Pause two seconds at lockout, lower in three."
+   ],
+   "image": "images/leg-extension.webp",
+   "imageAlt": "images/leg-extension-2.webp",
+   "thumb": "images/thumbs/leg-extension.webp",
+   "imageType": "photo",
+   "source": "fedb:Leg_Extensions"
+  },
+  {
+   "id": "leg-swings",
+   "name": "Leg Swings",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Hold a post; swing front-to-back, then side-to-side.",
+    "Gradually bigger, stay tall and relaxed."
+   ],
+   "desc": "Hold a support and swing one leg forward and back, then across the body and out to the side.",
+   "image": "images/placeholders/leg-swings.svg",
+   "thumb": "images/placeholders/leg-swings.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "legs-up-wall",
+   "name": "Legs Up the Wall",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Wall",
+   "cues": [
+    "Hips close to the wall, legs resting up; arms relaxed.",
+    "Slow nasal breathing; let the legs drain."
+   ],
+   "desc": "Lie on your back with your legs resting vertically against a wall.",
+   "image": "images/legs-up-wall.webp",
+   "thumb": "images/thumbs/legs-up-wall.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "low-cable-fly",
+   "name": "Low-to-High Cable Fly",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "Sweep up from the hips to eye level.",
+    "Upper-chest focus; keep a soft bend in the elbows."
+   ],
+   "image": "images/low-cable-fly.webp",
+   "imageAlt": "images/low-cable-fly-2.webp",
+   "thumb": "images/thumbs/low-cable-fly.webp",
+   "imageType": "photo",
+   "source": "fedb:Low_Cable_Crossover"
+  },
+  {
+   "id": "low-lunge",
+   "name": "Low Lunge (Crescent)",
+   "element": "air",
+   "category": "Yoga",
+   "equipment": "Mat",
+   "cues": [
+    "Back knee down; sink the hips forward and reach up.",
+    "Squeeze the back glute to deepen the hip-flexor stretch."
+   ],
+   "desc": "Kneeling lunge with arms overhead. Sink the hips forward to open the front of the back hip.",
+   "image": "images/low-lunge.webp",
+   "thumb": "images/thumbs/low-lunge.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "lunge-pass-through",
+   "name": "Kettlebell Lunge Pass-Through",
+   "element": "earth",
+   "category": "Single-leg",
+   "equipment": "Kettlebell",
+   "cues": [
+    "Pass the bell under the front leg each rep while staying upright.",
+    "Control the depth; the back knee hovers."
+   ],
+   "image": "images/lunge-pass-through.webp",
+   "imageAlt": "images/lunge-pass-through-2.webp",
+   "thumb": "images/thumbs/lunge-pass-through.webp",
+   "imageType": "photo",
+   "source": "fedb:Lunge_Pass_Through"
+  },
+  {
+   "id": "lying-leg-curl",
+   "name": "Lying Leg Curl",
+   "element": "earth",
+   "category": "Hypertrophy",
+   "equipment": "Machine",
+   "cues": [
+    "Hips pressed into the pad; curl fast, lower in three seconds.",
+    "Pull the toes up toward the shins to bias the hamstrings."
+   ],
+   "image": "images/lying-leg-curl.webp",
+   "imageAlt": "images/lying-leg-curl-2.webp",
+   "thumb": "images/thumbs/lying-leg-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Lying_Leg_Curls"
+  },
+  {
+   "id": "meadows-row",
+   "name": "Landmine Single-Arm Row",
+   "element": "water",
+   "category": "Strength",
+   "equipment": "Landmine",
+   "cues": [
+    "Staggered stance, hinge; row the bar end to the hip.",
+    "Big stretch at the bottom, no torso twist."
+   ],
+   "image": "images/meadows-row.webp",
+   "imageAlt": "images/meadows-row-2.webp",
+   "thumb": "images/thumbs/meadows-row.webp",
+   "imageType": "photo",
+   "source": "fedb:One-Arm_Long_Bar_Row"
+  },
+  {
+   "id": "med-ball-slam",
+   "name": "Med-Ball Overhead Slam",
+   "element": "water",
+   "category": "Power",
+   "equipment": "Slam ball",
+   "cues": [
+    "Reach tall onto the toes, then slam through the core.",
+    "Throw it through the floor; hinge, catch, repeat."
+   ],
+   "image": "images/med-ball-slam.webp",
+   "imageAlt": "images/med-ball-slam-2.webp",
+   "thumb": "images/thumbs/med-ball-slam.webp",
+   "imageType": "photo",
+   "source": "fedb:Overhead_Slam"
+  },
+  {
+   "id": "monster-walk",
+   "name": "Banded Monster Walk",
+   "element": "earth",
+   "category": "Activation",
+   "equipment": "Mini band",
+   "cues": [
+    "Stay low and wide; knees out against the band.",
+    "Small steps with constant tension."
+   ],
+   "image": "images/monster-walk.webp",
+   "imageAlt": "images/monster-walk-2.webp",
+   "thumb": "images/thumbs/monster-walk.webp",
+   "imageType": "photo",
+   "source": "fedb:Monster_Walk"
+  },
+  {
+   "id": "muscle-snatch",
+   "name": "Muscle Snatch",
+   "element": "earth",
+   "category": "Olympic",
+   "equipment": "Barbell",
+   "cues": [
+    "Don't re-bend the knees; pull high and turn the bar over.",
+    "A shoulder-strength drill for a powerful arm swing."
+   ],
+   "image": "images/muscle-snatch.webp",
+   "imageAlt": "images/muscle-snatch-2.webp",
+   "thumb": "images/thumbs/muscle-snatch.webp",
+   "imageType": "photo",
+   "source": "fedb:Muscle_Snatch"
+  },
+  {
+   "id": "neck-stretch",
+   "name": "Side Neck Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Ear toward the shoulder; let the opposite shoulder sink.",
+    "Breathe slowly, no pulling."
+   ],
+   "image": "images/neck-stretch.webp",
+   "imageAlt": "images/neck-stretch-2.webp",
+   "thumb": "images/thumbs/neck-stretch.webp",
+   "imageType": "photo",
+   "source": "fedb:Side_Neck_Stretch"
+  },
+  {
+   "id": "neutral-db-bench",
+   "name": "Neutral-Grip Dumbbell Press",
+   "element": "fire",
+   "category": "Shoulder health",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Palms facing each other is the shoulder-friendly pressing path.",
+    "Tuck the elbows and press smoothly."
+   ],
+   "image": "images/neutral-db-bench.webp",
+   "imageAlt": "images/neutral-db-bench-2.webp",
+   "thumb": "images/thumbs/neutral-db-bench.webp",
+   "imageType": "photo",
+   "source": "fedb:Dumbbell_Bench_Press_with_Neutral_Grip"
+  },
+  {
+   "id": "neutral-incline-db",
+   "name": "Neutral-Grip Incline Press",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Palms in, elbows tucked; easy on the shoulders, hard on the chest.",
+    "Three seconds down, drive up."
+   ],
+   "image": "images/neutral-incline-db.webp",
+   "imageAlt": "images/neutral-incline-db-2.webp",
+   "thumb": "images/thumbs/neutral-incline-db.webp",
+   "imageType": "photo",
+   "source": "fedb:Hammer_Grip_Incline_DB_Bench_Press"
+  },
+  {
+   "id": "neutral-pull-up",
+   "name": "Neutral-Grip Pull-Up",
+   "element": "water",
+   "category": "Strength",
+   "equipment": "V-handle / parallel bars",
+   "cues": [
+    "Neutral grip is shoulder-friendly; pull the sternum to the handles.",
+    "Ribs down, no kipping, smooth tempo."
+   ],
+   "image": "images/neutral-pull-up.webp",
+   "imageAlt": "images/neutral-pull-up-2.webp",
+   "thumb": "images/thumbs/neutral-pull-up.webp",
+   "imageType": "photo",
+   "source": "fedb:V-Bar_Pullup"
+  },
+  {
+   "id": "nordic-curl",
+   "name": "Nordic Hamstring Curl",
+   "element": "earth",
+   "category": "Resilience",
+   "equipment": "Partner / anchor",
+   "cues": [
+    "Hips locked straight; lower as slowly as you can.",
+    "Catch with your hands, push back up lightly, repeat."
+   ],
+   "image": "images/nordic-curl.webp",
+   "imageAlt": "images/nordic-curl-2.webp",
+   "thumb": "images/thumbs/nordic-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Floor_Glute-Ham_Raise"
+  },
+  {
+   "id": "ohp",
+   "name": "Standing Overhead Press",
+   "element": "fire",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Glutes and abs tight; press the bar up and slightly back.",
+    "Head through the window at the top; full lockout.",
+    "Bar starts on the front delts, forearms vertical."
+   ],
+   "image": "images/ohp.webp",
+   "imageAlt": "images/ohp-2.webp",
+   "thumb": "images/thumbs/ohp.webp",
+   "imageType": "photo",
+   "source": "fedb:Standing_Military_Press"
+  },
+  {
+   "id": "one-arm-slam",
+   "name": "Single-Arm Med-Ball Slam",
+   "element": "water",
+   "category": "Power",
+   "equipment": "Slam ball",
+   "cues": [
+    "Reach tall like an attack, then whip down through the core.",
+    "Alternate arms; the off-arm matters too."
+   ],
+   "image": "images/one-arm-slam.webp",
+   "imageAlt": "images/one-arm-slam-2.webp",
+   "thumb": "images/thumbs/one-arm-slam.webp",
+   "imageType": "photo",
+   "source": "fedb:One-Arm_Medicine_Ball_Slam"
+  },
+  {
+   "id": "open-book",
+   "name": "Open Book Rotation",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Side-lying, knees stacked; open the top arm like a book.",
+    "Follow the hand with your eyes; exhale as you open."
+   ],
+   "desc": "Lie on your side with the knees bent and stacked. Rotate the top arm open across the body to the floor behind you.",
+   "image": "images/placeholders/open-book.svg",
+   "thumb": "images/placeholders/open-book.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "overhead-cable-ext",
+   "name": "Overhead Cable Extension",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Cable + rope",
+   "cues": [
+    "Elbows point forward; reach the rope overhead.",
+    "Long-head stretch at the bottom is the money."
+   ],
+   "image": "images/overhead-cable-ext.webp",
+   "imageAlt": "images/overhead-cable-ext-2.webp",
+   "thumb": "images/thumbs/overhead-cable-ext.webp",
+   "imageType": "photo",
+   "source": "fedb:Cable_Rope_Overhead_Triceps_Extension"
+  },
+  {
+   "id": "overhead-squat",
+   "name": "Overhead Squat",
+   "element": "earth",
+   "category": "Olympic",
+   "equipment": "Barbell",
+   "cues": [
+    "Snatch grip, press up into the bar, armpits facing forward.",
+    "Sit down slowly and stay balanced over mid-foot."
+   ],
+   "image": "images/overhead-squat.webp",
+   "imageAlt": "images/overhead-squat-2.webp",
+   "thumb": "images/thumbs/overhead-squat.webp",
+   "imageType": "photo",
+   "source": "fedb:Overhead_Squat"
+  },
+  {
+   "id": "overhead-throw",
+   "name": "Overhead Med-Ball Throw",
+   "element": "water",
+   "category": "Power",
+   "equipment": "Medicine ball",
+   "cues": [
+    "Reach the ball deep behind your head and throw with the whole body.",
+    "Feels like a spike. Lead with the core and follow through."
+   ],
+   "image": "images/overhead-throw.webp",
+   "imageAlt": "images/overhead-throw-2.webp",
+   "thumb": "images/thumbs/overhead-throw.webp",
+   "imageType": "photo",
+   "source": "fedb:Standing_Two-Arm_Overhead_Throw"
+  },
+  {
+   "id": "pallof-press",
+   "name": "Pallof Press",
+   "element": "water",
+   "category": "Core",
+   "equipment": "Cable / band",
+   "cues": [
+    "Press straight out and resist the rotation.",
+    "Ribs down, glutes on, breathe behind the brace."
+   ],
+   "image": "images/pallof-press.webp",
+   "imageAlt": "images/pallof-press-2.webp",
+   "thumb": "images/thumbs/pallof-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Pallof_Press"
+  },
+  {
+   "id": "pallof-rotation",
+   "name": "Pallof Press with Rotation",
+   "element": "water",
+   "category": "Core",
+   "equipment": "Cable",
+   "cues": [
+    "Press out, rotate away under control, return to center.",
+    "Hips face forward; the torso does the rotating."
+   ],
+   "image": "images/pallof-rotation.webp",
+   "imageAlt": "images/pallof-rotation-2.webp",
+   "thumb": "images/thumbs/pallof-rotation.webp",
+   "imageType": "photo",
+   "source": "fedb:Pallof_Press_With_Rotation"
+  },
+  {
+   "id": "pec-deck",
+   "name": "Pec Deck",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Machine",
+   "cues": [
+    "Shoulders back; close the handles with the chest.",
+    "Pause at full contraction."
+   ],
+   "image": "images/pec-deck.webp",
+   "imageAlt": "images/pec-deck-2.webp",
+   "thumb": "images/thumbs/pec-deck.webp",
+   "imageType": "photo",
+   "source": "fedb:Butterfly"
+  },
+  {
+   "id": "pec-stretch",
+   "name": "Stick Chest & Shoulder Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Dowel / broomstick",
+   "cues": [
+    "Wide grip on a stick, then lift it slowly up and back behind your head.",
+    "Stop where the chest opens; breathe into the front of the shoulders."
+   ],
+   "image": "images/pec-stretch.webp",
+   "imageAlt": "images/pec-stretch-2.webp",
+   "thumb": "images/thumbs/pec-stretch.webp",
+   "imageType": "photo",
+   "source": "fedb:Chest_And_Front_Of_Shoulder_Stretch"
+  },
+  {
+   "id": "pelvic-tilt-bridge",
+   "name": "Pelvic Tilt into Bridge",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Tilt the pelvis, then peel the spine up one segment at a time.",
+    "Lower the same way, one vertebra at a time."
+   ],
+   "image": "images/pelvic-tilt-bridge.webp",
+   "imageAlt": "images/pelvic-tilt-bridge-2.webp",
+   "thumb": "images/thumbs/pelvic-tilt-bridge.webp",
+   "imageType": "photo",
+   "source": "fedb:Pelvic_Tilt_Into_Bridge"
+  },
+  {
+   "id": "pigeon-pose",
+   "name": "Pigeon Pose",
+   "element": "air",
+   "category": "Yoga",
+   "equipment": "Mat",
+   "cues": [
+    "Front shin angled forward, back leg long; square the hips.",
+    "Fold forward slowly and breathe into the outer hip."
+   ],
+   "desc": "From all fours, bring one knee forward behind the wrist and extend the other leg back. Fold over the front shin.",
+   "image": "images/pigeon-pose.webp",
+   "thumb": "images/thumbs/pigeon-pose.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "pin-press",
+   "name": "Pin Press",
+   "element": "fire",
+   "category": "Strength",
+   "equipment": "Barbell + rack",
+   "cues": [
+    "Bar starts on pins an inch off the chest; dead stop.",
+    "Drive explosively off the pins."
+   ],
+   "image": "images/pin-press.webp",
+   "imageAlt": "images/pin-press-2.webp",
+   "thumb": "images/thumbs/pin-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Pin_Presses"
+  },
+  {
+   "id": "plank",
+   "name": "Plank",
+   "element": "air",
+   "category": "Core",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Squeeze the glutes and quads; push the floor away.",
+    "Breathe. Shaking is just the body learning."
+   ],
+   "image": "images/plank.webp",
+   "imageAlt": "images/plank-2.webp",
+   "thumb": "images/thumbs/plank.webp",
+   "imageType": "photo",
+   "source": "fedb:Plank"
+  },
+  {
+   "id": "plyo-push-up",
+   "name": "Plyo Push-Up",
+   "element": "fire",
+   "category": "Power",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Explode so the hands leave the floor; land soft and rebound.",
+    "Rigid plank. Power from the chest, not a hip flop."
+   ],
+   "image": "images/plyo-push-up.webp",
+   "imageAlt": "images/plyo-push-up-2.webp",
+   "thumb": "images/thumbs/plyo-push-up.webp",
+   "imageType": "photo",
+   "source": "fedb:Plyo_Push-up"
+  },
+  {
+   "id": "pogo-hops",
+   "name": "Pogo Hops",
+   "element": "earth",
+   "category": "Elastic",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Stiff ankles; bounce like the ground is hot.",
+    "Minimal knee bend; let the Achilles do the work."
+   ],
+   "desc": "Small, rapid two-footed hops with nearly straight knees. Bounce off the balls of the feet with minimal ground contact.",
+   "image": "images/placeholders/pogo-hops.svg",
+   "thumb": "images/placeholders/pogo-hops.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "power-clean",
+   "name": "Power Clean",
+   "element": "earth",
+   "category": "Olympic",
+   "equipment": "Barbell",
+   "cues": [
+    "Push the floor through the first pull and keep the bar close.",
+    "Violent hip extension, then pull yourself under with fast elbows.",
+    "Catch high with soft knees and elbows up."
+   ],
+   "image": "images/power-clean.webp",
+   "imageAlt": "images/power-clean-2.webp",
+   "thumb": "images/thumbs/power-clean.webp",
+   "imageType": "photo",
+   "source": "fedb:Power_Clean"
+  },
+  {
+   "id": "power-clean-blocks",
+   "name": "Power Clean from Blocks",
+   "element": "earth",
+   "category": "Olympic",
+   "equipment": "Barbell + blocks",
+   "cues": [
+    "Set tight on the blocks; no slack, no hitching.",
+    "Explode from a dead start and catch crisp."
+   ],
+   "image": "images/power-clean-blocks.webp",
+   "imageAlt": "images/power-clean-blocks-2.webp",
+   "thumb": "images/thumbs/power-clean-blocks.webp",
+   "imageType": "photo",
+   "source": "fedb:Power_Clean_from_Blocks"
+  },
+  {
+   "id": "power-jerk",
+   "name": "Power Jerk",
+   "element": "fire",
+   "category": "Olympic",
+   "equipment": "Barbell",
+   "cues": [
+    "Dip and drive, then punch yourself under in a quarter squat.",
+    "Lockout and stabilize before you stand."
+   ],
+   "image": "images/power-jerk.webp",
+   "imageAlt": "images/power-jerk-2.webp",
+   "thumb": "images/thumbs/power-jerk.webp",
+   "imageType": "photo",
+   "source": "fedb:Power_Jerk"
+  },
+  {
+   "id": "power-snatch",
+   "name": "Power Snatch",
+   "element": "earth",
+   "category": "Olympic",
+   "equipment": "Barbell",
+   "cues": [
+    "Wide grip; brush the hip, then punch up and under.",
+    "Lock the elbows in the catch with soft knees and chest up."
+   ],
+   "image": "images/power-snatch.webp",
+   "imageAlt": "images/power-snatch-2.webp",
+   "thumb": "images/thumbs/power-snatch.webp",
+   "imageType": "photo",
+   "source": "fedb:Power_Snatch"
+  },
+  {
+   "id": "preacher-curl",
+   "name": "Preacher Curl",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "EZ bar + preacher bench",
+   "cues": [
+    "Armpits on the pad; don't bounce out of the bottom.",
+    "Slow down the last third of each rep."
+   ],
+   "image": "images/preacher-curl.webp",
+   "imageAlt": "images/preacher-curl-2.webp",
+   "thumb": "images/thumbs/preacher-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Preacher_Curl"
+  },
+  {
+   "id": "prone-scorpion",
+   "name": "Prone Scorpion",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Face down, arms out; swing the heel across toward the opposite hand.",
+    "Gentle and controlled. Wake up the hips and T-spine."
+   ],
+   "image": "images/prone-scorpion.webp",
+   "imageAlt": "images/prone-scorpion-2.webp",
+   "thumb": "images/thumbs/prone-scorpion.webp",
+   "imageType": "photo",
+   "source": "fedb:Iron_Crosses_stretch"
+  },
+  {
+   "id": "pull-up",
+   "name": "Pull-Up",
+   "element": "water",
+   "category": "Strength",
+   "equipment": "Pull-up bar",
+   "cues": [
+    "Pack the shoulders, then drive the elbows to the back pockets.",
+    "Full hang at the bottom every rep; no half-reps."
+   ],
+   "image": "images/pull-up.webp",
+   "imageAlt": "images/pull-up-2.webp",
+   "thumb": "images/thumbs/pull-up.webp",
+   "imageType": "photo",
+   "source": "fedb:Pullups"
+  },
+  {
+   "id": "push-press",
+   "name": "Push Press",
+   "element": "fire",
+   "category": "Power",
+   "equipment": "Barbell",
+   "cues": [
+    "Short, vertical dip, then drive the bar with the legs.",
+    "Punch the bar to lockout as the legs finish."
+   ],
+   "image": "images/push-press.webp",
+   "imageAlt": "images/push-press-2.webp",
+   "thumb": "images/thumbs/push-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Push_Press"
+  },
+  {
+   "id": "push-up",
+   "name": "Push-Up",
+   "element": "fire",
+   "category": "Strength",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Plank body; chest to the floor, elbows at 45°.",
+    "Push the floor away and spread the shoulder blades at the top."
+   ],
+   "image": "images/push-up.webp",
+   "imageAlt": "images/push-up-2.webp",
+   "thumb": "images/thumbs/push-up.webp",
+   "imageType": "photo",
+   "source": "fedb:Pushups"
+  },
+  {
+   "id": "rack-pull",
+   "name": "Rack Pull",
+   "element": "water",
+   "category": "Strength",
+   "equipment": "Barbell + rack",
+   "cues": [
+    "Bar just below the knee; push the hips through to lockout.",
+    "Shoulders back at the top; don't hyperextend."
+   ],
+   "image": "images/rack-pull.webp",
+   "imageAlt": "images/rack-pull-2.webp",
+   "thumb": "images/thumbs/rack-pull.webp",
+   "imageType": "photo",
+   "source": "fedb:Rack_Pulls"
+  },
+  {
+   "id": "rear-delt-raise",
+   "name": "Seated Rear Delt Raise",
+   "element": "fire",
+   "category": "Shoulder health",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Chest on the thighs; raise the dumbbells out wide.",
+    "Pinkies up and squeeze the back of the shoulders."
+   ],
+   "image": "images/rear-delt-raise.webp",
+   "imageAlt": "images/rear-delt-raise-2.webp",
+   "thumb": "images/thumbs/rear-delt-raise.webp",
+   "imageType": "photo",
+   "source": "fedb:Seated_Bent-Over_Rear_Delt_Raise"
+  },
+  {
+   "id": "renegade-row",
+   "name": "Renegade Row",
+   "element": "water",
+   "category": "Athletic",
+   "equipment": "Kettlebells / dumbbells",
+   "cues": [
+    "Wide feet, plank tight; row without letting the hips rotate.",
+    "Opposite hand pushes the floor away."
+   ],
+   "image": "images/renegade-row.webp",
+   "imageAlt": "images/renegade-row-2.webp",
+   "thumb": "images/thumbs/renegade-row.webp",
+   "imageType": "photo",
+   "source": "fedb:Alternating_Renegade_Row"
+  },
+  {
+   "id": "reverse-curl",
+   "name": "Reverse Barbell Curl",
+   "element": "water",
+   "category": "Resilience",
+   "equipment": "Barbell / EZ bar",
+   "cues": [
+    "Overhand grip; elbows pinned, wrists neutral.",
+    "Lower slowly. Your forearms will file a complaint."
+   ],
+   "image": "images/reverse-curl.webp",
+   "imageAlt": "images/reverse-curl-2.webp",
+   "thumb": "images/thumbs/reverse-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Reverse_Barbell_Curl"
+  },
+  {
+   "id": "reverse-fly",
+   "name": "Chest-Supported Reverse Fly",
+   "element": "water",
+   "category": "Shoulder health",
+   "equipment": "Dumbbells + incline bench",
+   "cues": [
+    "Chest on the incline, soft elbows; open the arms like wings.",
+    "Lead with the pinkies and pause at the top."
+   ],
+   "image": "images/reverse-fly.webp",
+   "imageAlt": "images/reverse-fly-2.webp",
+   "thumb": "images/thumbs/reverse-fly.webp",
+   "imageType": "photo",
+   "source": "fedb:Reverse_Flyes"
+  },
+  {
+   "id": "reverse-grip-row",
+   "name": "Reverse-Grip Barbell Row",
+   "element": "water",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Underhand grip; row to the belly button with elbows tight.",
+    "Squeeze the shoulder blades together at the top."
+   ],
+   "image": "images/reverse-grip-row.webp",
+   "imageAlt": "images/reverse-grip-row-2.webp",
+   "thumb": "images/thumbs/reverse-grip-row.webp",
+   "imageType": "photo",
+   "source": "fedb:Reverse_Grip_Bent-Over_Rows"
+  },
+  {
+   "id": "reverse-hyper",
+   "name": "Reverse Hyperextension",
+   "element": "earth",
+   "category": "Resilience",
+   "equipment": "Reverse hyper / bench",
+   "cues": [
+    "Swing the legs up with the glutes, not momentum.",
+    "Let the spine decompress on the way down."
+   ],
+   "image": "images/reverse-hyper.webp",
+   "imageAlt": "images/reverse-hyper-2.webp",
+   "thumb": "images/thumbs/reverse-hyper.webp",
+   "imageType": "photo",
+   "source": "fedb:Reverse_Hyperextension"
+  },
+  {
+   "id": "reverse-lunge",
+   "name": "Dumbbell Reverse Lunge",
+   "element": "earth",
+   "category": "Single-leg",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Step back long and lower the back knee softly.",
+    "Push through the front foot to return; stay tall."
+   ],
+   "image": "images/reverse-lunge.webp",
+   "imageAlt": "images/reverse-lunge-2.webp",
+   "thumb": "images/thumbs/reverse-lunge.webp",
+   "imageType": "photo",
+   "source": "fedb:Dumbbell_Rear_Lunge"
+  },
+  {
+   "id": "reverse-machine-fly",
+   "name": "Reverse Pec Deck",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Machine",
+   "cues": [
+    "Chest on the pad; sweep the handles back with straight arms.",
+    "Pause and squeeze the rear delts, then control the return."
+   ],
+   "image": "images/reverse-machine-fly.webp",
+   "imageAlt": "images/reverse-machine-fly-2.webp",
+   "thumb": "images/thumbs/reverse-machine-fly.webp",
+   "imageType": "photo",
+   "source": "fedb:Reverse_Machine_Flyes"
+  },
+  {
+   "id": "ring-row",
+   "name": "Suspension Row",
+   "element": "water",
+   "category": "Posture",
+   "equipment": "Rings / TRX",
+   "cues": [
+    "Plank body, pull the hands to the ribs, thumbs rotate out.",
+    "Walk the feet forward to make it harder."
+   ],
+   "image": "images/ring-row.webp",
+   "imageAlt": "images/ring-row-2.webp",
+   "thumb": "images/thumbs/ring-row.webp",
+   "imageType": "photo",
+   "source": "fedb:Inverted_Row_with_Straps"
+  },
+  {
+   "id": "romanian-deadlift",
+   "name": "Romanian Deadlift",
+   "element": "earth",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Soft knees; push the hips back until the hamstrings bite.",
+    "Bar drags the thighs, back flat, then snap the hips through."
+   ],
+   "image": "images/romanian-deadlift.webp",
+   "imageAlt": "images/romanian-deadlift-2.webp",
+   "thumb": "images/thumbs/romanian-deadlift.webp",
+   "imageType": "photo",
+   "source": "fedb:Romanian_Deadlift"
+  },
+  {
+   "id": "rope-hammer-curl",
+   "name": "Cable Rope Hammer Curl",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Cable + rope",
+   "cues": [
+    "Pin the elbows and pull the rope ends apart at the top.",
+    "Constant tension, slow eccentric."
+   ],
+   "image": "images/rope-hammer-curl.webp",
+   "imageAlt": "images/rope-hammer-curl-2.webp",
+   "thumb": "images/thumbs/rope-hammer-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Cable_Hammer_Curls_-_Rope_Attachment"
+  },
+  {
+   "id": "rope-pushdown",
+   "name": "Rope Pushdown",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Cable + rope",
+   "cues": [
+    "Elbows pinned; split the rope at the bottom.",
+    "Full lockout, then slow return."
+   ],
+   "image": "images/rope-pushdown.webp",
+   "imageAlt": "images/rope-pushdown-2.webp",
+   "thumb": "images/thumbs/rope-pushdown.webp",
+   "imageType": "photo",
+   "source": "fedb:Triceps_Pushdown_-_Rope_Attachment"
+  },
+  {
+   "id": "rotational-pass",
+   "name": "Rotational Med-Ball Pass",
+   "element": "water",
+   "category": "Power",
+   "equipment": "Medicine ball + partner/wall",
+   "cues": [
+    "Rotate from the hips first, then the shoulders.",
+    "Stay tall and athletic; catch and reload fast."
+   ],
+   "image": "images/rotational-pass.webp",
+   "imageAlt": "images/rotational-pass-2.webp",
+   "thumb": "images/thumbs/rotational-pass.webp",
+   "imageType": "photo",
+   "source": "fedb:Medicine_Ball_Full_Twist"
+  },
+  {
+   "id": "row-easy",
+   "name": "Easy Row (Erg)",
+   "element": "air",
+   "category": "Warm-up",
+   "equipment": "Rowing machine",
+   "cues": [
+    "Legs, hips, then arms. Smooth, relaxed strokes.",
+    "Breathe and let your heart rate rise gradually."
+   ],
+   "image": "images/row-easy.webp",
+   "imageAlt": "images/row-easy-2.webp",
+   "thumb": "images/thumbs/row-easy.webp",
+   "imageType": "photo",
+   "source": "fedb:Rowing_Stationary"
+  },
+  {
+   "id": "runners-stretch",
+   "name": "Runner's Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Staggered stance, hands beside the front foot, front heel flat.",
+    "Push the hips up and back; feel the front hamstring and back calf."
+   ],
+   "image": "images/runners-stretch.webp",
+   "imageAlt": "images/runners-stretch-2.webp",
+   "thumb": "images/thumbs/runners-stretch.webp",
+   "imageType": "photo",
+   "source": "fedb:Runners_Stretch"
+  },
+  {
+   "id": "russian-twist",
+   "name": "Russian Twist",
+   "element": "water",
+   "category": "Core",
+   "equipment": "Plate / med ball",
+   "cues": [
+    "Lean back, chest proud; rotate the ribs, not just the arms.",
+    "Touch beside each hip with control."
+   ],
+   "image": "images/russian-twist.webp",
+   "imageAlt": "images/russian-twist-2.webp",
+   "thumb": "images/thumbs/russian-twist.webp",
+   "imageType": "photo",
+   "source": "fedb:Russian_Twist"
+  },
+  {
+   "id": "sand-footwork",
+   "name": "Sand Footwork Flow",
+   "element": "air",
+   "category": "Recovery",
+   "equipment": "Sand",
+   "cues": [
+    "Light shuffles, crossovers and skips at walking intensity.",
+    "Quiet feet, loose arms. Practice, not punishment."
+   ],
+   "desc": "Low-intensity volleyball footwork patterns on sand: shuffles, crossover steps, drop steps and skips.",
+   "image": "images/placeholders/sand-footwork.svg",
+   "thumb": "images/placeholders/sand-footwork.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "sand-jog",
+   "name": "Easy Sand Jog",
+   "element": "air",
+   "category": "Warm-up",
+   "equipment": "Sand",
+   "cues": [
+    "Easy pace, short strides, let the feet wake up.",
+    "Breathe through the nose. If you can't chat, slow down."
+   ],
+   "desc": "An easy jog on the sand to raise temperature and wake up feet and ankles.",
+   "image": "images/sand-jog.webp",
+   "thumb": "images/thumbs/sand-jog.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "sand-sprint",
+   "name": "Sand Sprint",
+   "element": "earth",
+   "category": "Speed",
+   "equipment": "Sand",
+   "cues": [
+    "Drive the knees and punch the arms; sand rewards power.",
+    "Short, quick steps for the first five meters."
+   ],
+   "desc": "Sprint on soft sand. Walk back for recovery. The sand cuts impact and doubles the effort.",
+   "image": "images/sand-sprint.webp",
+   "thumb": "images/thumbs/sand-sprint.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "scap-pull-up",
+   "name": "Scapular Pull-Up",
+   "element": "water",
+   "category": "Shoulder health",
+   "equipment": "Pull-up bar",
+   "cues": [
+    "Straight arms; pull the shoulder blades down and back.",
+    "Pause one second. This wakes up the lower traps."
+   ],
+   "image": "images/scap-pull-up.webp",
+   "imageAlt": "images/scap-pull-up-2.webp",
+   "thumb": "images/thumbs/scap-pull-up.webp",
+   "imageType": "photo",
+   "source": "fedb:Scapular_Pull-Up"
+  },
+  {
+   "id": "scaption",
+   "name": "Dumbbell Scaption",
+   "element": "water",
+   "category": "Shoulder health",
+   "equipment": "Light dumbbells",
+   "cues": [
+    "Thumbs up and raise in a Y, about 30° in front of you.",
+    "Stop at shoulder height; smooth and controlled."
+   ],
+   "image": "images/scaption.webp",
+   "imageAlt": "images/scaption-2.webp",
+   "thumb": "images/thumbs/scaption.webp",
+   "imageType": "photo",
+   "source": "fedb:Dumbbell_Scaption"
+  },
+  {
+   "id": "scoop-throw",
+   "name": "Med-Ball Scoop Toss",
+   "element": "water",
+   "category": "Power",
+   "equipment": "Medicine ball",
+   "cues": [
+    "Load the hips low and throw the ball up and back with a full extension.",
+    "Jump with it; triple extension is the goal."
+   ],
+   "image": "images/scoop-throw.webp",
+   "imageAlt": "images/scoop-throw-2.webp",
+   "thumb": "images/thumbs/scoop-throw.webp",
+   "imageType": "photo",
+   "source": "fedb:Medicine_Ball_Scoop_Throw"
+  },
+  {
+   "id": "seal-row",
+   "name": "Lying Barbell Row",
+   "element": "water",
+   "category": "Strength",
+   "equipment": "Barbell + high bench",
+   "cues": [
+    "Chest pinned to the bench; there's no cheating here.",
+    "Pull the bar to the bench and pause one second."
+   ],
+   "image": "images/seal-row.webp",
+   "imageAlt": "images/seal-row-2.webp",
+   "thumb": "images/thumbs/seal-row.webp",
+   "imageType": "photo",
+   "source": "fedb:Lying_Cambered_Barbell_Row"
+  },
+  {
+   "id": "seated-box-jump",
+   "name": "Seated Box Jump",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Bench + box",
+   "cues": [
+    "Sit on a bench, feet planted, explode straight onto the box.",
+    "Pure concentric power with no countermovement."
+   ],
+   "image": "images/seated-box-jump.webp",
+   "imageAlt": "images/seated-box-jump-2.webp",
+   "thumb": "images/thumbs/seated-box-jump.webp",
+   "imageType": "photo",
+   "source": "fedb:Dumbbell_Seated_Box_Jump"
+  },
+  {
+   "id": "seated-cable-row",
+   "name": "Seated Cable Row",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "Sit tall and pull the handle to the belly; elbows skim the ribs.",
+    "Reach forward and let the shoulder blades spread before each rep."
+   ],
+   "image": "images/seated-cable-row.webp",
+   "imageAlt": "images/seated-cable-row-2.webp",
+   "thumb": "images/thumbs/seated-cable-row.webp",
+   "imageType": "photo",
+   "source": "fedb:Seated_Cable_Rows"
+  },
+  {
+   "id": "seated-calf-raise",
+   "name": "Seated Calf Raise",
+   "element": "earth",
+   "category": "Resilience",
+   "equipment": "Machine",
+   "cues": [
+    "This hits the soleus, your sand-running engine.",
+    "Pause two seconds in the stretch; no bouncing."
+   ],
+   "image": "images/seated-calf-raise.webp",
+   "imageAlt": "images/seated-calf-raise-2.webp",
+   "thumb": "images/thumbs/seated-calf-raise.webp",
+   "imageType": "photo",
+   "source": "fedb:Seated_Calf_Raise"
+  },
+  {
+   "id": "seated-forward-fold",
+   "name": "Seated Hamstring Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Hinge from the hips and reach for the toes.",
+    "Soft knees are fine; chase length, not pain."
+   ],
+   "image": "images/seated-forward-fold.webp",
+   "imageAlt": "images/seated-forward-fold-2.webp",
+   "thumb": "images/thumbs/seated-forward-fold.webp",
+   "imageType": "photo",
+   "source": "fedb:Seated_Floor_Hamstring_Stretch"
+  },
+  {
+   "id": "seated-leg-curl",
+   "name": "Seated Leg Curl",
+   "element": "earth",
+   "category": "Hypertrophy",
+   "equipment": "Machine",
+   "cues": [
+    "Lean forward slightly for a deeper hamstring stretch.",
+    "Squeeze hard at the bottom, control on the way up."
+   ],
+   "image": "images/seated-leg-curl.webp",
+   "imageAlt": "images/seated-leg-curl-2.webp",
+   "thumb": "images/thumbs/seated-leg-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Seated_Leg_Curl"
+  },
+  {
+   "id": "seated-ohp",
+   "name": "Seated Barbell Press",
+   "element": "fire",
+   "category": "Strength",
+   "equipment": "Barbell + bench",
+   "cues": [
+    "Back tall against the pad; press straight up.",
+    "Lower to the chin with control."
+   ],
+   "image": "images/seated-ohp.webp",
+   "imageAlt": "images/seated-ohp-2.webp",
+   "thumb": "images/thumbs/seated-ohp.webp",
+   "imageType": "photo",
+   "source": "fedb:Seated_Barbell_Military_Press"
+  },
+  {
+   "id": "seated-twist",
+   "name": "Seated Spinal Twist",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Cross a leg, sit tall, then rotate toward the bent knee.",
+    "Lengthen on the inhale, twist on the exhale."
+   ],
+   "image": "images/seated-twist.webp",
+   "imageAlt": "images/seated-twist-2.webp",
+   "thumb": "images/thumbs/seated-twist.webp",
+   "imageType": "photo",
+   "source": "fedb:Dancers_Stretch"
+  },
+  {
+   "id": "serratus-raise",
+   "name": "Incline Serratus Shoulder Raise",
+   "element": "water",
+   "category": "Shoulder health",
+   "equipment": "Dumbbells + incline bench",
+   "cues": [
+    "Arms locked; punch the dumbbells up using only the shoulder blades.",
+    "Feel the serratus wrap the ribs. A healthy scapula makes a healthy shoulder."
+   ],
+   "image": "images/serratus-raise.webp",
+   "imageAlt": "images/serratus-raise-2.webp",
+   "thumb": "images/thumbs/serratus-raise.webp",
+   "imageType": "photo",
+   "source": "fedb:Dumbbell_Incline_Shoulder_Raise"
+  },
+  {
+   "id": "shrug",
+   "name": "Barbell Shrug",
+   "element": "water",
+   "category": "Strength",
+   "equipment": "Barbell",
+   "cues": [
+    "Straight up to the ears; pause one second.",
+    "No rolling. Up and down only."
+   ],
+   "image": "images/shrug.webp",
+   "imageAlt": "images/shrug-2.webp",
+   "thumb": "images/thumbs/shrug.webp",
+   "imageType": "photo",
+   "source": "fedb:Barbell_Shrug"
+  },
+  {
+   "id": "side-hop-sprint",
+   "name": "Side Hop to Sprint",
+   "element": "earth",
+   "category": "Speed",
+   "equipment": "Cone / hurdle",
+   "cues": [
+    "Quick lateral hops, then explode into a sprint off the last one.",
+    "React. The transition is the whole drill."
+   ],
+   "image": "images/side-hop-sprint.webp",
+   "imageAlt": "images/side-hop-sprint-2.webp",
+   "thumb": "images/thumbs/side-hop-sprint.webp",
+   "imageType": "photo",
+   "source": "fedb:Side_Hop-Sprint"
+  },
+  {
+   "id": "side-plank",
+   "name": "Side Plank",
+   "element": "earth",
+   "category": "Core",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Elbow under the shoulder, hips high, body in one line.",
+    "Push the floor away and breathe behind the brace."
+   ],
+   "image": "images/side-plank.webp",
+   "imageAlt": "images/side-plank-2.webp",
+   "thumb": "images/thumbs/side-plank.webp",
+   "imageType": "photo",
+   "source": "fedb:Side_Bridge"
+  },
+  {
+   "id": "side-quad-stretch",
+   "name": "Side-Lying Quad Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Pull the heel to the glute and push the hip forward.",
+    "Knees stay together."
+   ],
+   "image": "images/side-quad-stretch.webp",
+   "imageAlt": "images/side-quad-stretch-2.webp",
+   "thumb": "images/thumbs/side-quad-stretch.webp",
+   "imageType": "photo",
+   "source": "fedb:On_Your_Side_Quad_Stretch"
+  },
+  {
+   "id": "single-arm-cable-ext",
+   "name": "Single-Arm Cable Extension",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "One arm at a time; lock out and squeeze.",
+    "Keep the elbow fixed by your side."
+   ],
+   "image": "images/single-arm-cable-ext.webp",
+   "imageAlt": "images/single-arm-cable-ext-2.webp",
+   "thumb": "images/thumbs/single-arm-cable-ext.webp",
+   "imageType": "photo",
+   "source": "fedb:Cable_One_Arm_Tricep_Extension"
+  },
+  {
+   "id": "single-arm-cable-row",
+   "name": "Single-Arm Cable Row",
+   "element": "water",
+   "category": "Athletic",
+   "equipment": "Cable",
+   "cues": [
+    "Row with a little rotation, like drawing back for a swing.",
+    "Hips square; let the shoulder reach forward at full stretch."
+   ],
+   "image": "images/single-arm-cable-row.webp",
+   "imageAlt": "images/single-arm-cable-row-2.webp",
+   "thumb": "images/thumbs/single-arm-cable-row.webp",
+   "imageType": "photo",
+   "source": "fedb:Seated_One-arm_Cable_Pulley_Rows"
+  },
+  {
+   "id": "single-arm-hang",
+   "name": "Single-Arm Dead Hang",
+   "element": "water",
+   "category": "Shoulder health",
+   "equipment": "Pull-up bar",
+   "cues": [
+    "Hang long and let the shoulder decompress.",
+    "Breathe slowly; switch hands before the grip fails."
+   ],
+   "image": "images/single-arm-hang.webp",
+   "imageAlt": "images/single-arm-hang-2.webp",
+   "thumb": "images/thumbs/single-arm-hang.webp",
+   "imageType": "photo",
+   "source": "fedb:One_Handed_Hang"
+  },
+  {
+   "id": "single-arm-landmine",
+   "name": "Single-Arm Landmine Press",
+   "element": "fire",
+   "category": "Shoulder health",
+   "equipment": "Landmine",
+   "cues": [
+    "The arcing path is the shoulder-friendly press for overhead athletes.",
+    "Reach through at the top and let the shoulder blade glide."
+   ],
+   "image": "images/single-arm-landmine.webp",
+   "imageAlt": "images/single-arm-landmine-2.webp",
+   "thumb": "images/thumbs/single-arm-landmine.webp",
+   "imageType": "photo",
+   "source": "fedb:Single-Arm_Linear_Jammer"
+  },
+  {
+   "id": "single-arm-pulldown",
+   "name": "Single-Arm Lat Pulldown",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "Pull the elbow to the hip with a slight torso crunch.",
+    "Let the shoulder blade rise fully at the top."
+   ],
+   "image": "images/single-arm-pulldown.webp",
+   "imageAlt": "images/single-arm-pulldown-2.webp",
+   "thumb": "images/thumbs/single-arm-pulldown.webp",
+   "imageType": "photo",
+   "source": "fedb:One_Arm_Lat_Pulldown"
+  },
+  {
+   "id": "single-leg-box-squat",
+   "name": "Single-Leg Box Squat",
+   "element": "earth",
+   "category": "Single-leg",
+   "equipment": "Box",
+   "cues": [
+    "Sit back to the box on one leg, slow and controlled.",
+    "Knee over toes; stand without pushing off the free foot."
+   ],
+   "image": "images/single-leg-box-squat.webp",
+   "imageAlt": "images/single-leg-box-squat-2.webp",
+   "thumb": "images/thumbs/single-leg-box-squat.webp",
+   "imageType": "photo",
+   "source": "fedb:Single-Leg_High_Box_Squat"
+  },
+  {
+   "id": "single-leg-glute-bridge",
+   "name": "Single-Leg Glute Bridge",
+   "element": "earth",
+   "category": "Activation",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Drive through the heel and keep the hips level like a tabletop.",
+    "Pause at the top and feel the glute, not the hamstring."
+   ],
+   "image": "images/single-leg-glute-bridge.webp",
+   "imageAlt": "images/single-leg-glute-bridge-2.webp",
+   "thumb": "images/thumbs/single-leg-glute-bridge.webp",
+   "imageType": "photo",
+   "source": "fedb:Single_Leg_Glute_Bridge"
+  },
+  {
+   "id": "single-leg-hop",
+   "name": "Single-Leg Forward Hop",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Cones",
+   "cues": [
+    "Hop and land on the same leg; quiet, stable landings.",
+    "Drive the free knee to help the takeoff."
+   ],
+   "image": "images/single-leg-hop.webp",
+   "imageAlt": "images/single-leg-hop-2.webp",
+   "thumb": "images/thumbs/single-leg-hop.webp",
+   "imageType": "photo",
+   "source": "fedb:Single-Leg_Hop_Progression"
+  },
+  {
+   "id": "single-leg-lateral-hop",
+   "name": "Single-Leg Lateral Hop",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Line / cone",
+   "cues": [
+    "Hop side to side over a line on one leg.",
+    "Stiff ankle, level hips, eyes up."
+   ],
+   "image": "images/single-leg-lateral-hop.webp",
+   "imageAlt": "images/single-leg-lateral-hop-2.webp",
+   "thumb": "images/thumbs/single-leg-lateral-hop.webp",
+   "imageType": "photo",
+   "source": "fedb:Single-Leg_Lateral_Hop"
+  },
+  {
+   "id": "single-leg-push-off",
+   "name": "Single-Leg Box Push-Off",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Box",
+   "cues": [
+    "Drive through the foot on the box and get tall.",
+    "Land on the same foot and go again; knee drive like takeoff."
+   ],
+   "image": "images/single-leg-push-off.webp",
+   "imageAlt": "images/single-leg-push-off-2.webp",
+   "thumb": "images/thumbs/single-leg-push-off.webp",
+   "imageType": "photo",
+   "source": "fedb:Single_Leg_Push-off"
+  },
+  {
+   "id": "single-leg-rdl",
+   "name": "Single-Leg RDL (Kettlebell)",
+   "element": "earth",
+   "category": "Single-leg",
+   "equipment": "Kettlebell",
+   "cues": [
+    "Hips square to the floor; reach the free heel back.",
+    "Soft standing knee; hinge until the hamstring bites, then stand tall."
+   ],
+   "image": "images/single-leg-rdl.webp",
+   "imageAlt": "images/single-leg-rdl-2.webp",
+   "thumb": "images/thumbs/single-leg-rdl.webp",
+   "imageType": "photo",
+   "source": "fedb:Kettlebell_One-Legged_Deadlift"
+  },
+  {
+   "id": "skull-crusher",
+   "name": "EZ-Bar Skull Crusher",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "EZ bar",
+   "cues": [
+    "Lower to the forehead or just behind; elbows still.",
+    "Extend powerfully; don't let the elbows flare."
+   ],
+   "image": "images/skull-crusher.webp",
+   "imageAlt": "images/skull-crusher-2.webp",
+   "thumb": "images/thumbs/skull-crusher.webp",
+   "imageType": "photo",
+   "source": "fedb:EZ-Bar_Skullcrusher"
+  },
+  {
+   "id": "sled-push",
+   "name": "Sled Push",
+   "element": "earth",
+   "category": "Conditioning",
+   "equipment": "Sled",
+   "cues": [
+    "Arms long, body at 45°, drive the knees.",
+    "Short, powerful steps through the balls of the feet."
+   ],
+   "image": "images/sled-push.webp",
+   "imageAlt": "images/sled-push-2.webp",
+   "thumb": "images/thumbs/sled-push.webp",
+   "imageType": "photo",
+   "source": "fedb:Sled_Push"
+  },
+  {
+   "id": "sledgehammer",
+   "name": "Sledgehammer Tire Strikes",
+   "element": "water",
+   "category": "Conditioning",
+   "equipment": "Sledgehammer + tire",
+   "cues": [
+    "Slide the top hand down as the hammer falls; switch sides.",
+    "Power comes from the hips and core like an attack swing."
+   ],
+   "image": "images/sledgehammer.webp",
+   "imageAlt": "images/sledgehammer-2.webp",
+   "thumb": "images/thumbs/sledgehammer.webp",
+   "imageType": "photo",
+   "source": "fedb:Sledgehammer_Swings"
+  },
+  {
+   "id": "sleeper-stretch",
+   "name": "Sleeper Stretch",
+   "element": "air",
+   "category": "Shoulder health",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Lying on the shoulder, gently press the forearm toward the floor.",
+    "Mild stretch only. The hitting arm needs internal rotation back."
+   ],
+   "desc": "Lie on your side with the bottom arm in front at 90°. Gently press the forearm down to stretch the back of the shoulder.",
+   "image": "images/placeholders/sleeper-stretch.svg",
+   "thumb": "images/placeholders/sleeper-stretch.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "snatch-grip-deadlift",
+   "name": "Snatch-Grip Deadlift",
+   "element": "earth",
+   "category": "Olympic",
+   "equipment": "Barbell",
+   "cues": [
+    "Wide grip, hips lower than a normal pull, chest up.",
+    "Keep the bar close and push patiently through the floor."
+   ],
+   "image": "images/snatch-grip-deadlift.webp",
+   "imageAlt": "images/snatch-grip-deadlift-2.webp",
+   "thumb": "images/thumbs/snatch-grip-deadlift.webp",
+   "imageType": "photo",
+   "source": "fedb:Snatch_Deadlift"
+  },
+  {
+   "id": "soleus-stretch",
+   "name": "Soleus & Achilles Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Bent knee, heel down; sink the knee over the toes.",
+    "Long, slow breaths. Achilles health equals jump health."
+   ],
+   "image": "images/soleus-stretch.webp",
+   "imageAlt": "images/soleus-stretch-2.webp",
+   "thumb": "images/thumbs/soleus-stretch.webp",
+   "imageType": "photo",
+   "source": "fedb:Standing_Soleus_And_Achilles_Stretch"
+  },
+  {
+   "id": "spanish-squat",
+   "name": "Spanish Squat (Band Isometric)",
+   "element": "earth",
+   "category": "Resilience",
+   "equipment": "Heavy band",
+   "cues": [
+    "Band behind the knees; sit back with shins vertical.",
+    "Hold the burn and breathe; this is patellar-tendon armor."
+   ],
+   "desc": "Loop a heavy band around a rack behind your knees, lean back into it and sit to a half squat with vertical shins. Hold.",
+   "image": "images/placeholders/spanish-squat.svg",
+   "thumb": "images/placeholders/spanish-squat.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "spider-curl",
+   "name": "Spider Curl",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbells / EZ bar",
+   "cues": [
+    "Chest on the incline, arms hanging straight down.",
+    "Curl and squeeze hard; no shoulder swing."
+   ],
+   "image": "images/spider-curl.webp",
+   "imageAlt": "images/spider-curl-2.webp",
+   "thumb": "images/thumbs/spider-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Spider_Curl"
+  },
+  {
+   "id": "split-jerk",
+   "name": "Split Jerk",
+   "element": "fire",
+   "category": "Olympic",
+   "equipment": "Barbell",
+   "cues": [
+    "Dip and drive straight up, then split fast under the bar.",
+    "Front shin vertical, back knee soft; recover front foot first."
+   ],
+   "image": "images/split-jerk.webp",
+   "imageAlt": "images/split-jerk-2.webp",
+   "thumb": "images/thumbs/split-jerk.webp",
+   "imageType": "photo",
+   "source": "fedb:Split_Jerk"
+  },
+  {
+   "id": "split-jump",
+   "name": "Split Jump",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Bodyweight",
+   "cues": [
+    "From a lunge, jump high and switch legs in the air.",
+    "Land soft with the front knee over the foot."
+   ],
+   "image": "images/split-jump.webp",
+   "imageAlt": "images/split-jump-2.webp",
+   "thumb": "images/thumbs/split-jump.webp",
+   "imageType": "photo",
+   "source": "fedb:Split_Jump"
+  },
+  {
+   "id": "standing-calf-raise",
+   "name": "Standing Calf Raise",
+   "element": "earth",
+   "category": "Resilience",
+   "equipment": "Machine",
+   "cues": [
+    "Full stretch at the bottom, pause, then rise as high as possible.",
+    "Knees straight; drive through the big toe."
+   ],
+   "image": "images/standing-calf-raise.webp",
+   "imageAlt": "images/standing-calf-raise-2.webp",
+   "thumb": "images/thumbs/standing-calf-raise.webp",
+   "imageType": "photo",
+   "source": "fedb:Standing_Calf_Raises"
+  },
+  {
+   "id": "standing-db-press",
+   "name": "Standing Dumbbell Press",
+   "element": "fire",
+   "category": "Strength",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Squeeze the glutes; press without leaning back.",
+    "Stack the wrists over the elbows."
+   ],
+   "image": "images/standing-db-press.webp",
+   "imageAlt": "images/standing-db-press-2.webp",
+   "thumb": "images/thumbs/standing-db-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Standing_Dumbbell_Press"
+  },
+  {
+   "id": "standing-hip-circles",
+   "name": "Standing Hip Circles",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Hands on the hips; make slow, big circles.",
+    "Both directions; loosen the hips before you load them."
+   ],
+   "image": "images/standing-hip-circles.webp",
+   "imageAlt": "images/standing-hip-circles-2.webp",
+   "thumb": "images/thumbs/standing-hip-circles.webp",
+   "imageType": "photo",
+   "source": "fedb:Standing_Hip_Circles"
+  },
+  {
+   "id": "step-up",
+   "name": "Dumbbell Step-Up",
+   "element": "earth",
+   "category": "Single-leg",
+   "equipment": "Dumbbells + box",
+   "cues": [
+    "Whole foot on the box; drive through it with no push from the back leg.",
+    "Stand fully tall at the top, then step down slowly."
+   ],
+   "image": "images/step-up.webp",
+   "imageAlt": "images/step-up-2.webp",
+   "thumb": "images/thumbs/step-up.webp",
+   "imageType": "photo",
+   "source": "fedb:Dumbbell_Step_Ups"
+  },
+  {
+   "id": "step-up-knee-drive",
+   "name": "Step-Up with Knee Drive",
+   "element": "earth",
+   "category": "Single-leg",
+   "equipment": "Box",
+   "cues": [
+    "Drive the free knee up like your approach takeoff.",
+    "Finish tall on the box leg with hip, knee and ankle fully extended."
+   ],
+   "image": "images/step-up-knee-drive.webp",
+   "imageAlt": "images/step-up-knee-drive-2.webp",
+   "thumb": "images/thumbs/step-up-knee-drive.webp",
+   "imageType": "photo",
+   "source": "fedb:Step-up_with_Knee_Raise"
+  },
+  {
+   "id": "straddle",
+   "name": "Straddle Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Legs wide, toes up; walk the hands forward.",
+    "Long spine first, then fold."
+   ],
+   "image": "images/straddle.webp",
+   "imageAlt": "images/straddle-2.webp",
+   "thumb": "images/thumbs/straddle.webp",
+   "imageType": "photo",
+   "source": "fedb:The_Straddle"
+  },
+  {
+   "id": "straight-arm-pulldown",
+   "name": "Straight-Arm Pulldown",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "Arms long, sweep the bar to the thighs with the lats.",
+    "Ribs down; don't let the low back arch."
+   ],
+   "image": "images/straight-arm-pulldown.webp",
+   "imageAlt": "images/straight-arm-pulldown-2.webp",
+   "thumb": "images/thumbs/straight-arm-pulldown.webp",
+   "imageType": "photo",
+   "source": "fedb:Straight-Arm_Pulldown"
+  },
+  {
+   "id": "suitcase-deadlift",
+   "name": "Suitcase Deadlift",
+   "element": "water",
+   "category": "Core",
+   "equipment": "Barbell or dumbbell, one hand",
+   "cues": [
+    "One weight at your side; don't let the torso tilt.",
+    "Hinge and stand like the weight isn't there."
+   ],
+   "image": "images/suitcase-deadlift.webp",
+   "imageAlt": "images/suitcase-deadlift-2.webp",
+   "thumb": "images/thumbs/suitcase-deadlift.webp",
+   "imageType": "photo",
+   "source": "fedb:One-Arm_Side_Deadlift"
+  },
+  {
+   "id": "superman",
+   "name": "Superman Hold",
+   "element": "water",
+   "category": "Posture",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Lift the arms and legs a few inches and squeeze the glutes.",
+    "Long neck; reach out, not up."
+   ],
+   "image": "images/superman.webp",
+   "imageAlt": "images/superman-2.webp",
+   "thumb": "images/thumbs/superman.webp",
+   "imageType": "photo",
+   "source": "fedb:Superman"
+  },
+  {
+   "id": "supine-chest-throw",
+   "name": "Supine Med-Ball Chest Throw",
+   "element": "fire",
+   "category": "Power",
+   "equipment": "Medicine ball",
+   "cues": [
+    "From your back, punch the ball straight up as high as possible.",
+    "Catch, absorb, and throw again immediately."
+   ],
+   "image": "images/supine-chest-throw.webp",
+   "imageAlt": "images/supine-chest-throw-2.webp",
+   "thumb": "images/thumbs/supine-chest-throw.webp",
+   "imageType": "photo",
+   "source": "fedb:Supine_Chest_Throw"
+  },
+  {
+   "id": "supine-one-arm-throw",
+   "name": "Supine Single-Arm Overhead Throw",
+   "element": "water",
+   "category": "Power",
+   "equipment": "Medicine ball",
+   "cues": [
+    "Arm fully back; sit up and throw like a quick attack.",
+    "Light ball, fast arm. Speed is the goal."
+   ],
+   "image": "images/supine-one-arm-throw.webp",
+   "imageAlt": "images/supine-one-arm-throw-2.webp",
+   "thumb": "images/thumbs/supine-one-arm-throw.webp",
+   "imageType": "photo",
+   "source": "fedb:Supine_One-Arm_Overhead_Throw"
+  },
+  {
+   "id": "svend-press",
+   "name": "Svend Press",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Plates",
+   "cues": [
+    "Squeeze the plates together and press straight out.",
+    "Keep crushing the plates the whole time."
+   ],
+   "image": "images/svend-press.webp",
+   "imageAlt": "images/svend-press-2.webp",
+   "thumb": "images/thumbs/svend-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Svend_Press"
+  },
+  {
+   "id": "t-bar-row",
+   "name": "T-Bar Row",
+   "element": "water",
+   "category": "Strength",
+   "equipment": "Landmine / T-bar",
+   "cues": [
+    "Chest proud, hinge locked; drive the elbows back.",
+    "Pause at the chest and lower under control."
+   ],
+   "image": "images/t-bar-row.webp",
+   "imageAlt": "images/t-bar-row-2.webp",
+   "thumb": "images/thumbs/t-bar-row.webp",
+   "imageType": "photo",
+   "source": "fedb:T-Bar_Row_with_Handle"
+  },
+  {
+   "id": "tate-press",
+   "name": "Tate Press",
+   "element": "fire",
+   "category": "Hypertrophy",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Elbows flare out; lower the dumbbells to the chest.",
+    "Extend up; pure triceps."
+   ],
+   "image": "images/tate-press.webp",
+   "imageAlt": "images/tate-press-2.webp",
+   "thumb": "images/thumbs/tate-press.webp",
+   "imageType": "photo",
+   "source": "fedb:Tate_Press"
+  },
+  {
+   "id": "thread-needle",
+   "name": "Thread the Needle",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "From all fours, slide one arm under the body and rest the shoulder down.",
+    "Then reach to the sky. The T-spine loves rotation."
+   ],
+   "desc": "On hands and knees, thread one arm under the opposite arm, rotating the upper back, then open to the ceiling.",
+   "image": "images/thread-needle.webp",
+   "thumb": "images/thumbs/thread-needle.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "tibialis-raise",
+   "name": "Tibialis Raise",
+   "element": "earth",
+   "category": "Resilience",
+   "equipment": "Wall / bodyweight",
+   "cues": [
+    "Back against the wall, heels forward; pull the toes to the shins.",
+    "Pause at the top and lower slowly. Shins are an ankle's best friend."
+   ],
+   "desc": "Lean your back on a wall with heels about a foot out. Keep the legs straight and raise the toes toward the shins, then lower under control.",
+   "image": "images/placeholders/tibialis-raise.svg",
+   "thumb": "images/placeholders/tibialis-raise.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "trap-bar-deadlift",
+   "name": "Trap Bar Deadlift",
+   "element": "earth",
+   "category": "Strength",
+   "equipment": "Trap bar",
+   "cues": [
+    "Push the floor away and let hips and knees open together.",
+    "Lats tight, chest up, stand up fast."
+   ],
+   "image": "images/trap-bar-deadlift.webp",
+   "imageAlt": "images/trap-bar-deadlift-2.webp",
+   "thumb": "images/thumbs/trap-bar-deadlift.webp",
+   "imageType": "photo",
+   "source": "fedb:Trap_Bar_Deadlift"
+  },
+  {
+   "id": "trap-bar-jump",
+   "name": "Trap Bar Jump",
+   "element": "earth",
+   "category": "Power",
+   "equipment": "Trap bar",
+   "cues": [
+    "Light load (20-40% of your trap bar max); jump as high as possible.",
+    "Land soft, reset and breathe before every rep."
+   ],
+   "desc": "Hold a lightly loaded trap bar, dip and jump straight up, then land softly in an athletic stance.",
+   "image": "images/placeholders/trap-bar-jump.svg",
+   "thumb": "images/placeholders/trap-bar-jump.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "triangle-pose",
+   "name": "Triangle Pose",
+   "element": "air",
+   "category": "Yoga",
+   "equipment": "Mat",
+   "cues": [
+    "Long legs; hinge sideways and reach the top arm to the sky.",
+    "Stack the shoulders and breathe into the side body."
+   ],
+   "desc": "Straight-legged wide stance, hinge sideways over the front leg with arms in one vertical line.",
+   "image": "images/triangle-pose.webp",
+   "thumb": "images/thumbs/triangle-pose.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "triceps-stretch",
+   "name": "Overhead Triceps Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Reach down the back, other hand gently pushes the elbow.",
+    "Stay tall; don't crunch the neck."
+   ],
+   "image": "images/triceps-stretch.webp",
+   "imageAlt": "images/triceps-stretch-2.webp",
+   "thumb": "images/thumbs/triceps-stretch.webp",
+   "imageType": "photo",
+   "source": "fedb:Triceps_Stretch"
+  },
+  {
+   "id": "tuck-jump",
+   "name": "Tuck Jump",
+   "element": "earth",
+   "category": "Plyometric",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Pull the knees to the chest at the top of each jump.",
+    "Land on the balls of the feet and rebound immediately."
+   ],
+   "image": "images/tuck-jump.webp",
+   "imageAlt": "images/tuck-jump-2.webp",
+   "thumb": "images/thumbs/tuck-jump.webp",
+   "imageType": "photo",
+   "source": "fedb:Knee_Tuck_Jump"
+  },
+  {
+   "id": "turkish-get-up",
+   "name": "Turkish Get-Up",
+   "element": "fire",
+   "category": "Shoulder health",
+   "equipment": "Kettlebell",
+   "cues": [
+    "Eyes on the bell; arm vertical at every stage.",
+    "Slow is smooth. Earn every position."
+   ],
+   "image": "images/turkish-get-up.webp",
+   "imageAlt": "images/turkish-get-up-2.webp",
+   "thumb": "images/thumbs/turkish-get-up.webp",
+   "imageType": "photo",
+   "source": "fedb:Kettlebell_Turkish_Get-Up_Lunge_style"
+  },
+  {
+   "id": "underhand-pulldown",
+   "name": "Underhand Pulldown",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "Supinated grip, elbows tight to the body.",
+    "Pull to the upper chest and squeeze for one second."
+   ],
+   "image": "images/underhand-pulldown.webp",
+   "imageAlt": "images/underhand-pulldown-2.webp",
+   "thumb": "images/thumbs/underhand-pulldown.webp",
+   "imageType": "photo",
+   "source": "fedb:Underhand_Cable_Pulldowns"
+  },
+  {
+   "id": "upper-back-stretch",
+   "name": "Upper Back Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Clasp the hands in front and round the upper back.",
+    "Push the hands away to spread the shoulder blades."
+   ],
+   "image": "images/upper-back-stretch.webp",
+   "imageAlt": "images/upper-back-stretch-2.webp",
+   "thumb": "images/thumbs/upper-back-stretch.webp",
+   "imageType": "photo",
+   "source": "fedb:Upper_Back_Stretch"
+  },
+  {
+   "id": "v-bar-pulldown",
+   "name": "V-Bar Pulldown",
+   "element": "water",
+   "category": "Hypertrophy",
+   "equipment": "Cable",
+   "cues": [
+    "Drive the elbows down and in; squeeze the lats.",
+    "Control the bar back up for three seconds."
+   ],
+   "image": "images/v-bar-pulldown.webp",
+   "imageAlt": "images/v-bar-pulldown-2.webp",
+   "thumb": "images/thumbs/v-bar-pulldown.webp",
+   "imageType": "photo",
+   "source": "fedb:V-Bar_Pulldown"
+  },
+  {
+   "id": "walking-lunge",
+   "name": "Walking Lunge",
+   "element": "earth",
+   "category": "Single-leg",
+   "equipment": "Bodyweight / Sand",
+   "cues": [
+    "Long stride, back knee hovers, torso tall.",
+    "On sand, punch each step into the ground; it fights back."
+   ],
+   "image": "images/walking-lunge.webp",
+   "imageAlt": "images/walking-lunge-2.webp",
+   "thumb": "images/thumbs/walking-lunge.webp",
+   "imageType": "photo",
+   "source": "fedb:Bodyweight_Walking_Lunge"
+  },
+  {
+   "id": "wall-slide",
+   "name": "Wall Slide",
+   "element": "air",
+   "category": "Shoulder health",
+   "equipment": "Wall",
+   "cues": [
+    "Back and forearms on the wall; slide up while keeping contact.",
+    "Ribs down; feel the lower traps and serratus."
+   ],
+   "desc": "Stand with your back to a wall, arms in a goalpost position, and slide the arms overhead while keeping contact.",
+   "image": "images/placeholders/wall-slide.svg",
+   "thumb": "images/placeholders/wall-slide.svg",
+   "imageType": "placeholder",
+   "source": "placeholder"
+  },
+  {
+   "id": "warrior-two",
+   "name": "Warrior II",
+   "element": "air",
+   "category": "Yoga",
+   "equipment": "Mat",
+   "cues": [
+    "Front knee over the ankle, arms long, gaze past the front hand.",
+    "Sink and hold. The legs burn, the mind stays calm."
+   ],
+   "desc": "Wide stance with the front knee bent and arms extended to the sides.",
+   "image": "images/warrior-two.webp",
+   "thumb": "images/thumbs/warrior-two.webp",
+   "imageType": "photo",
+   "source": "external"
+  },
+  {
+   "id": "weighted-pull-up",
+   "name": "Weighted Pull-Up",
+   "element": "water",
+   "category": "Strength",
+   "equipment": "Pull-up bar + belt",
+   "cues": [
+    "Start from a dead hang and pull the elbows down to the ribs.",
+    "Chest to the bar; control the descent in two seconds."
+   ],
+   "image": "images/weighted-pull-up.webp",
+   "imageAlt": "images/weighted-pull-up-2.webp",
+   "thumb": "images/thumbs/weighted-pull-up.webp",
+   "imageType": "photo",
+   "source": "fedb:Weighted_Pull_Ups"
+  },
+  {
+   "id": "woodchop",
+   "name": "Cable Woodchop",
+   "element": "water",
+   "category": "Core",
+   "equipment": "Cable",
+   "cues": [
+    "High to low across the body; pivot the back foot.",
+    "Arms stay long, rotation comes from hips and torso."
+   ],
+   "image": "images/woodchop.webp",
+   "imageAlt": "images/woodchop-2.webp",
+   "thumb": "images/thumbs/woodchop.webp",
+   "imageType": "photo",
+   "source": "fedb:Standing_Cable_Wood_Chop"
+  },
+  {
+   "id": "worlds-greatest-stretch",
+   "name": "World's Greatest Stretch",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Lunge, elbow to instep, then rotate the arm to the sky.",
+    "Breathe into each position; don't rush the rotation."
+   ],
+   "image": "images/worlds-greatest-stretch.webp",
+   "imageAlt": "images/worlds-greatest-stretch-2.webp",
+   "thumb": "images/thumbs/worlds-greatest-stretch.webp",
+   "imageType": "photo",
+   "source": "fedb:Worlds_Greatest_Stretch"
+  },
+  {
+   "id": "wrist-circles",
+   "name": "Wrist Circles",
+   "element": "air",
+   "category": "Mobility",
+   "equipment": "Bodyweight",
+   "cues": [
+    "Interlace the fingers and roll the wrists both ways.",
+    "Your passing platform will thank you."
+   ],
+   "image": "images/wrist-circles.webp",
+   "imageAlt": "images/wrist-circles-2.webp",
+   "thumb": "images/thumbs/wrist-circles.webp",
+   "imageType": "photo",
+   "source": "fedb:Wrist_Circles"
+  },
+  {
+   "id": "wrist-curl",
+   "name": "Barbell Wrist Curl",
+   "element": "water",
+   "category": "Resilience",
+   "equipment": "Barbell + bench",
+   "cues": [
+    "Forearms on the bench, let the bar roll to the fingertips.",
+    "Curl the wrist up and squeeze."
+   ],
+   "image": "images/wrist-curl.webp",
+   "imageAlt": "images/wrist-curl-2.webp",
+   "thumb": "images/thumbs/wrist-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Palms-Up_Barbell_Wrist_Curl_Over_A_Bench"
+  },
+  {
+   "id": "wrist-roller",
+   "name": "Wrist Roller",
+   "element": "water",
+   "category": "Resilience",
+   "equipment": "Wrist roller",
+   "cues": [
+    "Arms out front; roll the weight up and slowly back down.",
+    "Forearms built for a thousand passes."
+   ],
+   "image": "images/wrist-roller.webp",
+   "imageAlt": "images/wrist-roller-2.webp",
+   "thumb": "images/thumbs/wrist-roller.webp",
+   "imageType": "photo",
+   "source": "fedb:Wrist_Roller"
+  },
+  {
+   "id": "zottman-curl",
+   "name": "Zottman Curl",
+   "element": "water",
+   "category": "Resilience",
+   "equipment": "Dumbbells",
+   "cues": [
+    "Curl palms-up, rotate at the top, lower palms-down slowly.",
+    "Forearm and elbow insurance for the hitting arm."
+   ],
+   "image": "images/zottman-curl.webp",
+   "imageAlt": "images/zottman-curl-2.webp",
+   "thumb": "images/thumbs/zottman-curl.webp",
+   "imageType": "photo",
+   "source": "fedb:Zottman_Curl"
+  }
+ ]
+}
