@@ -8,6 +8,7 @@
  * @module
  */
 
+import type * as login from "../login.js";
 import type * as progress from "../progress.js";
 
 import type {
@@ -17,6 +18,7 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  login: typeof login;
   progress: typeof progress;
 }>;
 

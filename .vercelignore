@@ -7,3 +7,4 @@ package-lock.json
 README.md
 .env*
 .gitignore
+.convex

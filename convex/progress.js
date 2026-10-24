@@ -6,16 +6,17 @@ import { ConvexError, v } from "convex/values";
 const CODE = /^lotus(-[a-z2-7]{4}){4}$/;
 const MAX_STATE = 512 * 1024;
 
-function checkCode(code) {
+function checkCode(code, serverKey) {
+  if (!process.env.PROGRESS_SERVER_KEY || serverKey !== process.env.PROGRESS_SERVER_KEY) throw new ConvexError('Unauthorized');
   if (!CODE.test(code)) throw new ConvexError("That isn't a valid sync code."); // ConvexError text reaches the app in production too
 }
 
 const byCode = (ctx, code) => ctx.db.query("progress").withIndex("by_code", (q) => q.eq("code", code)).unique();
 
 export const get = query({
-  args: { code: v.string() },
-  handler: async (ctx, { code }) => {
-    checkCode(code);
+  args: { code: v.string(), serverKey:v.string() },
+  handler: async (ctx, { code,serverKey }) => {
+    checkCode(code,serverKey);
     const row = await byCode(ctx, code);
     return row ? { state: row.state, rev: row.rev, updatedAt: row.updatedAt } : null;
   },
@@ -24,9 +25,9 @@ export const get = query({
 // Saves only if nothing was saved since `baseRev`. Otherwise it returns the newer copy so the
 // device can merge it into its own changes and try again, instead of overwriting another device's work.
 export const save = mutation({
-  args: { code: v.string(), baseRev: v.number(), state: v.string() },
-  handler: async (ctx, { code, baseRev, state }) => {
-    checkCode(code);
+  args: { code: v.string(), baseRev: v.number(), state: v.string(), serverKey:v.string() },
+  handler: async (ctx, { code, baseRev, state,serverKey }) => {
+    checkCode(code,serverKey);
     if (state.length > MAX_STATE) throw new ConvexError("Saved progress is too large.");
     let parsed = null;
     try { parsed = JSON.parse(state); } catch { /* reported below */ }

@@ -1,0 +1,12 @@
+const crypto=require('node:crypto');
+const COOKIE='wlta-session';const AGE=60*60*24*30;
+function json(res,status,data){res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');res.status(status).json(data);}
+function sameOrigin(req){const origin=req.headers.origin;if(!origin)return false;try{return new URL(origin).host===(req.headers['x-forwarded-host']||req.headers.host);}catch{return false;}}
+function signature(value){return crypto.createHmac('sha256',process.env.SESSION_SECRET).update(value).digest('base64url');}
+function equal(a,b){const aa=Buffer.from(a),bb=Buffer.from(b);return aa.length===bb.length&&crypto.timingSafeEqual(aa,bb);}
+function authenticated(req){if(!process.env.SESSION_SECRET)return false;const cookies=Object.fromEntries((req.headers.cookie||'').split(';').map(s=>s.trim().split('=')));const token=cookies[COOKIE]||'';const [payload,sig]=token.split('.');if(!payload||!sig||!equal(signature(payload),sig))return false;try{const data=JSON.parse(Buffer.from(payload,'base64url').toString());return data.exp>Date.now()&&data.exp<Date.now()+(AGE+60)*1000;}catch{return false;}}
+function setSession(res){const payload=Buffer.from(JSON.stringify({exp:Date.now()+AGE*1000,nonce:crypto.randomBytes(16).toString('hex')})).toString('base64url');res.setHeader('Set-Cookie',`${COOKIE}=${payload}.${signature(payload)}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=${AGE}`);}
+function clearSession(res){res.setHeader('Set-Cookie',`${COOKIE}=; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=0`);}
+function passwordOK(value){if(typeof value!=='string'||value.length>256)return false;const {salt,hash}=JSON.parse(process.env.PASSWORD_HASH||'{}');if(!salt||!hash)throw new Error('Password is not configured');return equal(crypto.scryptSync(value,salt,64).toString('hex'),hash);}
+async function convex(kind,path,args){if(!process.env.CONVEX_URL||!process.env.PROGRESS_SERVER_KEY)throw new Error('Cloud progress is not configured');const res=await fetch(`${process.env.CONVEX_URL}/api/${kind}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({path,args:{...args,serverKey:process.env.PROGRESS_SERVER_KEY},format:'json'}),signal:AbortSignal.timeout(12000)});const data=await res.json();if(data.status!=='success')throw new Error('Cloud request failed');return data.value;}
+module.exports={json,sameOrigin,authenticated,setSession,clearSession,passwordOK,convex};

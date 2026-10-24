@@ -109,7 +109,7 @@
   // ------------------------------------------------------------------ cloud sync (Convex)
   // Progress is saved here first (so the app works offline), then synced to Convex under a private sync code.
   // Each save names the cloud revision it started from; if another device saved first, the two copies are merged.
-  const CONVEX_URL = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? "http://127.0.0.1:3210" : "";
+  let CONVEX_URL = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? "http://127.0.0.1:3210" : "";
   const SYNC_KEY = "wlta-sync";
   const CODE_RE = /^lotus(-[a-z2-7]{4}){4}$/;
   const sync = { code: "", rev: 0, dirty: false, off: false, at: 0 };
@@ -130,11 +130,22 @@
   function loadSync() {
     if (!CONVEX_URL) return;
     try { const s = JSON.parse(localStorage.getItem(SYNC_KEY)); if (isObj(s)) Object.assign(sync, s); } catch (e) { /* nothing saved yet */ }
+    if (window.WLTA_ACCOUNT) {
+      if (!sync.account) Object.assign(sync, { code:"lotus-aaaa-aaaa-aaaa-aaaa", rev:0, dirty:!!(Object.keys(S.checks).length || Object.keys(S.logs).length || Object.keys(S.notes).length || S.shifts.length), at:0 });
+      Object.assign(sync, {account:true,off:false});saveSync();return;
+    }
     if (!CODE_RE.test(sync.code)) sync.code = "";
     if (!sync.code && !sync.off) { Object.assign(sync, { code: newCode(), rev: 0, dirty: true }); saveSync(); }
   }
 
   async function convex(kind, path, args) { // Convex's HTTP API: POST /api/query or /api/mutation
+    if (window.WLTA_ACCOUNT) {
+      const response=await fetch('/api/progress',kind==='query'?{cache:'no-store'}:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({baseRev:args.baseRev,state:args.state})});
+      const result=await response.json();
+      if(response.status===401){location.reload();throw new Error('Please sign in again.');}
+      if(!response.ok)throw new Error(result.error||'Cloud progress is unavailable.');
+      return result;
+    }
     const ctl = new AbortController();
     const timer = setTimeout(() => ctl.abort(), 12000);
     try {
@@ -238,7 +249,7 @@
     window.addEventListener("focus", nudge);
     window.addEventListener("online", nudge);
     document.addEventListener("focusout", () => { if (refreshPending) setTimeout(refreshView, 0); });
-    setInterval(() => { if (document.visibilityState === "visible") nudge(); }, 45000);
+    setInterval(() => { if (document.visibilityState === "visible") nudge(); }, 10000);
     syncNow();
   }
 
@@ -287,6 +298,13 @@
       getSelection().selectAllChildren($("#sync-code"));
       toast("Select the code and copy it.");
     }
+  }
+  async function awaitSyncThenSignOut() {
+    await syncNow();
+    const deadline=Date.now()+15000;
+    while(syncBusy&&Date.now()<deadline)await new Promise(resolve=>setTimeout(resolve,100));
+    if(sync.dirty){toast('Your latest changes have not reached the cloud yet. Please wait for sync before signing out.');return;}
+    await window.WLTA_SIGN_OUT();
   }
 
   // ------------------------------------------------------------------ schedule with shifts
@@ -721,7 +739,7 @@
     setNav("more");
     const logs = Object.values(S.logs).reduce((a, m) => a + Object.keys(m).length, 0);
     const on = syncOn();
-    const syncCard = !CONVEX_URL ? "" : `<section class="card"><h2 class="h-brush" style="font-size:24px">Cloud sync</h2>
+    const syncCard = window.WLTA_ACCOUNT ? `<section class="card"><h2 class="h-brush" style="font-size:24px">Cloud sync</h2><p class="muted small">You’re signed in. Your checklists, logs, notes and schedule follow you across devices.</p><div class="setting-row"><div><strong>Status</strong><div class="muted small" id="sync-status" aria-live="polite">${esc(syncStatusText())}</div></div><button type="button" class="btn btn-sm" data-action="sync-now">${icon("i-cloud")}Sync now</button></div><button type="button" class="btn btn-sm btn-ghost" data-action="sign-out">Sign out</button></section>` : !CONVEX_URL ? "" : `<section class="card"><h2 class="h-brush" style="font-size:24px">Cloud sync</h2>
         <p class="muted small">Progress is saved to the cloud under a private sync code. Use the same code on your other devices to share it.</p>
         <div class="setting-row"><div><strong>Status</strong><div class="muted small" id="sync-status" aria-live="polite">${esc(syncStatusText())}</div></div>
           ${on ? `<button type="button" class="btn btn-sm" data-action="sync-now">${icon("i-cloud")}Sync now</button>` : `<button type="button" class="btn btn-sm btn-primary" data-action="sync-on">${icon("i-cloud")}Turn on</button>`}</div>
@@ -753,8 +771,8 @@
         <a class="btn" href="#/credits">See all image credits</a>
       </section>
       <section class="card"><h2 class="h-brush" style="font-size:24px">Start over</h2>
-        <p class="muted small">${esc(H.io.resetConfirm)}${on ? " Your cloud copy is kept under your current sync code, and this device gets a new one." : ""}</p>
-        <button type="button" class="btn btn-danger" data-action="reset">Erase all progress on this device</button></section>
+        <p class="muted small">${window.WLTA_ACCOUNT ? 'This clears your shared progress on every device. Export a backup first.' : esc(H.io.resetConfirm)+(on ? " Your cloud copy is kept under your current sync code, and this device gets a new one." : "")}</p>
+        <button type="button" class="btn btn-danger" data-action="reset">${window.WLTA_ACCOUNT?'Reset shared progress':'Erase all progress on this device'}</button></section>
     </div>`, { title: "More" });
   }
 
@@ -961,10 +979,10 @@
     toast(H.io.imported);
   }
   async function resetAll() {
-    const body = H.io.resetConfirm + (syncOn() ? " Your cloud copy is kept under your current sync code, and this device gets a new one." : "");
+    const body = window.WLTA_ACCOUNT ? 'This clears your shared progress on every device. Export a backup first.' : H.io.resetConfirm + (syncOn() ? " Your cloud copy is kept under your current sync code, and this device gets a new one." : "");
     const ok = await confirmModal({ title: "Erase everything?", body, ok: "Erase all progress", danger: true });
     if (!ok) return;
-    if (syncOn()) Object.assign(sync, { code: newCode(), rev: 0 });
+    if (syncOn() && !window.WLTA_ACCOUNT) Object.assign(sync, { code: newCode(), rev: 0 });
     S = blankState(); calCache = null; openLogs.clear(); save(true);
     toast(H.io.resetDone);
     location.hash = "#/today";
@@ -994,6 +1012,7 @@
       else if (a === "import") $("#import-file").click();
       else if (a === "reset") resetAll();
       else if (a === "sync-now") syncNow();
+      else if (a === "sign-out") { awaitSyncThenSignOut(); }
       else if (a === "copy-code") copyCode();
       else if (a === "sync-off") setSyncOff(true);
       else if (a === "sync-on") setSyncOff(false);
@@ -1061,6 +1080,8 @@
   }
 
   async function init() {
+    await window.WLTA_READY;
+    if (window.WLTA_ACCOUNT) CONVEX_URL = "/api";
     const msg = $("#loading-msg");
     if (msg) msg.textContent = pick(LOADING);
     const p = new URLSearchParams(location.search).get("today");

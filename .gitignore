@@ -12,3 +12,12 @@ tools/.cache/
 .vercel
 .DS_Store
 Thumbs.db
+
+.vercel
+.env*
+
+# Local test scripts that contain the site password: never commit them (this repo is public)
+tools/configure-cloud.cjs
+tools/cloud-test.cjs
+tools/debug-live.cjs
+tools/live-check.cjs
