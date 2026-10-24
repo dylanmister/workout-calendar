@@ -39,7 +39,7 @@
   const fmtMed = (iso) => fmt(iso, { month: "short", day: "numeric", year: "numeric" });
 
   // ------------------------------------------------------------------ state
-  const blankState = () => ({ v: 1, checks: {}, done: {}, logs: {}, notes: {}, shifts: [], settings: { unit: "lb" } });
+  const blankState = () => ({ v: 1, checks: {}, done: {}, logs: {}, notes: {}, supps: {}, shifts: [], settings: { unit: "lb" } });
   const isObj = (x) => x && typeof x === "object" && !Array.isArray(x);
   const total = () => D.days.length;
 
@@ -49,6 +49,7 @@
     const out = blankState();
     const day = (k) => { const n = Number(k); return Number.isInteger(n) && n >= 1 && n <= total() ? n : 0; };
     const KEY = /^\d{1,2}\.\d{1,2}$/;
+    const DATE = /^\d{4}-\d{2}-\d{2}$/;
     for (const [d, m] of Object.entries(isObj(o.checks) ? o.checks : {})) {
       const n = day(d);
       if (!n || !isObj(m)) continue;
@@ -72,6 +73,11 @@
     for (const [d, v] of Object.entries(isObj(o.notes) ? o.notes : {})) {
       const n = day(d);
       if (n && typeof v === "string" && v.trim()) out.notes[n] = v.slice(0, 4000);
+    }
+    for (const [iso, v] of Object.entries(isObj(o.supps) ? o.supps : {})) { // keyed by calendar date: supplements are daily, so a pushed workout doesn't carry them along
+      if (!v || !DATE.test(iso)) continue;
+      const dn = toNum(iso);
+      if (toISO(dn) === iso && dn >= startNum() && dn < startNum() + total() + 400) out.supps[iso] = 1;
     }
     if (Array.isArray(o.shifts)) out.shifts = o.shifts.map(Number).filter((n) => Number.isInteger(n) && n >= 1 && n <= total()).slice(0, 400);
     if (isObj(o.settings) && (o.settings.unit === "kg" || o.settings.unit === "lb")) out.settings.unit = o.settings.unit;
@@ -131,7 +137,7 @@
     if (!CONVEX_URL) return;
     try { const s = JSON.parse(localStorage.getItem(SYNC_KEY)); if (isObj(s)) Object.assign(sync, s); } catch (e) { /* nothing saved yet */ }
     if (window.WLTA_ACCOUNT) {
-      if (!sync.account) Object.assign(sync, { code:"lotus-aaaa-aaaa-aaaa-aaaa", rev:0, dirty:!!(Object.keys(S.checks).length || Object.keys(S.logs).length || Object.keys(S.notes).length || S.shifts.length), at:0 });
+      if (!sync.account) Object.assign(sync, { code:"lotus-aaaa-aaaa-aaaa-aaaa", rev:0, dirty:!!(Object.keys(S.checks).length || Object.keys(S.logs).length || Object.keys(S.notes).length || Object.keys(S.supps).length || S.shifts.length), at:0 });
       Object.assign(sync, {account:true,off:false});saveSync();return;
     }
     if (!CODE_RE.test(sync.code)) sync.code = "";
@@ -167,6 +173,7 @@
       for (const [k, rec] of Object.entries(items)) if (!day[k] || rec.t > day[k].t) day[k] = rec;
     }
     for (const [n, text] of Object.entries(theirs.notes)) m.notes[n] ||= text;
+    for (const iso of Object.keys(theirs.supps)) m.supps[iso] = 1;
     for (const [n, at] of Object.entries(theirs.done)) m.done[n] ||= at;
     if (theirs.shifts.length > m.shifts.length) m.shifts = [...theirs.shifts];
     return m;
@@ -510,6 +517,13 @@
     const day = D.days[n - 1];
     return isDone(n) ? `<div class="mastered-banner" id="mastered">You have mastered ${ELEMENTS[day.element]} today.</div>` : `<div id="mastered"></div>`;
   }
+  function suppsHTML(iso) { // its own yes/no, separate from the workout checklist, so it never changes a day's mastery
+    const on = !!S.supps[iso];
+    return `<section class="card supplements"><h2 class="eyebrow">Supplement checklist</h2>
+      <button type="button" class="supp-toggle" data-action="supps" data-iso="${iso}" aria-pressed="${on}">
+        <span class="supp-box" aria-hidden="true">${icon("i-check")}</span><span class="supp-label">Took supplements</span>
+        <span class="supp-state" aria-hidden="true">${on ? "Yes" : "No"}</span></button></section>`;
+  }
 
   // ------------------------------------------------------------------ views
   function renderDay(n, opts = {}) {
@@ -558,6 +572,7 @@
         ${day.blocks.map((b, bi) => blockHTML(n, b, bi)).join("")}
         <section class="card notes" style="margin-top:14px"><label class="eyebrow" for="notes-${n}">Session notes</label>
           <textarea id="notes-${n}" data-action="notes" data-n="${n}" placeholder="${esc(H.empty.notes)}">${esc(S.notes[n] || "")}</textarea></section>
+        ${suppsHTML(iso)}
         <nav class="day-nav" aria-label="Other days">
           ${n > 1 ? `<a class="btn" href="#/day/${n - 1}">${icon("i-left")}Day ${n - 1}</a>` : "<span></span>"}
           ${n < total() ? `<a class="btn" href="#/day/${n + 1}">Day ${n + 1}${icon("i-right")}</a>` : "<span></span>"}
@@ -578,7 +593,7 @@
         <div class="btn-row" style="justify-content:center"><a class="btn btn-primary" href="#/day/${next}">Preview Day ${next}</a>
         ${S.shifts.length ? `<button type="button" class="btn" data-action="undo">${icon("i-undo")}Undo last shift</button>` : ""}</div>` : ""}
       <p class="shift-note" style="margin-top:14px">Schedule shifted <strong>+${S.shifts.length}</strong> · ends ${esc(fmtMed(toISO(endNum())))}</p>
-    </section></div>`, { el: "air", title: "Rest stop" });
+    </section>${suppsHTML(iso)}</div>`, { el: "air", title: "Rest stop" });
     lastRenderedToday = todayISO();
   }
 
@@ -887,6 +902,16 @@
     if (now && !was) celebrate(n);
   }
 
+  function toggleSupps(iso, btn) {
+    if (S.supps[iso]) delete S.supps[iso]; else S.supps[iso] = 1;
+    save();
+    const on = !!S.supps[iso];
+    btn.setAttribute("aria-pressed", String(on));
+    $(".supp-state", btn).textContent = on ? "Yes" : "No";
+    const box = $(".supp-box", btn);
+    box.classList.remove("pop"); void box.offsetWidth; if (on) box.classList.add("pop");
+  }
+
   function pushBack(n) {
     if (isDone(n)) { toast("That day is already mastered. No need to push it."); return; }
     S.shifts.push(n);
@@ -999,6 +1024,7 @@
       }
       const a = t.dataset.action;
       if (a === "check") { const main = t.closest(".day-main"); toggleCheck(Number(main.dataset.n), t.closest(".ex").dataset.key, t); }
+      else if (a === "supps") toggleSupps(t.dataset.iso, t);
       else if (a === "img") openLightbox(t.dataset.id);
       else if (a === "log") toggleLog(t);
       else if (a === "fill-last") fillLast(t.closest(".log"));
