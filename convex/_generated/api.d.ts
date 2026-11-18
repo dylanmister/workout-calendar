@@ -9,6 +9,7 @@
  */
 
 import type * as login from "../login.js";
+import type * as photos from "../photos.js";
 import type * as progress from "../progress.js";
 
 import type {
@@ -19,6 +20,7 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   login: typeof login;
+  photos: typeof photos;
   progress: typeof progress;
 }>;
 

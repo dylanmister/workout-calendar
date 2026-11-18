@@ -189,7 +189,7 @@
   }
   function refreshView() { // show another device's changes without yanking the page away mid-edit
     const a = document.activeElement;
-    if ((a && a.matches("#view input, #view textarea")) || !$("#lightbox").hidden || !$("#celebrate").hidden || !$("#modal").hidden) { refreshPending = true; return; }
+    if ((a && a.matches("#view input, #view textarea, #view select")) || !$("#lightbox").hidden || !$("#celebrate").hidden || !$("#modal").hidden || !$("#camera").hidden) { refreshPending = true; return; }
     refreshPending = false;
     const y = scrollY;
     route();
@@ -376,6 +376,410 @@
     return parts.join(" · ") + (hasW ? ` ${rec.u}` : "");
   }
 
+  // ------------------------------------------------------------------ progress photos
+  // One photo per calendar day (like supplements, it stays on its date if a workout is pushed). Photos live in
+  // Convex file storage behind the signed-in /api/photos endpoints, never in the progress JSON or browser storage.
+  // Each image is resized in the browser first, which also strips location data and other metadata.
+  const PHOTO_FULL = 1600, PHOTO_THUMB = 640, PHOTO_MAX_BYTES = 2.2e6;
+  const photos = { on: false, ready: false, error: "", at: 0, loading: null, index: new Map(), busy: new Map(), failed: new Map(), local: new Map(), refocus: null };
+  let booted = false, compareMode = "side";
+
+  const validPhoto = (p) => isObj(p) && /^\d{4}-\d{2}-\d{2}$/.test(p.date) && Number.isFinite(p.v) && p.w > 0 && p.h > 0;
+  const photoDates = () => [...photos.index.keys()].sort();
+  function photoSrc(iso, size) {
+    const p = photos.index.get(iso);
+    if (!p) return "";
+    const local = photos.local.get(iso); // the copy just uploaded from this device: no need to download it again
+    return local && local.v === p.v ? local.url : `/api/photo?date=${iso}&size=${size}&v=${p.v}`;
+  }
+  const photoRatio = (p) => Math.min(1.6, Math.max(0.56, p.w / p.h)).toFixed(4);
+  const thumbWidth = (p) => Math.round(p.w * Math.min(1, PHOTO_THUMB / Math.max(p.w, p.h)));
+  const photoTilt = (iso) => ((toNum(iso) * 37) % 7 - 3) * 0.55; // a steady, slightly hand-placed angle per date
+  function photoDayLabel(iso) {
+    const e = entryAt(toNum(iso));
+    if (!e) return "";
+    return e.type === "gap" ? "Rest day" : `Day ${e.n} · ${ELEMENTS[D.days[e.n - 1].element]}`;
+  }
+  const dropLocal = (iso) => { const l = photos.local.get(iso); if (l) { URL.revokeObjectURL(l.url); photos.local.delete(iso); } };
+  const offline = (e) => e instanceof TypeError; // fetch() rejects with TypeError when the network is unreachable
+
+  async function loadPhotos(force = false, maxAge = 20000) {
+    if (!photos.on) return;
+    if (photos.loading) return photos.loading;
+    if (!force && Date.now() - photos.at < maxAge) return; // also paces retries while offline
+    photos.at = Date.now();
+    photos.loading = (async () => {
+      try {
+        const r = await fetch("/api/photos", { cache: "no-store" });
+        if (r.status === 401) { location.reload(); return; }
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok || !Array.isArray(j.photos)) throw new Error(j.error || "Progress photos are unavailable right now.");
+        const next = new Map(j.photos.filter(validPhoto).map((p) => [p.date, { v: p.v, w: p.w, h: p.h }]));
+        const changed = !photos.ready || next.size !== photos.index.size || [...next].some(([d, p]) => !photos.index.has(d) || photos.index.get(d).v !== p.v);
+        for (const iso of photos.local.keys()) if (!next.has(iso) || next.get(iso).v !== photos.local.get(iso).v) dropLocal(iso);
+        Object.assign(photos, { index: next, ready: true, error: "" });
+        if (changed) photosChanged();
+      } catch (e) {
+        photos.error = offline(e) ? "You're offline. Photos will load when you reconnect." : e.message;
+        if (!photos.ready) photosChanged();
+      } finally { photos.loading = null; }
+    })();
+    return photos.loading;
+  }
+  function photosChanged() {
+    if (!booted) return;
+    updatePhotoCards();
+    const name = location.hash.replace(/^#\/?/, "").split("/")[0];
+    if (name === "photos" || name === "progress") refreshView();
+  }
+  function updatePhotoCards() { // refresh just the photo section, keeping its place, its reveal state and keyboard focus
+    for (const card of $$(".photo-card")) {
+      const a = document.activeElement, iso = card.dataset.iso;
+      const waiting = photos.refocus && photos.refocus.iso === iso && (!a || a === document.body) ? photos.refocus.action : "";
+      const focused = card.contains(a) ? a.dataset.action || "photo-take" : waiting;
+      card.innerHTML = photoCardInner(iso);
+      if (!focused) continue;
+      const again = $(`[data-action="${focused}"]`, card) || $("[data-action=photo-take]", card);
+      if (again && !again.disabled) { again.focus({ preventScroll: true }); photos.refocus = null; }
+      else photos.refocus = { iso, action: focused }; // buttons are paused while a photo saves; return focus afterwards
+    }
+  }
+
+  function photoCardInner(iso) {
+    const p = photos.index.get(iso), busy = photos.busy.get(iso), failed = photos.failed.get(iso);
+    const label = photoDayLabel(iso), long = fmtLong(iso);
+    const caption = (tag) => `<${tag} class="polaroid-cap"><span class="cap-date">${esc(fmt(iso, { weekday: "short", month: "short", day: "numeric", year: "numeric" }))}</span>${label ? `<span class="cap-day">${esc(label)}</span>` : ""}</${tag}>`;
+    let frame, intro;
+    if (busy || failed) {
+      const pr = busy || failed;
+      frame = `<figure class="polaroid ${failed ? "is-failed" : "is-busy"}"><div class="polaroid-img" style="--ar:${photoRatio(pr)}">
+        <img src="${pr.preview}" alt="New progress photo for ${esc(long)}"><span class="developing">${failed ? "Not saved yet" : "Developing…"}</span></div>${caption("figcaption")}</figure>`;
+      intro = failed ? "This photo hasn't reached your cloud account yet." : "Saving your photo to the training journal…";
+    } else if (p) {
+      frame = `<figure class="polaroid"><button type="button" class="polaroid-img" data-action="photo-view" data-iso="${iso}" style="--ar:${photoRatio(p)}" aria-label="Enlarge the progress photo for ${esc(long)}">
+        <img src="${photoSrc(iso, "full")}" srcset="${photoSrc(iso, "thumb")} ${thumbWidth(p)}w, ${photoSrc(iso, "full")} ${p.w}w" sizes="(max-width: 560px) 80vw, 340px" alt="Progress photo for ${esc(long)}" width="${p.w}" height="${p.h}" decoding="async"></button>${caption("figcaption")}</figure>`;
+      intro = "Saved to your training journal. Taking or uploading another photo replaces this one.";
+    } else {
+      const msg = !photos.on ? "Photos save to your cloud account" : photos.ready ? "No photo yet for this day" : photos.error ? "Photos couldn't load" : "Loading photos…";
+      frame = `<figure class="polaroid is-empty"><div class="polaroid-img">${icon("i-camera", "empty-cam")}<span class="empty-msg">${msg}</span></div>${caption("figcaption")}</figure>`;
+      intro = !photos.on ? "Progress photos are stored with your signed-in account. Open the hosted site and sign in to take and save them."
+        : photos.error && !photos.ready ? esc(photos.error)
+        : "Snap one photo a day to see your progress over time. You can replace it whenever you like.";
+    }
+    const off = !photos.on || !photos.ready || busy ? " disabled" : "";
+    return `<div class="photo-head"><h2 class="eyebrow" id="photo-title">Daily Progress Photo</h2><span class="photo-stamp">${esc(fmt(iso, { month: "short", day: "numeric" }))}</span></div>
+      <div class="photo-body">${frame}
+        <div class="photo-side">
+          <p class="photo-intro">${intro}</p>
+          <div class="photo-actions">
+            <button type="button" class="btn btn-primary" data-action="photo-take" data-iso="${iso}"${off}>${icon("i-camera")}Take Photo</button>
+            <button type="button" class="btn" data-action="photo-upload" data-iso="${iso}"${off}>${icon("i-image")}Upload Photo</button>
+          </div>
+          ${failed ? `<div class="btn-row photo-retry"><button type="button" class="btn btn-sm" data-action="photo-retry" data-iso="${iso}">${icon("i-upload")}Retry saving</button><button type="button" class="btn btn-sm btn-ghost" data-action="photo-discard" data-iso="${iso}">Discard</button></div>` : ""}
+          ${photos.on && photos.error && !photos.ready ? `<button type="button" class="btn btn-sm" data-action="photos-reload">Try again</button>` : ""}
+          <div class="photo-links">${p && !busy ? `<button type="button" class="btn btn-sm btn-ghost" data-action="photo-remove" data-iso="${iso}">Remove photo</button>` : ""}
+            ${photos.on ? `<a class="photo-gallery-link" href="#/photos">${icon("i-grid")}View all progress photos</a>` : ""}</div>
+        </div></div>`;
+  }
+  const photoCardHTML = (iso) => `<section class="card photo-card" data-iso="${iso}" aria-labelledby="photo-title">${photoCardInner(iso)}</section>`;
+
+  // --- adding a photo: decode → resize → confirm a replacement → upload
+  function pickPhoto(iso, capture = false) {
+    const input = $(capture ? "#photo-capture" : "#photo-file");
+    input.dataset.iso = iso;
+    input.value = "";
+    input.click();
+  }
+  function onPhotoFile(e) {
+    const input = e.target, file = input.files && input.files[0], iso = input.dataset.iso;
+    input.value = "";
+    if (file && iso) addPhoto(iso, file);
+  }
+  async function addPhoto(iso, source) {
+    if (photos.busy.has(iso)) return;
+    let prepared;
+    try { prepared = await preparePhoto(source); } catch (e) { toast(e.message || "That photo couldn't be read. Try a JPEG or PNG."); return; }
+    if (photos.index.has(iso)) {
+      const ok = await confirmModal({ title: "Replace this photo?", body: `${fmtLong(iso)} already has a progress photo. The new one will replace it.`, ok: "Replace photo" });
+      if (!ok) { URL.revokeObjectURL(prepared.preview); return; }
+    }
+    sendPhoto(iso, prepared);
+  }
+  async function preparePhoto(source) {
+    let img = source, url = "";
+    if (source instanceof Blob) {
+      if (source.type && !source.type.startsWith("image/")) throw new Error("That file isn't a photo. Choose a JPEG, PNG or HEIC image.");
+      if (source.size > 60 * 1024 * 1024) throw new Error("That photo is too large. Choose one under 60 MB.");
+      url = URL.createObjectURL(source);
+      img = new Image();
+      img.src = url;
+      try { await img.decode(); } catch (e) { URL.revokeObjectURL(url); throw new Error("This browser can't open that photo. Try a JPEG or PNG."); }
+    }
+    try {
+      const sw = img.naturalWidth || img.width, sh = img.naturalHeight || img.height;
+      if (!sw || !sh) throw new Error("That photo appears to be empty.");
+      const full = drawScaled(img, sw, sh, PHOTO_FULL); // drawing an <img> applies its EXIF rotation, so phone photos stay upright
+      const thumb = drawScaled(full, full.width, full.height, PHOTO_THUMB);
+      let fullBlob = await jpegBlob(full, 0.86);
+      if (fullBlob.size > PHOTO_MAX_BYTES) fullBlob = await jpegBlob(full, 0.7);
+      if (fullBlob.size > PHOTO_MAX_BYTES) throw new Error("That photo is too detailed to save. Try a different one.");
+      const thumbBlob = await jpegBlob(thumb, 0.8);
+      return { full: fullBlob, thumb: thumbBlob, w: full.width, h: full.height, preview: URL.createObjectURL(fullBlob) };
+    } finally { if (url) URL.revokeObjectURL(url); }
+  }
+  function drawScaled(src, sw, sh, max) {
+    const k = Math.min(1, max / Math.max(sw, sh)), w = Math.max(1, Math.round(sw * k)), h = Math.max(1, Math.round(sh * k));
+    const c = document.createElement("canvas");
+    c.width = w; c.height = h;
+    const g = c.getContext("2d");
+    g.fillStyle = "#fbf4e4"; // transparent areas print onto paper instead of turning black
+    g.fillRect(0, 0, w, h);
+    g.imageSmoothingEnabled = true;
+    g.imageSmoothingQuality = "high";
+    g.drawImage(src, 0, 0, w, h);
+    return c;
+  }
+  const jpegBlob = (c, q) => new Promise((ok, bad) => c.toBlob((b) => (b ? ok(b) : bad(new Error("That photo couldn't be processed."))), "image/jpeg", q));
+  const toBase64 = (blob) => new Promise((ok, bad) => { const r = new FileReader(); r.onload = () => ok(String(r.result).split(",")[1] || ""); r.onerror = () => bad(r.error); r.readAsDataURL(blob); });
+
+  async function sendPhoto(iso, prepared) {
+    const before = photos.failed.get(iso);
+    if (before && before !== prepared) URL.revokeObjectURL(before.preview);
+    photos.failed.delete(iso);
+    photos.busy.set(iso, prepared);
+    updatePhotoCards();
+    try {
+      const body = JSON.stringify({ date: iso, full: await toBase64(prepared.full), thumb: await toBase64(prepared.thumb), w: prepared.w, h: prepared.h });
+      const r = await fetch("/api/photos", { method: "POST", headers: { "Content-Type": "application/json" }, body });
+      if (r.status === 401) { location.reload(); return; }
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || !validPhoto(j)) throw new Error(j.error || "The photo couldn't be saved.");
+      dropLocal(iso);
+      photos.index.set(iso, { v: j.v, w: j.w, h: j.h });
+      photos.local.set(iso, { v: j.v, url: prepared.preview });
+      toast("Photo saved to your training journal.");
+      const name = location.hash.replace(/^#\/?/, "").split("/")[0];
+      if (name === "photos" || name === "progress") refreshView();
+    } catch (e) {
+      photos.failed.set(iso, prepared);
+      toast(offline(e) ? "You're offline, so the photo wasn't saved. Tap Retry saving when you're back online." : `${e.message} Tap Retry saving to try again.`);
+    } finally {
+      photos.busy.delete(iso);
+      updatePhotoCards();
+    }
+  }
+  function discardFailed(iso) {
+    const f = photos.failed.get(iso);
+    if (f) URL.revokeObjectURL(f.preview);
+    photos.failed.delete(iso);
+    updatePhotoCards();
+  }
+  async function removePhoto(iso) {
+    const ok = await confirmModal({ title: "Remove this photo?", body: `The progress photo for ${fmtLong(iso)} will be deleted from every device. This can't be undone.`, ok: "Remove photo", danger: true });
+    if (!ok) return;
+    try {
+      const r = await fetch(`/api/photos?date=${iso}`, { method: "DELETE" });
+      if (r.status === 401) { location.reload(); return; }
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(j.error || "The photo couldn't be removed.");
+      photos.index.delete(iso);
+      dropLocal(iso);
+      updatePhotoCards();
+      toast("Photo removed.");
+    } catch (e) { toast(offline(e) ? "You're offline. Try again when you're connected." : e.message); }
+  }
+
+  // --- camera: a live preview with a self-timer, so a phone can be propped up for a full-body shot.
+  // The browser asks for camera permission only when Take Photo is pressed. Without camera support it falls
+  // back to the phone's own camera app through a file input.
+  const cam = { iso: "", stream: null, facing: "user", timer: 0, count: 0, tick: null, still: null, paused: false, gen: 0 };
+  const TIMERS = [0, 3, 10];
+  function openCamera(iso) {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) { pickPhoto(iso, true); return; }
+    try { const f = localStorage.getItem("wlta-camera"); if (f === "user" || f === "environment") cam.facing = f; } catch (e) { /* default camera */ }
+    const ov = $("#camera");
+    Object.assign(cam, { iso, still: null, count: 0 });
+    ov.innerHTML = `<div class="camera-card">
+      <div class="cam-top"><h2 id="cam-title">Progress photo <span>${esc(fmt(iso, { weekday: "short", month: "short", day: "numeric" }))}</span></h2>
+        <button type="button" class="close-btn" data-action="cam-close" aria-label="Close camera">${icon("i-close")}</button></div>
+      <div class="cam-stage">
+        <video class="cam-video" playsinline muted autoplay></video>
+        <canvas class="cam-still" hidden></canvas>
+        <div class="cam-guide" aria-hidden="true"></div>
+        <div class="cam-count" aria-live="assertive"></div>
+        <div class="cam-msg" role="status"></div>
+        <div class="cam-flash" aria-hidden="true"></div>
+      </div>
+      <div class="cam-controls" data-step="live">
+        <button type="button" class="cam-ctl" data-action="cam-timer" aria-label="Self-timer: off">${icon("i-clock")}<span>Timer off</span></button>
+        <button type="button" class="cam-shutter" data-action="cam-shutter" aria-label="Take photo" disabled><span></span></button>
+        <button type="button" class="cam-ctl" data-action="cam-flip" aria-label="Switch camera" hidden>${icon("i-flip")}<span>Flip</span></button>
+      </div>
+      <div class="cam-controls cam-review" data-step="review" hidden>
+        <button type="button" class="btn" data-action="cam-retake">${icon("i-undo")}Retake</button>
+        <button type="button" class="btn btn-primary" data-action="cam-use">${icon("i-check")}Use photo</button>
+      </div></div>`;
+    setTimerLabel();
+    ov.hidden = false;
+    document.body.style.overflow = "hidden";
+    $("[data-action=cam-close]", ov).focus();
+    startCamera();
+  }
+  function camMsg(text, problem = false) {
+    const el = $("#camera .cam-msg");
+    if (!el) return;
+    el.innerHTML = text ? `<p>${esc(text)}</p>${problem ? `<div class="btn-row"><button type="button" class="btn btn-sm" data-action="cam-restart">${icon("i-undo")}Try again</button>
+      <button type="button" class="btn btn-sm btn-primary" data-action="cam-upload">${icon("i-image")}Upload a photo instead</button></div>` : ""}` : "";
+    el.classList.toggle("show", !!text);
+  }
+  async function startCamera() {
+    const ov = $("#camera"), video = $(".cam-video", ov), shutterBtn = $("[data-action=cam-shutter]", ov);
+    const gen = ++cam.gen; // only the latest request may keep its stream (e.g. after tapping Flip twice)
+    stopStream();
+    shutterBtn.disabled = true;
+    camMsg("Starting the camera… If your browser asks, allow camera access.");
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: { ideal: cam.facing }, width: { ideal: 1920 }, height: { ideal: 1080 } } });
+      if (gen !== cam.gen || ov.hidden || !video.isConnected || document.hidden) {
+        stream.getTracks().forEach((t) => t.stop());
+        if (gen === cam.gen && document.hidden && !ov.hidden) cam.paused = true; // resume when the app comes back
+        return;
+      }
+      cam.stream = stream;
+      video.srcObject = stream;
+      await video.play().catch(() => {});
+      const track = stream.getVideoTracks()[0];
+      video.classList.toggle("mirror", (track.getSettings().facingMode || "user") !== "environment"); // a selfie preview reads like a mirror
+      track.addEventListener("ended", () => { if (cam.stream === stream) camMsg("The camera stopped. It may have been taken by another app.", true); });
+      camMsg("");
+      shutterBtn.disabled = false;
+      const devices = await navigator.mediaDevices.enumerateDevices().catch(() => []);
+      const flip = $("[data-action=cam-flip]", ov);
+      if (flip) flip.hidden = devices.filter((d) => d.kind === "videoinput").length < 2;
+    } catch (e) {
+      if (gen !== cam.gen) return;
+      const n = e && e.name;
+      camMsg(n === "NotAllowedError" || n === "SecurityError" ? "Camera access is blocked. To take photos here, allow camera access for this site in your browser's settings and try again, or upload a photo instead."
+        : n === "NotFoundError" || n === "OverconstrainedError" ? "No camera was found on this device. You can upload a photo instead."
+          : n === "NotReadableError" || n === "AbortError" ? "The camera is busy in another app. Close that app and try again."
+            : "The camera couldn't start. Try again, or upload a photo instead.", true);
+    }
+  }
+  function stopStream() { if (cam.stream) { cam.stream.getTracks().forEach((t) => t.stop()); cam.stream = null; } }
+  function closeCamera() {
+    const ov = $("#camera");
+    if (!ov || ov.hidden) return;
+    cam.gen++; // a camera request still in flight will stop its own stream
+    cam.paused = false;
+    stopCountdown();
+    stopStream();
+    ov.hidden = true;
+    ov.innerHTML = "";
+    document.body.style.overflow = "";
+  }
+  function setTimerLabel() {
+    const b = $("#camera [data-action=cam-timer]");
+    if (!b) return;
+    b.lastChild.textContent = cam.timer ? `${cam.timer}s timer` : "Timer off";
+    b.setAttribute("aria-label", `Self-timer: ${cam.timer ? `${cam.timer} seconds` : "off"}`);
+    b.setAttribute("aria-pressed", String(!!cam.timer));
+  }
+  function stopCountdown() {
+    clearInterval(cam.tick);
+    cam.tick = null;
+    const c = $("#camera .cam-count");
+    if (c) c.textContent = "";
+    const s = $("#camera [data-action=cam-shutter]");
+    if (s) { s.setAttribute("aria-label", "Take photo"); s.classList.remove("counting"); }
+  }
+  function shutter() {
+    if (cam.tick) { stopCountdown(); return; } // a second press cancels the timer
+    if (!cam.timer) { snap(); return; }
+    const c = $("#camera .cam-count"), s = $("#camera [data-action=cam-shutter]");
+    cam.count = cam.timer;
+    c.textContent = cam.count;
+    s.setAttribute("aria-label", "Cancel timer");
+    s.classList.add("counting");
+    cam.tick = setInterval(() => {
+      cam.count--;
+      if (cam.count > 0) c.textContent = cam.count; else { stopCountdown(); snap(); }
+    }, 1000);
+  }
+  function snap() {
+    const ov = $("#camera"), video = $(".cam-video", ov), w = video.videoWidth, h = video.videoHeight;
+    if (!w || !h || !cam.stream) return;
+    const c = $(".cam-still", ov);
+    c.width = w; c.height = h;
+    const g = c.getContext("2d");
+    if (video.classList.contains("mirror")) { g.translate(w, 0); g.scale(-1, 1); } // save exactly what the preview showed
+    g.drawImage(video, 0, 0, w, h);
+    cam.still = c;
+    video.pause();
+    video.hidden = true;
+    c.hidden = false;
+    const flash = $(".cam-flash", ov);
+    flash.classList.remove("go"); void flash.offsetWidth; flash.classList.add("go");
+    $("[data-step=live]", ov).hidden = true;
+    $("[data-step=review]", ov).hidden = false;
+    $("[data-action=cam-use]", ov).focus();
+  }
+  function retake() {
+    const ov = $("#camera"), video = $(".cam-video", ov);
+    cam.still = null;
+    $(".cam-still", ov).hidden = true;
+    video.hidden = false;
+    if (cam.stream) video.play().catch(() => {}); else startCamera(); // the camera was released while the app was in the background
+    $("[data-step=review]", ov).hidden = true;
+    $("[data-step=live]", ov).hidden = false;
+    $("[data-action=cam-shutter]", ov).focus();
+  }
+  function useStill() {
+    const iso = cam.iso, still = cam.still;
+    closeCamera();
+    if (still) addPhoto(iso, still);
+  }
+  function camUpload() { const iso = cam.iso; closeCamera(); pickPhoto(iso); }
+
+  // --- photo viewer (shares the lightbox with exercise images)
+  function openPhoto(iso) {
+    const dates = photoDates(), i = dates.indexOf(iso);
+    if (i < 0) return;
+    const p = photos.index.get(iso), label = photoDayLabel(iso), lb = $("#lightbox");
+    const wasOpen = !lb.hidden && lb.dataset.mode === "photo";
+    const onThatDay = !!$(`#view .photo-card[data-iso="${iso}"]`);
+    const first = dates[0], last = dates.at(-1);
+    const compare = iso === first ? `${first}/${last}` : `${first}/${iso}`;
+    clearInterval(lbTimer);
+    lb.dataset.mode = "photo";
+    lb.dataset.iso = iso;
+    lb.innerHTML = `<div class="lightbox-card photo-viewer">
+      <button type="button" class="close-btn" data-action="close-lightbox" aria-label="Close">${icon("i-close")}</button>
+      <div class="pv-media" style="--ar:${p.w}/${p.h}">
+        <img class="pv-low" src="${photoSrc(iso, "thumb")}" alt="">
+        <img class="pv-full" src="${photoSrc(iso, "full")}" alt="Progress photo for ${esc(fmtLong(iso))}">
+      </div>
+      <div class="pv-bar">
+        <button type="button" class="icon-btn" data-action="photo-prev" aria-label="Previous photo"${i ? "" : " disabled"}>${icon("i-left")}</button>
+        <div class="pv-caption"><h2 id="lb-title">${esc(fmtLong(iso))}</h2><p>${label ? `${esc(label)} · ` : ""}Photo ${i + 1} of ${dates.length}</p></div>
+        <button type="button" class="icon-btn" data-action="photo-next" aria-label="Next photo"${i < dates.length - 1 ? "" : " disabled"}>${icon("i-right")}</button>
+      </div>
+      ${!onThatDay && entryAt(toNum(iso)) || dates.length > 1 ? `<div class="pv-actions btn-row">
+        ${!onThatDay && entryAt(toNum(iso)) ? `<a class="btn btn-sm" href="#/date/${iso}">${icon("i-calendar")}Open this day</a>` : ""}
+        ${dates.length > 1 ? `<a class="btn btn-sm" href="#/photos/compare/${compare}">${icon("i-compare")}Compare</a>` : ""}</div>` : ""}
+    </div>`;
+    lb.hidden = false;
+    document.body.style.overflow = "hidden";
+    const keep = wasOpen && document.activeElement && document.activeElement.dataset.action;
+    const target = keep && $(`[data-action="${keep}"]:not([disabled])`, lb);
+    (target || $(".close-btn", lb)).focus();
+  }
+  function stepPhoto(dir) {
+    const lb = $("#lightbox");
+    if (lb.hidden || lb.dataset.mode !== "photo") return;
+    const dates = photoDates(), i = dates.indexOf(lb.dataset.iso) + dir;
+    if (i >= 0 && i < dates.length) openPhoto(dates[i]);
+  }
+
   // ------------------------------------------------------------------ toast & modal
   let toastTimer = null;
   function toast(msg, opt = {}) {
@@ -544,6 +948,7 @@
       <aside class="day-side">
         <section class="banner" data-el="${el}" aria-labelledby="day-title">
           <div class="scene" aria-hidden="true">${SCENES[el]}</div>
+          <div class="issue-badge" aria-hidden="true"><svg class="burst"><use href="#burst"/></svg><span class="ib-k">Day</span><span class="ib-n">${n}</span></div>
           <div class="banner-text">
             <div class="el-line eyebrow">${icon(`el-${el}`)} ${ELEMENTS[el]} · ${esc(day.focus)}</div>
             <h1 id="day-title">${esc(day.title)}</h1>
@@ -573,6 +978,7 @@
         <section class="card notes" style="margin-top:14px"><label class="eyebrow" for="notes-${n}">Session notes</label>
           <textarea id="notes-${n}" data-action="notes" data-n="${n}" placeholder="${esc(H.empty.notes)}">${esc(S.notes[n] || "")}</textarea></section>
         ${suppsHTML(iso)}
+        ${photoCardHTML(iso)}
         <nav class="day-nav" aria-label="Other days">
           ${n > 1 ? `<a class="btn" href="#/day/${n - 1}">${icon("i-left")}Day ${n - 1}</a>` : "<span></span>"}
           ${n < total() ? `<a class="btn" href="#/day/${n + 1}">Day ${n + 1}${icon("i-right")}</a>` : "<span></span>"}
@@ -593,7 +999,7 @@
         <div class="btn-row" style="justify-content:center"><a class="btn btn-primary" href="#/day/${next}">Preview Day ${next}</a>
         ${S.shifts.length ? `<button type="button" class="btn" data-action="undo">${icon("i-undo")}Undo last shift</button>` : ""}</div>` : ""}
       <p class="shift-note" style="margin-top:14px">Schedule shifted <strong>+${S.shifts.length}</strong> · ends ${esc(fmtMed(toISO(endNum())))}</p>
-    </section>${suppsHTML(iso)}</div>`, { el: "air", title: "Rest stop" });
+    </section>${suppsHTML(iso)}${photoCardHTML(iso)}</div>`, { el: "air", title: "Rest stop" });
     lastRenderedToday = todayISO();
   }
 
@@ -719,11 +1125,25 @@
         ${D.program.phases.map((p, i) => `<div class="phase${i === pIdx ? " current" : i < pIdx ? " past" : ""}"><div class="n"><span class="n-word">PHASE </span>${p.numeral}</div><div class="t">${esc(p.name)}</div>
           <div class="d">${esc(fmt(p.start, { month: "short" }))}${p.start.slice(0, 7) !== p.end.slice(0, 7) ? "–" + esc(fmt(p.end, { month: "short" })) : ""}</div></div>`).join("")}
       </div><p class="muted small" style="margin:10px 0 0">${esc(D.program.phases[Math.max(0, pIdx)].blurb)}</p></section>
+      ${progressPhotosHTML()}
       <section class="card"><h2 class="h-brush" style="font-size:24px;margin-bottom:6px">Best lifts</h2>
         ${prs.length ? `<ul class="pr-list">${prs.map((p) => `<li><span class="nm">${esc(p.name)}</span><span class="best">${esc(p.best)}</span>
           <span class="sub">${p.sessions} session${p.sessions > 1 ? "s" : ""} · last Day ${p.lastDay}</span><span class="sub" style="text-align:right">${p.e1rm ? `≈ ${p.e1rm} ${p.u} e1RM` : ""}</span></li>`).join("")}</ul>`
         : `<p class="muted">${esc(H.empty.noLogs)}</p><p class="muted small">${esc(H.empty.noLogsSub)}</p>`}
       </section></div>`, { title: "Progress" });
+  }
+
+  function progressPhotosHTML() {
+    if (!photos.on) return "";
+    loadPhotos(false, 4000);
+    const dates = photoDates(), first = dates[0], last = dates.at(-1);
+    const body = !photos.ready ? `<p class="muted small">${esc(photos.error || "Loading your photos…")}</p>`
+      : !dates.length ? `<p class="muted small">No progress photos yet. Add one at the end of each day's workout, right after your supplements.</p><a class="btn" href="#/today">${icon("i-camera")}Go to today</a>`
+      : `<p class="muted small">${plural(dates.length, "photo")} · first ${esc(fmtMed(first))} · latest ${esc(fmtMed(last))}</p>
+        <ol class="photo-strip">${dates.slice(-6).map((iso) => `<li><button type="button" class="polaroid polaroid-mini" data-action="photo-view" data-iso="${iso}" style="--tilt:${photoTilt(iso)}deg" aria-label="Progress photo, ${esc(fmtLong(iso))}">
+          <span class="polaroid-img"><img src="${photoSrc(iso, "thumb")}" alt="" loading="lazy" decoding="async"></span><span class="polaroid-cap"><span class="cap-date">${esc(fmt(iso, { month: "short", day: "numeric" }))}</span></span></button></li>`).join("")}</ol>
+        <div class="btn-row"><a class="btn btn-primary" href="#/photos">${icon("i-grid")}Open the gallery</a>${dates.length > 1 ? `<a class="btn" href="#/photos/compare/${first}/${last}">${icon("i-compare")}Compare first &amp; latest</a>` : ""}</div>`;
+    return `<section class="card photos-summary"><h2 class="h-brush">Progress photos</h2>${body}</section>`;
   }
 
   function personalRecords() {
@@ -779,6 +1199,7 @@
         <p class="muted small">${plural(doneCount(), "mastered day")}, ${plural(logs, "logged exercise")}, ${plural(Object.keys(S.notes).length, "note")} and ${plural(S.shifts.length, "shift")} saved here.</p>
         <div class="btn-row"><button type="button" class="btn btn-primary" data-action="export">${icon("i-download")}Export backup</button>
           <button type="button" class="btn" data-action="import">${icon("i-upload")}Import backup</button></div>
+        ${photos.on ? `<p class="muted small" style="margin:14px 0 0">Progress photos are stored in your cloud account, not in backup files.</p>` : ""}
       </section>
       <section class="card"><h2 class="h-brush" style="font-size:24px">Credits &amp; about</h2>
         <div class="prose small"><p>Exercise photos: the public-domain <a href="https://github.com/yuhonas/free-exercise-db" rel="noopener" target="_blank">free-exercise-db</a>, plus a few photos from Pexels, Unsplash and Wikimedia Commons. Each one was checked to show the exact movement.</p>
@@ -786,7 +1207,7 @@
         <a class="btn" href="#/credits">See all image credits</a>
       </section>
       <section class="card"><h2 class="h-brush" style="font-size:24px">Start over</h2>
-        <p class="muted small">${window.WLTA_ACCOUNT ? 'This clears your shared progress on every device. Export a backup first.' : esc(H.io.resetConfirm)+(on ? " Your cloud copy is kept under your current sync code, and this device gets a new one." : "")}</p>
+        <p class="muted small">${window.WLTA_ACCOUNT ? 'This clears your shared progress on every device. Export a backup first. Progress photos are kept.' : esc(H.io.resetConfirm)+(on ? " Your cloud copy is kept under your current sync code, and this device gets a new one." : "")}</p>
         <button type="button" class="btn btn-danger" data-action="reset">${window.WLTA_ACCOUNT?'Reset shared progress':'Erase all progress on this device'}</button></section>
     </div>`, { title: "More" });
   }
@@ -814,6 +1235,121 @@
       <a class="btn" href="#/more">${icon("i-left")}Back</a></section></div>`, { title: "Credits" });
   }
 
+  // ------------------------------------------------------------------ progress photo gallery
+  function renderPhotos(mode, a, b) {
+    setNav("photos");
+    loadPhotos(false, 4000); // check for photos taken on another device; the page re-renders only if something changed
+    const dates = photoDates();
+    const view = mode === "calendar" || mode === "compare" ? mode : "timeline";
+    const tabs = [["timeline", "#/photos", "Timeline"], ["calendar", "#/photos/calendar", "Calendar"], ["compare", "#/photos/compare", "Compare"]];
+    let inner;
+    if (!photos.on) inner = photoNotice("Progress photos are stored with your signed-in account. Open the hosted site and sign in to see them.");
+    else if (!photos.ready) inner = photoNotice(photos.error || "Loading your photos…", !!photos.error);
+    else if (!dates.length) inner = photoNotice("No progress photos yet. Add your first one at the end of today's workout, right after your supplements.", false, true);
+    else inner = view === "calendar" ? photoCalendarHTML(a) : view === "compare" ? compareHTML(a, b) : timelineHTML();
+    const span = dates.length ? `${plural(dates.length, "photo")} · ${esc(fmtMed(dates[0]))}${dates.length > 1 ? ` – ${esc(fmtMed(dates.at(-1)))}` : ""}` : "One photo a day, collected in date order.";
+    setView(`<div class="wrap narrow photos-page">
+      <section class="card photos-hero">
+        <div class="eyebrow">${icon("i-camera")}The training journal</div>
+        <h1>Progress Photo Gallery</h1>
+        <p class="photos-count">${photos.ready ? span : "&nbsp;"}</p>
+        <nav class="seg-ctl photo-tabs" aria-label="Gallery views">${tabs.map(([k, href, label]) => `<a href="${href}"${k === view ? ' aria-current="page"' : ""}>${label}</a>`).join("")}</nav>
+      </section>${inner}</div>`, { title: view === "compare" ? "Compare photos" : "Progress photos" });
+  }
+  const photoNotice = (text, retry = false, today = false) => `<section class="card photo-notice">${icon("i-camera", "big-icon")}<p>${esc(text)}</p>
+    ${retry ? `<button type="button" class="btn" data-action="photos-reload">Try again</button>` : ""}${today ? `<a class="btn btn-primary" href="#/today">${icon("i-camera")}Go to today</a>` : ""}</section>`;
+  const monthLabel = (ym) => new Date(Date.UTC(+ym.slice(0, 4), +ym.slice(5, 7) - 1, 1)).toLocaleDateString(undefined, { timeZone: "UTC", month: "long", year: "numeric" });
+
+  function timelineHTML() {
+    const months = new Map();
+    for (const iso of photoDates()) { const k = iso.slice(0, 7); if (!months.has(k)) months.set(k, []); months.get(k).push(iso); }
+    return [...months].map(([ym, list]) => `<section class="photo-month" aria-labelledby="pm-${ym}">
+      <h2 class="photo-month-head" id="pm-${ym}"><span>${esc(monthLabel(ym))}</span><small>${plural(list.length, "photo")}</small></h2>
+      <ol class="photo-grid">${list.map((iso) => `<li>${polaroidTile(iso)}</li>`).join("")}</ol></section>`).join("");
+  }
+  function polaroidTile(iso) {
+    const p = photos.index.get(iso), label = photoDayLabel(iso), tw = thumbWidth(p), th = Math.round((tw * p.h) / p.w);
+    return `<button type="button" class="polaroid polaroid-tile" data-action="photo-view" data-iso="${iso}" style="--tilt:${photoTilt(iso)}deg" aria-label="${esc(fmtLong(iso))}${label ? `, ${esc(label)}` : ""}. Enlarge photo.">
+      <span class="polaroid-img"><img src="${photoSrc(iso, "thumb")}" alt="" loading="lazy" decoding="async" width="${tw}" height="${th}"></span>
+      <span class="polaroid-cap"><span class="cap-date">${esc(fmt(iso, { weekday: "short", month: "short", day: "numeric" }))}</span>${label ? `<span class="cap-day">${esc(label)}</span>` : ""}</span></button>`;
+  }
+
+  function photoCalendarHTML(arg) {
+    const dates = photoDates();
+    const first = [monthKey(D.program.start), monthKey(dates[0])].sort()[0];
+    const last = [monthKey(toISO(endNum())), monthKey(dates.at(-1))].sort().at(-1);
+    let ym = /^\d{4}-\d{2}$/.test(arg || "") ? arg : monthKey(dates.at(-1));
+    if (ym < first) ym = first;
+    if (ym > last) ym = last;
+    const [y, m] = ym.split("-").map(Number);
+    const firstNum = Math.round(Date.UTC(y, m - 1, 1) / DAY_MS), daysIn = new Date(Date.UTC(y, m, 0)).getUTCDate();
+    const lead = (new Date(firstNum * DAY_MS).getUTCDay() + 6) % 7;
+    const prevYM = toISO(firstNum - 1).slice(0, 7), nextYM = toISO(firstNum + daysIn).slice(0, 7);
+    const cells = [];
+    for (let i = 0; i < lead; i++) cells.push(`<div class="pcal-cell out" aria-hidden="true"></div>`);
+    let count = 0;
+    for (let d = 1; d <= daysIn; d++) {
+      const dn = firstNum + d - 1, iso = toISO(dn), today = dn === todayNum() ? " today" : "";
+      if (photos.index.has(iso)) {
+        count++;
+        cells.push(`<button type="button" class="pcal-cell has-photo${today}" data-action="photo-view" data-iso="${iso}" aria-label="${esc(fmtLong(iso))}: progress photo. Enlarge.">
+          <img src="${photoSrc(iso, "thumb")}" alt="" loading="lazy" decoding="async"><span class="num">${d}</span></button>`);
+      } else if (entryAt(dn)) {
+        cells.push(`<a class="pcal-cell${today}${dn > todayNum() ? " future" : ""}" href="#/date/${iso}" aria-label="${esc(fmtLong(iso))}: no photo. Open this day."><span class="num">${d}</span></a>`);
+      } else cells.push(`<div class="pcal-cell out${today}"><span class="num">${d}</span></div>`);
+    }
+    return `<section class="card cal-card photo-cal">
+      <div class="cal-head">
+        <a class="icon-btn" href="#/photos/calendar/${prevYM}"${ym <= first ? ' aria-disabled="true" tabindex="-1"' : ""} aria-label="Previous month">${icon("i-left")}</a>
+        <h2>${esc(monthLabel(ym))}</h2>
+        <a class="icon-btn" href="#/photos/calendar/${nextYM}"${ym >= last ? ' aria-disabled="true" tabindex="-1"' : ""} aria-label="Next month">${icon("i-right")}</a>
+      </div>
+      <div class="cal-grid">${["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((w) => `<div class="cal-dow" aria-hidden="true">${w.slice(0, 1)}<span class="sr-only">${w}</span></div>`).join("")}${cells.join("")}</div>
+      <p class="muted small pcal-note">${plural(count, "photo")} this month. Tap a photo to enlarge it, or an empty day to open it and add one.</p>
+    </section>`;
+  }
+
+  function compareHTML(a, b) {
+    const dates = photoDates();
+    if (dates.length < 2) return photoNotice(`Comparing needs at least two photos. You have ${plural(dates.length, "photo")} so far.`, false, true);
+    let A = dates.includes(a) ? a : dates[0], B = dates.includes(b) ? b : dates.at(-1);
+    if (A === B) B = A === dates.at(-1) ? dates.at(-2) : dates.at(-1);
+    if (A > B) [A, B] = [B, A];
+    const gap = toNum(B) - toNum(A), days = gap === 1 ? "day" : "days";
+    const short = (iso) => esc(fmt(iso, { weekday: "short", month: "short", day: "numeric", year: "numeric" }));
+    const options = (sel, other) => dates.map((d) => `<option value="${d}"${d === sel ? " selected" : ""}${d === other ? " disabled" : ""}>${esc(fmt(d, { month: "short", day: "numeric", year: "numeric" }))}${photoDayLabel(d) ? ` · ${esc(photoDayLabel(d))}` : ""}</option>`).join("");
+    const shot = (iso, role) => `<figure class="polaroid compare-shot"><div class="polaroid-img compare-img"><img src="${photoSrc(iso, "full")}" alt="${role} photo, ${esc(fmtLong(iso))}" decoding="async"></div>
+      <figcaption class="polaroid-cap"><span class="cap-date">${short(iso)}</span>${photoDayLabel(iso) ? `<span class="cap-day">${esc(photoDayLabel(iso))}</span>` : ""}</figcaption></figure>`;
+    const stage = compareMode === "slider"
+      ? `<div class="compare-slider" style="--pos:50%">
+          <div class="cs-stage" data-slider-stage>
+            <img class="cs-img" src="${photoSrc(B, "full")}" alt="After photo, ${esc(fmtLong(B))}" draggable="false">
+            <div class="cs-before"><img class="cs-img" src="${photoSrc(A, "full")}" alt="Before photo, ${esc(fmtLong(A))}" draggable="false"></div>
+            <span class="cs-handle" aria-hidden="true"><span></span></span>
+            <span class="cs-tag cs-tag-a" aria-hidden="true">Before · ${esc(fmt(A, { month: "short", day: "numeric" }))}</span>
+            <span class="cs-tag cs-tag-b" aria-hidden="true">After · ${esc(fmt(B, { month: "short", day: "numeric" }))}</span>
+          </div>
+          <label class="cs-range"><span class="sr-only">Slide to reveal more of the before or after photo</span><input type="range" min="0" max="100" value="50" data-compare-slider></label>
+        </div>`
+      : `<div class="compare-side">${shot(A, "Before")}<div class="compare-badge" aria-hidden="true"><svg class="burst"><use href="#burst"/></svg><b>${gap}</b><span>${days}</span></div>${shot(B, "After")}</div>`;
+    return `<section class="card compare-card">
+      <div class="compare-controls">
+        <label class="compare-pick"><span class="eyebrow">Before</span><select data-compare="a">${options(A, B)}</select></label>
+        <label class="compare-pick"><span class="eyebrow">After</span><select data-compare="b">${options(B, A)}</select></label>
+      </div>
+      <div class="compare-bar"><p class="compare-gap"><b>${gap}</b> ${days} apart</p>
+        <div class="seg-ctl compare-mode" role="group" aria-label="Comparison style"><button type="button" data-action="compare-mode" data-mode="side" aria-pressed="${compareMode === "side"}">Side by side</button><button type="button" data-action="compare-mode" data-mode="slider" aria-pressed="${compareMode === "slider"}">Slider</button></div></div>
+      ${stage}
+    </section>`;
+  }
+  function sliderAt(stage, clientX) {
+    const r = stage.getBoundingClientRect(), pct = Math.max(0, Math.min(100, ((clientX - r.left) / r.width) * 100));
+    const wrap = stage.closest(".compare-slider");
+    wrap.style.setProperty("--pos", `${pct.toFixed(1)}%`);
+    const input = $("[data-compare-slider]", wrap);
+    if (input) input.value = String(Math.round(pct));
+  }
+
   function renderError(err) {
     console.error("[WLTA]", err);
     const fileProto = location.protocol === "file:";
@@ -835,6 +1371,7 @@
       : credit.source === "Original illustration" ? "Illustrated placeholder: no openly licensed photo of this exact movement was found."
         : credit.source === "free-exercise-db" ? "Photos: free-exercise-db (public domain, Unlicense)."
           : `Photo: ${credit.author} · ${credit.source} · ${credit.license}.`;
+    lb.dataset.mode = "exercise";
     lb.innerHTML = `<div class="lightbox-card" data-el="${ex.element}">
       <button type="button" class="close-btn" data-action="close-lightbox" aria-label="Close">${icon("i-close")}</button>
       <div class="lightbox-media">
@@ -859,7 +1396,7 @@
     f1.classList.toggle("hide", f === 0);
     $$("[data-action=frame]", lb).forEach((b) => b.setAttribute("aria-pressed", String(Number(b.dataset.f) === f)));
   }
-  function closeLightbox() { const lb = $("#lightbox"); lb.hidden = true; lb.innerHTML = ""; clearInterval(lbTimer); document.body.style.overflow = ""; }
+  function closeLightbox() { const lb = $("#lightbox"); lb.hidden = true; lb.innerHTML = ""; delete lb.dataset.mode; delete lb.dataset.iso; clearInterval(lbTimer); document.body.style.overflow = ""; }
 
   // ------------------------------------------------------------------ celebration
   function celebrate(n) {
@@ -1042,7 +1579,55 @@
       else if (a === "copy-code") copyCode();
       else if (a === "sync-off") setSyncOff(true);
       else if (a === "sync-on") setSyncOff(false);
+      else if (a === "photo-take") openCamera(t.dataset.iso);
+      else if (a === "photo-upload") pickPhoto(t.dataset.iso);
+      else if (a === "photo-remove") removePhoto(t.dataset.iso);
+      else if (a === "photo-retry") { const f = photos.failed.get(t.dataset.iso); if (f) sendPhoto(t.dataset.iso, f); }
+      else if (a === "photo-discard") discardFailed(t.dataset.iso);
+      else if (a === "photo-view") openPhoto(t.dataset.iso);
+      else if (a === "photo-prev") stepPhoto(-1);
+      else if (a === "photo-next") stepPhoto(1);
+      else if (a === "photos-reload") { photos.error = ""; updatePhotoCards(); if (/^#\/?photos/.test(location.hash)) refreshView(); loadPhotos(true); }
+      else if (a === "compare-mode") { compareMode = t.dataset.mode === "slider" ? "slider" : "side"; try { localStorage.setItem("wlta-compare", compareMode); } catch (err) { /* remembered for this visit only */ } refreshView(); }
+      else if (a === "cam-close") closeCamera();
+      else if (a === "cam-shutter") shutter();
+      else if (a === "cam-timer") { cam.timer = TIMERS[(TIMERS.indexOf(cam.timer) + 1) % TIMERS.length]; setTimerLabel(); }
+      else if (a === "cam-flip") { cam.facing = cam.facing === "user" ? "environment" : "user"; try { localStorage.setItem("wlta-camera", cam.facing); } catch (err) { /* remembered for this visit only */ } startCamera(); }
+      else if (a === "cam-retake") retake();
+      else if (a === "cam-use") useStill();
+      else if (a === "cam-restart") startCamera();
+      else if (a === "cam-upload") camUpload();
     });
+    $("#photo-file").addEventListener("change", onPhotoFile);
+    $("#photo-capture").addEventListener("change", onPhotoFile);
+    document.addEventListener("change", (e) => {
+      if (!e.target.matches("[data-compare]")) return;
+      location.hash = `#/photos/compare/${$('[data-compare="a"]').value}/${$('[data-compare="b"]').value}`;
+    });
+    // Compare slider: drag anywhere on the photos. Photo viewer: swipe left or right for the next or previous day.
+    let sliding = null, swipe = null;
+    document.addEventListener("pointerdown", (e) => {
+      const stage = e.target.closest("[data-slider-stage]");
+      if (stage) { sliding = stage; stage.setPointerCapture(e.pointerId); sliderAt(stage, e.clientX); return; }
+      if (e.isPrimary && e.target.closest("#lightbox .pv-media")) swipe = { x: e.clientX, y: e.clientY, t: Date.now() };
+    });
+    document.addEventListener("pointermove", (e) => { if (sliding) sliderAt(sliding, e.clientX); });
+    document.addEventListener("pointerup", (e) => {
+      sliding = null;
+      if (!swipe) return;
+      const dx = e.clientX - swipe.x, dy = e.clientY - swipe.y;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.4 && Date.now() - swipe.t < 900) stepPhoto(dx < 0 ? 1 : -1);
+      swipe = null;
+    });
+    document.addEventListener("pointercancel", () => { sliding = null; swipe = null; });
+    document.addEventListener("error", (e) => { // a photo that can't load (removed on another device, or signed out)
+      const img = e.target;
+      if (!(img instanceof HTMLImageElement) || !img.src.includes("/api/photo?")) return;
+      if (img.classList.contains("pv-low")) { img.hidden = true; return; }
+      const box = img.closest(".polaroid-img, .pv-media, .pcal-cell, .cs-stage");
+      if (box) box.classList.add("img-failed");
+      loadPhotos();
+    }, true);
     document.addEventListener("submit", (e) => {
       if (e.target.id !== "sync-link") return;
       e.preventDefault();
@@ -1050,7 +1635,8 @@
     });
     document.addEventListener("input", (e) => {
       const t = e.target;
-      if (t.matches(".log input")) onLogInput(t);
+      if (t.matches("[data-compare-slider]")) t.closest(".compare-slider").style.setProperty("--pos", `${t.value}%`);
+      else if (t.matches(".log input")) onLogInput(t);
       else if (t.dataset.action === "notes") {
         const n = Number(t.dataset.n);
         if (t.value.trim()) S.notes[n] = t.value.slice(0, 4000); else delete S.notes[n];
@@ -1058,8 +1644,15 @@
       }
     });
     document.addEventListener("keydown", (e) => {
+      if (!$("#camera").hidden) { if (e.key === "Escape") { if (cam.tick) stopCountdown(); else closeCamera(); } return; }
+      const lb = $("#lightbox");
+      if (!lb.hidden && lb.dataset.mode === "photo" && (e.key === "ArrowLeft" || e.key === "ArrowRight") && !e.target.matches("input, select, textarea")) {
+        e.preventDefault();
+        stepPhoto(e.key === "ArrowLeft" ? -1 : 1);
+        return;
+      }
       if (e.key !== "Escape") return;
-      if (!$("#lightbox").hidden) closeLightbox();
+      if (!lb.hidden) closeLightbox();
       else if (!$("#celebrate").hidden) closeCelebrate();
     });
     $("#celebrate").addEventListener("click", (e) => { if (e.target.id === "celebrate") closeCelebrate(); });
@@ -1068,13 +1661,23 @@
     document.addEventListener("visibilitychange", () => { // new day while the app sat open
       if (document.visibilityState === "visible" && lastRenderedToday && lastRenderedToday !== todayISO() && /^#?\/?(today)?$/.test(location.hash.replace(/^#/, ""))) route();
     });
-    window.addEventListener("pagehide", () => save(true, false)); // flush only: real changes already queued a sync
+    window.addEventListener("pagehide", () => { save(true, false); stopStream(); }); // flush only: real changes already queued a sync
+    document.addEventListener("visibilitychange", () => { // free the camera while the app is in the background
+      if (document.visibilityState === "hidden") { if (cam.stream) { stopCountdown(); stopStream(); cam.paused = true; } }
+      else {
+        if (cam.paused && !$("#camera").hidden && !cam.still) startCamera();
+        cam.paused = false;
+        loadPhotos();
+      }
+    });
+    window.addEventListener("focus", () => loadPhotos());
   }
 
   function route() {
     closeLightbox();
+    closeCamera();
     const h = location.hash.replace(/^#\/?/, "");
-    const [name, arg] = h.split("/");
+    const [name, arg, arg2, arg3] = h.split("/");
     if (name === "day") {
       const n = Math.min(total(), Math.max(1, parseInt(arg, 10) || 1));
       const t = todayInfo();
@@ -1086,6 +1689,7 @@
     if (name === "progress") return renderProgress();
     if (name === "more") return renderMore();
     if (name === "credits") return renderCredits();
+    if (name === "photos") return renderPhotos(arg, arg2, arg3);
     return renderToday();
   }
 
@@ -1108,6 +1712,9 @@
   async function init() {
     await window.WLTA_READY;
     if (window.WLTA_ACCOUNT) CONVEX_URL = "/api";
+    photos.on = !!window.WLTA_ACCOUNT; // photos need the signed-in API
+    try { if (localStorage.getItem("wlta-compare") === "slider") compareMode = "slider"; } catch (e) { /* default */ }
+    loadPhotos(); // in parallel with the training data
     const msg = $("#loading-msg");
     if (msg) msg.textContent = pick(LOADING);
     const p = new URLSearchParams(location.search).get("today");
@@ -1118,6 +1725,8 @@
     loadSync();
     bindEvents();
     route();
+    booted = true;
+    if (photos.ready || photos.error) photosChanged(); // photos may have arrived before the first page drew
     startSync();
     // Small console API for testing and power users.
     window.WLTA = {

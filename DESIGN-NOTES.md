@@ -1,33 +1,22 @@
-# Illustrated training atlas redesign
+# Retro training journal redesign
 
-The original application, data, routes, wording, progress storage, and optional Convex sync implementation are preserved. The visual redesign uses warm ivory, forest ink, brass details, element-specific accents, editorial serif typography, larger exercise photographs, and four original SVG landscapes.
+The site reads like a 1970s fitness magazine crossed with an athletic training journal: faded cream paper, espresso-brown ink, burnt orange, mustard, forest green and muted brown, with sunset stripes, starbursts, rubber stamps and Polaroids. It is a visual redesign of the same application: routes, wording, data, progress storage and sync are unchanged, and every original string still renders.
 
-## Implementation
+## Visual system
 
-- `styles.css`: replaces the visual system, including all routes, dialogs, charts, logging forms, and responsive layouts. No layered legacy stylesheet or UI framework.
-- `design.js`: moves the existing daily banner and controls into a full-width masthead without changing their text or reading order. IntersectionObserver reveals content; keyboard focus stays within dialogs and returns to its trigger. Motion respects the device's reduced-motion setting.
-- `index.html`: updates the stylesheet cache version and loads the enhancement script. Existing text is untouched.
-- `images/atlas/`: four original code-drawn SVG landscapes. All four together are approximately 10 KB. They are decorative CSS backgrounds and do not replace exercise images. Regenerate with `python tools/design-art.py`.
+- **Type:** Fraunces (a soft, Cooper-style display serif) for headings, Oswald condensed caps for labels, buttons and navigation, Work Sans for body text, and Caveat handwriting for Polaroid captions and session notes. All come from Google Fonts and only download when used.
+- **Color:** tokens live at the top of `styles.css`. Each element has a fill, a text-safe ink, a tint and an "on fill" text color (Air days use ink on mustard). Text and button pairs were checked for WCAG AA contrast.
+- **Paper:** the supplied cloudscape shader now drifts in cream and beige, so it reads as mottled aged paper. A light grain and halftone sit on top. Dialogs and the camera sit above the grain so photos stay clean.
+- **Print details:** hand-cut card corners, hard offset shadows, sunset stripe bands, starburst badges, ticket-stub phases, dotted record-book leaders, ruled index-card set logs, a ruled journal page for notes, and rubber-stamp checkmarks.
+- **Day banners:** four original striped-sunset illustrations in `images/retro/` (mountains, waves, flames, clouds), each about 2 to 3 KB. The decorative "Day N" starburst on the banner is hidden from screen readers because the date line already says it.
 
-## Run
+## Files
 
-```powershell
-python -m http.server 8010 --bind 127.0.0.1
-```
-
-Open `http://127.0.0.1:8010`. Existing deployment configuration and routes remain unchanged. No new runtime packages are needed.
+- `styles.css`: the whole visual system, including the progress photo section, gallery, viewer and camera.
+- `design.js`: unchanged behavior (masthead layout, reveal on scroll, dialog focus handling); the photo section and gallery months are added to the reveal list.
+- `cloudscape.js`: only its three colors and speed changed.
+- `images/atlas/`: the previous design's landscapes, no longer referenced.
 
 ## Verification
 
-```powershell
-node --check app.js
-node --check design.js
-python -X utf8 tools/verify.py
-node tools/design-qa/verify.cjs
-```
-
-The browser test requires Playwright and Chromium. It resolves Playwright from this folder or the existing neighboring `codex training calendar` development installation. To use this test elsewhere, install Playwright locally as a development tool and run `npx playwright install chromium`.
-
-The retained baseline records the rendered wording on eight original routes and hashes the original app and all JSON data files. Tests compare the redesigned pages to that baseline, exercise logging and notes persistence, image enlargement and frames, calendar navigation, schedule shift and undo, completion, units, backup export/import, keyboard containment, and reduced motion. Layout checks cover 320, 390, 768, and 1440 pixels. Before/after screenshots are saved under `tools/design-qa/`.
-
-Cloud sync is left unchanged and disabled in isolated browser tests, so those tests do not modify a cloud copy. A running Convex backend is required to verify actual cross-device synchronization. No deployment was performed.
+Checked in Chromium at 320, 390, 768, 820, 1024 and 1440 px: no horizontal scrolling on any route (including the gallery and open dialogs), reduced motion respected, keyboard focus contained in dialogs, and every string from `tools/design-baseline/copy.json` still rendered under the baseline's conditions. Functional checks (checklists, completion, logs, notes, supplements, push/undo, calendar, units, backup export/import, cloud sync) and the progress photo tests are described in CLOUD-SETUP.md.

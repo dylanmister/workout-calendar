@@ -18,7 +18,8 @@ void main(){vec2 uv=gl_FragCoord.xy/u_resolution;float t=u_time*u_speed;vec2 asp
   const position=gl.getAttribLocation(program,'position');gl.enableVertexAttribArray(position);gl.vertexAttribPointer(position,2,gl.FLOAT,false,0,0);
   const uniforms=Object.fromEntries(['resolution','time','colorBottom','colorMid','colorTop','speed'].map(k=>[k,gl.getUniformLocation(program,'u_'+k)]));
   const rgb=h=>h.match(/[a-f0-9]{2}/gi).map(x=>parseInt(x,16)/255);
-  gl.uniform3fv(uniforms.colorBottom,rgb('#87ceeb'));gl.uniform3fv(uniforms.colorMid,rgb('#f8f8f8'));gl.uniform3fv(uniforms.colorTop,rgb('#ffffff'));gl.uniform1f(uniforms.speed,.45);
+  // Retro palette: the clouds become slowly drifting mottles of aged cream paper.
+  gl.uniform3fv(uniforms.colorBottom,rgb('#e4cfa4'));gl.uniform3fv(uniforms.colorMid,rgb('#efe0c0'));gl.uniform3fv(uniforms.colorTop,rgb('#f8eed7'));gl.uniform1f(uniforms.speed,.3);
   let frame=0,last=0,elapsed=0,previous=0,lost=false;
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   function draw(){gl.uniform1f(uniforms.time,elapsed);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);}

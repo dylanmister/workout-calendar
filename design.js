@@ -22,7 +22,7 @@
       layout.prepend(masthead);
     }
     let sequence=0;
-    for(const target of view.querySelectorAll('.banner,.scroll,.summary,.block,.wrap.narrow > .card,.notes,.supplements')) {
+    for(const target of view.querySelectorAll('.banner,.scroll,.summary,.block,.wrap.narrow > .card,.notes,.supplements,.photo-card,.photo-month')) {
       if(target.dataset.reveal)continue;
       target.dataset.reveal='true';
       target.style.setProperty('--reveal-delay',`${(sequence++%3)*55}ms`);

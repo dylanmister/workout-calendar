@@ -20,6 +20,7 @@ Then open http://localhost:8000.
 
 - **Time travel:** add `?today=2026-12-15` to the URL to preview any date (handy for testing).
 - **Phone preview on desktop:** open http://localhost:8000/tools/phone-preview.html. It shows a 390px-wide frame.
+- **Progress photos** are stored with the signed-in account, so a plain static server shows the photo section with a short notice instead of the buttons. To use photos locally, run the real API handlers against the development database with `node tools/cloud-server.cjs` (see CLOUD-SETUP.md).
 
 ## Deploy
 The folder is deployable as-is. All paths are relative and routing uses `#/…`.
@@ -34,13 +35,19 @@ After editing `app.js` or `styles.css`, bump the `?v=` numbers in `index.html` s
 - **Checklist:** Pai Sho tile checkboxes. Tap a photo to enlarge it (start and finish frames).
 - **Set logging:** weight × reps for each set, with last time's numbers shown to beat.
 - **Celebration:** shown when every item on a day is checked.
+- **Supplement checklist:** one yes/no per calendar day, separate from the workout checklist.
+- **Daily progress photo:** at the end of each day, right after the supplement checklist. **Take Photo** opens a live camera with a 3 s / 10 s self-timer and front/back switch; **Upload Photo** picks an existing image. One photo per day (replacing asks first), shown as a dated Polaroid. Photos are resized in the browser (which also removes location data) and saved to the signed-in account's cloud storage, so they appear on every device.
+- **Photo gallery (Photos tab):** a month-by-month timeline in date order, a calendar view with each photo on its date, a large viewer (arrow keys or swipe between days), and a before/after comparison (side by side or a drag slider).
 - **Progress:** streaks, the Avatar State meter, per-element bars and best lifts.
 - **Push schedule back a day:** shifts that workout and everything after it by one day and extends the end date. It has undo, and the shift count is shown.
 - **Backups:** More → Export / Import (JSON) to back up or move devices.
 
 ## Project layout
 ```
-index.html  styles.css  app.js  icon.svg  manifest.webmanifest
+index.html  styles.css  app.js  design.js  icon.svg  manifest.webmanifest
+api/  server/             signed-in API (session, progress, photos) for Vercel
+convex/                   database functions (progress, login limits, photos)
+images/retro/             the four sunset illustrations used in the day banners
 data/schedule.json        164 days of workouts (exercise references by id)
 data/exercises.json       exercise library: name, cues, image paths
 data/content.json         original quote for each day, humor strings
