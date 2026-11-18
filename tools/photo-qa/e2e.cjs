@@ -16,7 +16,7 @@ async function upload(page,file){await clearToast(page);const fc=page.waitForEve
  const browser=await chromium.launch({args:['--use-fake-ui-for-media-stream','--use-fake-device-for-media-stream']});
  const ctx=await browser.newContext({viewport:{width:1280,height:900}});
  // count camera streams so we can prove they are released when the camera closes
- await ctx.addInitScript(()=>{const real=navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);window.__streams=[];navigator.mediaDevices.getUserMedia=async(c)=>{const s=await real(c);window.__streams.push(s);return s;};});
+ await ctx.addInitScript(()=>{const real=navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);window.__streams=[];window.__asks=[];navigator.mediaDevices.getUserMedia=async(c)=>{window.__asks.push(c);const s=await real(c);window.__streams.push(s);return s;};});
  const page=await ctx.newPage();
  const errors=[],bad=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)bad.push(r.status()+' '+r.url())});
  await signIn(page);
@@ -56,6 +56,7 @@ async function upload(page,file){await clearToast(page);const fc=page.waitForEve
  await page.locator('[data-action=photo-take]').click();
  await page.waitForSelector('#camera:not([hidden]) [data-action=cam-shutter]:not([disabled])',{timeout:15000});
  assert.equal(await page.evaluate(()=>document.querySelector('.cam-video').videoWidth>0),true,'live preview running');
+ assert.deepEqual(await page.evaluate(()=>window.__asks[0].video.facingMode),{ideal:'environment'},'the camera starts on the rear lens');
  await page.locator('[data-action=cam-shutter]').click();
  await page.waitForSelector('[data-step=review]:not([hidden])');
  await page.locator('[data-action=cam-retake]').click();await page.waitForSelector('[data-step=live]:not([hidden])');

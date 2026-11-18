@@ -4,7 +4,7 @@ Production: **https://white-lotus-training-arc.vercel.app**
 
 Sign in with the password supplied for this project. Every device uses the same private training account. Checklists, completed days, set logs, notes, supplements, weight units, and schedule shifts are stored in Convex and cached locally. Daily progress photos are stored in Convex file storage (never in the browser) and are only reachable while signed in. Existing progress in the browser is merged into the cloud on its first authenticated visit. To migrate progress from a different site address, export it there, then import it on the production site after signing in.
 
-The supplied cloudscape shader runs across every route, including sign-in, recolored in warm paper tones for the retro design. It uses a capped drawing resolution and frame rate, pauses in hidden tabs, and renders a still frame when reduced motion is requested. Browsers without WebGL retain the CSS background.
+The supplied cloudscape shader runs across every route, including sign-in, recolored to sun-bleached sand for the retro beach design. It uses a capped drawing resolution and frame rate, pauses in hidden tabs, and renders a still frame when reduced motion is requested. Browsers without WebGL retain the CSS background.
 
 ## Architecture
 
@@ -55,6 +55,7 @@ node tools/photo-qa/harness.cjs         # in another terminal
 node tools/photo-qa/api.cjs             # sign-in and same-origin rules, validation, caching, replace, delete, failed-save cleanup
 node tools/photo-qa/e2e.cjs             # upload, camera, timer, replace, gallery, viewer, compare, remove, denied camera
 node tools/photo-qa/regression.cjs      # checklists, logs, notes, supplements, shifts, backups, sync, layouts
+node tools/photo-qa/ui-check.cjs        # mobile menu drawer, rear camera by default + flip, photos keep their own shape
 ```
 
 `node tools/photo-qa/copy-check.cjs` confirms every original string still renders; it needs the harness in signed-out mode on port 8032 (`QA_STATIC=1`, `QA_PORT=8032`). Each harness run uses a new random test account in the development database.

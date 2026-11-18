@@ -38,7 +38,7 @@
   });
   // Keep keyboard users inside an open dialog and return them to their trigger.
   const overlays=[...document.querySelectorAll('.overlay')];
-  const background=[view,document.querySelector('.app-header'),document.querySelector('.tabbar')];
+  const background=[view,document.querySelector('.app-header')].filter(Boolean);
   let lastOutside=null,wasOpen=false;
   document.addEventListener('focusin',event=>{
     if(!event.target.closest('.overlay'))lastOutside=event.target;

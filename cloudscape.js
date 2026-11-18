@@ -18,8 +18,8 @@ void main(){vec2 uv=gl_FragCoord.xy/u_resolution;float t=u_time*u_speed;vec2 asp
   const position=gl.getAttribLocation(program,'position');gl.enableVertexAttribArray(position);gl.vertexAttribPointer(position,2,gl.FLOAT,false,0,0);
   const uniforms=Object.fromEntries(['resolution','time','colorBottom','colorMid','colorTop','speed'].map(k=>[k,gl.getUniformLocation(program,'u_'+k)]));
   const rgb=h=>h.match(/[a-f0-9]{2}/gi).map(x=>parseInt(x,16)/255);
-  // Retro palette: the clouds become slowly drifting mottles of aged cream paper.
-  gl.uniform3fv(uniforms.colorBottom,rgb('#e4cfa4'));gl.uniform3fv(uniforms.colorMid,rgb('#efe0c0'));gl.uniform3fv(uniforms.colorTop,rgb('#f8eed7'));gl.uniform1f(uniforms.speed,.3);
+  // Beach palette: the clouds become sun-bleached sand with light drifting slowly across it.
+  gl.uniform3fv(uniforms.colorBottom,rgb('#f5e4c1'));gl.uniform3fv(uniforms.colorMid,rgb('#fbf0d9'));gl.uniform3fv(uniforms.colorTop,rgb('#fff6e3'));gl.uniform1f(uniforms.speed,.3);
   let frame=0,last=0,elapsed=0,previous=0,lost=false;
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   function draw(){gl.uniform1f(uniforms.time,elapsed);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);}

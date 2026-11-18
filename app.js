@@ -392,8 +392,9 @@
     const local = photos.local.get(iso); // the copy just uploaded from this device: no need to download it again
     return local && local.v === p.v ? local.url : `/api/photo?date=${iso}&size=${size}&v=${p.v}`;
   }
-  const photoRatio = (p) => Math.min(1.6, Math.max(0.56, p.w / p.h)).toFixed(4);
+  const photoRatio = (p) => (p.w / p.h).toFixed(4); // a photo's own shape (width / height): never cropped, never stretched
   const thumbWidth = (p) => Math.round(p.w * Math.min(1, PHOTO_THUMB / Math.max(p.w, p.h)));
+  const thumbHeight = (p) => Math.round((thumbWidth(p) * p.h) / p.w);
   const photoTilt = (iso) => ((toNum(iso) * 37) % 7 - 3) * 0.55; // a steady, slightly hand-placed angle per date
   function photoDayLabel(iso) {
     const e = entryAt(toNum(iso));
@@ -452,11 +453,11 @@
     let frame, intro;
     if (busy || failed) {
       const pr = busy || failed;
-      frame = `<figure class="polaroid ${failed ? "is-failed" : "is-busy"}"><div class="polaroid-img" style="--ar:${photoRatio(pr)}">
-        <img src="${pr.preview}" alt="New progress photo for ${esc(long)}"><span class="developing">${failed ? "Not saved yet" : "Developing…"}</span></div>${caption("figcaption")}</figure>`;
+      frame = `<figure class="polaroid ${failed ? "is-failed" : "is-busy"}"><div class="polaroid-img">
+        <img src="${pr.preview}" alt="New progress photo for ${esc(long)}" width="${pr.w}" height="${pr.h}"><span class="developing">${failed ? "Not saved yet" : "Developing…"}</span></div>${caption("figcaption")}</figure>`;
       intro = failed ? "This photo hasn't reached your cloud account yet." : "Saving your photo to the training journal…";
     } else if (p) {
-      frame = `<figure class="polaroid"><button type="button" class="polaroid-img" data-action="photo-view" data-iso="${iso}" style="--ar:${photoRatio(p)}" aria-label="Enlarge the progress photo for ${esc(long)}">
+      frame = `<figure class="polaroid"><button type="button" class="polaroid-img" data-action="photo-view" data-iso="${iso}" aria-label="Enlarge the progress photo for ${esc(long)}">
         <img src="${photoSrc(iso, "full")}" srcset="${photoSrc(iso, "thumb")} ${thumbWidth(p)}w, ${photoSrc(iso, "full")} ${p.w}w" sizes="(max-width: 560px) 80vw, 340px" alt="Progress photo for ${esc(long)}" width="${p.w}" height="${p.h}" decoding="async"></button>${caption("figcaption")}</figure>`;
       intro = "Saved to your training journal. Taking or uploading another photo replaces this one.";
     } else {
@@ -592,11 +593,11 @@
   // --- camera: a live preview with a self-timer, so a phone can be propped up for a full-body shot.
   // The browser asks for camera permission only when Take Photo is pressed. Without camera support it falls
   // back to the phone's own camera app through a file input.
-  const cam = { iso: "", stream: null, facing: "user", timer: 0, count: 0, tick: null, still: null, paused: false, gen: 0 };
+  const cam = { iso: "", stream: null, facing: "environment", cams: [], timer: 0, count: 0, tick: null, still: null, paused: false, gen: 0 };
   const TIMERS = [0, 3, 10];
   function openCamera(iso) {
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) { pickPhoto(iso, true); return; }
-    try { const f = localStorage.getItem("wlta-camera"); if (f === "user" || f === "environment") cam.facing = f; } catch (e) { /* default camera */ }
+    cam.facing = "environment"; // every time it opens, the camera starts on the rear (environment-facing) lens
     const ov = $("#camera");
     Object.assign(cam, { iso, still: null, count: 0 });
     ov.innerHTML = `<div class="camera-card">
@@ -613,7 +614,7 @@
       <div class="cam-controls" data-step="live">
         <button type="button" class="cam-ctl" data-action="cam-timer" aria-label="Self-timer: off">${icon("i-clock")}<span>Timer off</span></button>
         <button type="button" class="cam-shutter" data-action="cam-shutter" aria-label="Take photo" disabled><span></span></button>
-        <button type="button" class="cam-ctl" data-action="cam-flip" aria-label="Switch camera" hidden>${icon("i-flip")}<span>Flip</span></button>
+        <button type="button" class="cam-ctl" data-action="cam-flip" aria-label="Switch to the front camera" hidden>${icon("i-flip")}<span>Flip</span></button>
       </div>
       <div class="cam-controls cam-review" data-step="review" hidden>
         <button type="button" class="btn" data-action="cam-retake">${icon("i-undo")}Retake</button>
@@ -632,15 +633,27 @@
       <button type="button" class="btn btn-sm btn-primary" data-action="cam-upload">${icon("i-image")}Upload a photo instead</button></div>` : ""}` : "";
     el.classList.toggle("show", !!text);
   }
-  async function startCamera() {
+  async function startCamera(deviceId = "") {
     const ov = $("#camera"), video = $(".cam-video", ov), shutterBtn = $("[data-action=cam-shutter]", ov);
     const gen = ++cam.gen; // only the latest request may keep its stream (e.g. after tapping Flip twice)
+    const stale = () => gen !== cam.gen || ov.hidden || !video.isConnected || document.hidden;
+    const md = navigator.mediaDevices, size = { width: { ideal: 1920 }, height: { ideal: 1080 } };
+    const open = (pick) => md.getUserMedia({ audio: false, video: { ...pick, ...size } });
     stopStream();
     shutterBtn.disabled = true;
     camMsg("Starting the camera… If your browser asks, allow camera access.");
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: false, video: { facingMode: { ideal: cam.facing }, width: { ideal: 1920 }, height: { ideal: 1080 } } });
-      if (gen !== cam.gen || ov.hidden || !video.isConnected || document.hidden) {
+      const pick = deviceId ? { deviceId: { exact: deviceId } } : { facingMode: { ideal: cam.facing } };
+      let stream;
+      try { stream = await open(pick); } catch (e) {
+        // a camera that was just released can need a moment to free up, and a chosen camera may have been unplugged
+        const n = e && e.name;
+        if (stale() || !["NotReadableError", "AbortError", "OverconstrainedError"].includes(n)) throw e;
+        await new Promise((r) => setTimeout(r, 400));
+        if (stale()) return;
+        stream = await open(n === "OverconstrainedError" ? { facingMode: { ideal: cam.facing } } : pick);
+      }
+      if (stale()) {
         stream.getTracks().forEach((t) => t.stop());
         if (gen === cam.gen && document.hidden && !ov.hidden) cam.paused = true; // resume when the app comes back
         return;
@@ -648,14 +661,23 @@
       cam.stream = stream;
       video.srcObject = stream;
       await video.play().catch(() => {});
-      const track = stream.getVideoTracks()[0];
-      video.classList.toggle("mirror", (track.getSettings().facingMode || "user") !== "environment"); // a selfie preview reads like a mirror
+      cam.cams = (await md.enumerateDevices().catch(() => [])).filter((d) => d.kind === "videoinput");
+      if (cam.stream !== stream) return; // closed or replaced meanwhile
+      const track = stream.getVideoTracks()[0], set = track.getSettings();
+      // Which way does it face? Phones report it; otherwise go by the camera's name, and a lone camera is a laptop webcam.
+      const facing = set.facingMode === "user" || set.facingMode === "environment" ? set.facingMode
+        : /back|rear|environment/i.test(track.label) ? "environment" : /front|user|face|webcam|integrated/i.test(track.label) ? "user"
+          : cam.cams.length < 2 ? "user" : cam.facing;
+      cam.facing = facing;
+      video.classList.toggle("mirror", facing === "user"); // a selfie preview reads like a mirror; the rear camera shows the scene as it is
       track.addEventListener("ended", () => { if (cam.stream === stream) camMsg("The camera stopped. It may have been taken by another app.", true); });
       camMsg("");
       shutterBtn.disabled = false;
-      const devices = await navigator.mediaDevices.enumerateDevices().catch(() => []);
       const flip = $("[data-action=cam-flip]", ov);
-      if (flip) flip.hidden = devices.filter((d) => d.kind === "videoinput").length < 2;
+      if (flip) {
+        flip.hidden = cam.cams.length < 2;
+        flip.setAttribute("aria-label", facing === "user" ? "Switch to the rear camera" : "Switch to the front camera");
+      }
     } catch (e) {
       if (gen !== cam.gen) return;
       const n = e && e.name;
@@ -664,6 +686,15 @@
           : n === "NotReadableError" || n === "AbortError" ? "The camera is busy in another app. Close that app and try again."
             : "The camera couldn't start. Try again, or upload a photo instead.", true);
     }
+  }
+  function flipCamera() { // front <-> rear, before the photo is taken
+    const track = cam.stream && cam.stream.getVideoTracks()[0], set = track ? track.getSettings() : {};
+    cam.facing = cam.facing === "user" ? "environment" : "user";
+    if (set.facingMode || !set.deviceId) { startCamera(); return; } // phones say which way each camera faces: ask for the other side
+    // Elsewhere (a laptop with two webcams, say) step to another camera, preferring one whose name says it faces the wanted way.
+    const others = cam.cams.filter((d) => d.deviceId && d.deviceId !== set.deviceId);
+    const named = others.find((d) => (cam.facing === "user" ? /front|user|face|webcam|integrated/i : /back|rear|environment/i).test(d.label));
+    startCamera((named || others[0] || {}).deviceId || "");
   }
   function stopStream() { if (cam.stream) { cam.stream.getTracks().forEach((t) => t.stop()); cam.stream = null; } }
   function closeCamera() {
@@ -754,7 +785,7 @@
     lb.dataset.iso = iso;
     lb.innerHTML = `<div class="lightbox-card photo-viewer">
       <button type="button" class="close-btn" data-action="close-lightbox" aria-label="Close">${icon("i-close")}</button>
-      <div class="pv-media" style="--ar:${p.w}/${p.h}">
+      <div class="pv-media" style="--arn:${photoRatio(p)}">
         <img class="pv-low" src="${photoSrc(iso, "thumb")}" alt="">
         <img class="pv-full" src="${photoSrc(iso, "full")}" alt="Progress photo for ${esc(fmtLong(iso))}">
       </div>
@@ -831,6 +862,25 @@
     if (top) window.scrollTo(0, 0);
   }
   function setNav(name) { $$("[data-nav]").forEach((a) => { if (a.dataset.nav === name) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); }); }
+
+  // Small screens: the main navigation lives in a drawer behind the Menu button. design.js keeps keyboard focus inside it while open.
+  function openMenu() {
+    const d = $("#nav-drawer");
+    if (!d || !d.hidden) return;
+    d.hidden = false;
+    $("#menu-btn").setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+    ($("a[aria-current=page]", d) || $("a", d)).focus();
+  }
+  function closeMenu(refocus = true) {
+    const d = $("#nav-drawer");
+    if (!d || d.hidden) return;
+    d.hidden = true;
+    const btn = $("#menu-btn");
+    btn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+    if (refocus) btn.focus();
+  }
 
   function locChip(loc) {
     const id = loc === "Sand" ? "i-sand" : loc === "Gym" ? "i-gym" : "i-sand";
@@ -1141,7 +1191,7 @@
       : !dates.length ? `<p class="muted small">No progress photos yet. Add one at the end of each day's workout, right after your supplements.</p><a class="btn" href="#/today">${icon("i-camera")}Go to today</a>`
       : `<p class="muted small">${plural(dates.length, "photo")} · first ${esc(fmtMed(first))} · latest ${esc(fmtMed(last))}</p>
         <ol class="photo-strip">${dates.slice(-6).map((iso) => `<li><button type="button" class="polaroid polaroid-mini" data-action="photo-view" data-iso="${iso}" style="--tilt:${photoTilt(iso)}deg" aria-label="Progress photo, ${esc(fmtLong(iso))}">
-          <span class="polaroid-img"><img src="${photoSrc(iso, "thumb")}" alt="" loading="lazy" decoding="async"></span><span class="polaroid-cap"><span class="cap-date">${esc(fmt(iso, { month: "short", day: "numeric" }))}</span></span></button></li>`).join("")}</ol>
+          <span class="polaroid-img"><img src="${photoSrc(iso, "thumb")}" alt="" loading="lazy" decoding="async" width="${thumbWidth(photos.index.get(iso))}" height="${thumbHeight(photos.index.get(iso))}"></span><span class="polaroid-cap"><span class="cap-date">${esc(fmt(iso, { month: "short", day: "numeric" }))}</span></span></button></li>`).join("")}</ol>
         <div class="btn-row"><a class="btn btn-primary" href="#/photos">${icon("i-grid")}Open the gallery</a>${dates.length > 1 ? `<a class="btn" href="#/photos/compare/${first}/${last}">${icon("i-compare")}Compare first &amp; latest</a>` : ""}</div>`;
     return `<section class="card photos-summary"><h2 class="h-brush">Progress photos</h2>${body}</section>`;
   }
@@ -1268,7 +1318,7 @@
       <ol class="photo-grid">${list.map((iso) => `<li>${polaroidTile(iso)}</li>`).join("")}</ol></section>`).join("");
   }
   function polaroidTile(iso) {
-    const p = photos.index.get(iso), label = photoDayLabel(iso), tw = thumbWidth(p), th = Math.round((tw * p.h) / p.w);
+    const p = photos.index.get(iso), label = photoDayLabel(iso), tw = thumbWidth(p), th = thumbHeight(p);
     return `<button type="button" class="polaroid polaroid-tile" data-action="photo-view" data-iso="${iso}" style="--tilt:${photoTilt(iso)}deg" aria-label="${esc(fmtLong(iso))}${label ? `, ${esc(label)}` : ""}. Enlarge photo.">
       <span class="polaroid-img"><img src="${photoSrc(iso, "thumb")}" alt="" loading="lazy" decoding="async" width="${tw}" height="${th}"></span>
       <span class="polaroid-cap"><span class="cap-date">${esc(fmt(iso, { weekday: "short", month: "short", day: "numeric" }))}</span>${label ? `<span class="cap-day">${esc(label)}</span>` : ""}</span></button>`;
@@ -1318,10 +1368,10 @@
     const gap = toNum(B) - toNum(A), days = gap === 1 ? "day" : "days";
     const short = (iso) => esc(fmt(iso, { weekday: "short", month: "short", day: "numeric", year: "numeric" }));
     const options = (sel, other) => dates.map((d) => `<option value="${d}"${d === sel ? " selected" : ""}${d === other ? " disabled" : ""}>${esc(fmt(d, { month: "short", day: "numeric", year: "numeric" }))}${photoDayLabel(d) ? ` · ${esc(photoDayLabel(d))}` : ""}</option>`).join("");
-    const shot = (iso, role) => `<figure class="polaroid compare-shot"><div class="polaroid-img compare-img"><img src="${photoSrc(iso, "full")}" alt="${role} photo, ${esc(fmtLong(iso))}" decoding="async"></div>
+    const shot = (iso, role) => `<figure class="polaroid compare-shot"><div class="polaroid-img compare-img"><img src="${photoSrc(iso, "full")}" alt="${role} photo, ${esc(fmtLong(iso))}" decoding="async" width="${photos.index.get(iso).w}" height="${photos.index.get(iso).h}"></div>
       <figcaption class="polaroid-cap"><span class="cap-date">${short(iso)}</span>${photoDayLabel(iso) ? `<span class="cap-day">${esc(photoDayLabel(iso))}</span>` : ""}</figcaption></figure>`;
     const stage = compareMode === "slider"
-      ? `<div class="compare-slider" style="--pos:50%">
+      ? `<div class="compare-slider" style="--pos:50%;--arn:${photoRatio(photos.index.get(B))}">
           <div class="cs-stage" data-slider-stage>
             <img class="cs-img" src="${photoSrc(B, "full")}" alt="After photo, ${esc(fmtLong(B))}" draggable="false">
             <div class="cs-before"><img class="cs-img" src="${photoSrc(A, "full")}" alt="Before photo, ${esc(fmtLong(A))}" draggable="false"></div>
@@ -1557,6 +1607,8 @@
       const t = e.target.closest("[data-action]");
       if (!t) {
         if (e.target.id === "lightbox") closeLightbox();
+        else if (e.target.id === "nav-drawer") closeMenu(); // a tap outside the drawer
+        else if (e.target.closest("#nav-drawer a[href]")) closeMenu(false); // a destination was chosen
         return;
       }
       const a = t.dataset.action;
@@ -1589,10 +1641,12 @@
       else if (a === "photo-next") stepPhoto(1);
       else if (a === "photos-reload") { photos.error = ""; updatePhotoCards(); if (/^#\/?photos/.test(location.hash)) refreshView(); loadPhotos(true); }
       else if (a === "compare-mode") { compareMode = t.dataset.mode === "slider" ? "slider" : "side"; try { localStorage.setItem("wlta-compare", compareMode); } catch (err) { /* remembered for this visit only */ } refreshView(); }
+      else if (a === "menu-open") openMenu();
+      else if (a === "menu-close") closeMenu();
       else if (a === "cam-close") closeCamera();
       else if (a === "cam-shutter") shutter();
       else if (a === "cam-timer") { cam.timer = TIMERS[(TIMERS.indexOf(cam.timer) + 1) % TIMERS.length]; setTimerLabel(); }
-      else if (a === "cam-flip") { cam.facing = cam.facing === "user" ? "environment" : "user"; try { localStorage.setItem("wlta-camera", cam.facing); } catch (err) { /* remembered for this visit only */ } startCamera(); }
+      else if (a === "cam-flip") flipCamera();
       else if (a === "cam-retake") retake();
       else if (a === "cam-use") useStill();
       else if (a === "cam-restart") startCamera();
@@ -1644,6 +1698,7 @@
       }
     });
     document.addEventListener("keydown", (e) => {
+      if (!$("#nav-drawer").hidden) { if (e.key === "Escape") closeMenu(); return; }
       if (!$("#camera").hidden) { if (e.key === "Escape") { if (cam.tick) stopCountdown(); else closeCamera(); } return; }
       const lb = $("#lightbox");
       if (!lb.hidden && lb.dataset.mode === "photo" && (e.key === "ArrowLeft" || e.key === "ArrowRight") && !e.target.matches("input, select, textarea")) {
@@ -1658,6 +1713,8 @@
     $("#celebrate").addEventListener("click", (e) => { if (e.target.id === "celebrate") closeCelebrate(); });
     $("#import-file").addEventListener("change", (e) => { const f = e.target.files[0]; e.target.value = ""; if (f) importFile(f); });
     window.addEventListener("hashchange", () => route());
+    const wide = matchMedia("(min-width: 901px)"), onWide = () => { if (wide.matches) closeMenu(false); }; // the drawer is for small screens only
+    if (wide.addEventListener) wide.addEventListener("change", onWide); else wide.addListener(onWide);
     document.addEventListener("visibilitychange", () => { // new day while the app sat open
       if (document.visibilityState === "visible" && lastRenderedToday && lastRenderedToday !== todayISO() && /^#?\/?(today)?$/.test(location.hash.replace(/^#/, ""))) route();
     });
@@ -1674,6 +1731,7 @@
   }
 
   function route() {
+    closeMenu(false);
     closeLightbox();
     closeCamera();
     const h = location.hash.replace(/^#\/?/, "");
