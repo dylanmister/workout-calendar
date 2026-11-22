@@ -11,6 +11,7 @@ The supplied cloudscape shader runs across every route, including sign-in, recol
 - `account.js`: sign-in interface and initialization gate.
 - `api/session.js`: server-side password verification, persistent login-attempt limiting, and signed HTTP-only session cookies.
 - `api/progress.js`: authenticated proxy for the shared account's Convex progress.
+- `api/calendar-feed.js`: read-only workout feed for the Life OS Google Calendar engine (a Google Apps Script). It requires `Authorization: Bearer <CALENDAR_FEED_TOKEN>` (a Vercel production secret; the local copy lives in ignored `tools/.cache/`). It returns every program day with its shifted date (start + (N - 1) + shifts at or before N, exactly as the calendar view computes it), completion flags and exercise names. Logs, notes, photos and the sync code never leave the server. Optional `?from=YYYY-MM-DD` trims past days.
 - `server/auth.cjs`: password hashing/verification, session signatures, origin checks, and Convex requests.
 - `convex/progress.js`: revision-based saves to avoid blindly overwriting a newer cloud copy.
 - `convex/login.js`: login attempt limits persisted in the database.
