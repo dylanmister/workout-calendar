@@ -211,22 +211,6 @@
    "source": "fedb:Ball_Leg_Curl"
   },
   {
-   "id": "band-bench",
-   "name": "Banded Speed Bench",
-   "element": "fire",
-   "category": "Power",
-   "equipment": "Barbell + bands",
-   "cues": [
-    "Light bar with bands; accelerate through the whole rep.",
-    "Fast down (controlled), faster up."
-   ],
-   "image": "images/band-bench.webp",
-   "imageAlt": "images/band-bench-2.webp",
-   "thumb": "images/thumbs/band-bench.webp",
-   "imageType": "photo",
-   "source": "fedb:Bench_Press_-_With_Bands"
-  },
-  {
    "id": "band-pull-apart",
    "name": "Band Pull-Apart",
    "element": "water",
@@ -1414,22 +1398,6 @@
    "source": "fedb:Ankle_On_The_Knee"
   },
   {
-   "id": "floor-press",
-   "name": "Barbell Floor Press",
-   "element": "fire",
-   "category": "Strength",
-   "equipment": "Barbell",
-   "cues": [
-    "Triceps touch the floor softly; pause, then press.",
-    "No bounce. Pure lockout strength."
-   ],
-   "image": "images/floor-press.webp",
-   "imageAlt": "images/floor-press-2.webp",
-   "thumb": "images/thumbs/floor-press.webp",
-   "imageType": "photo",
-   "source": "fedb:Floor_Press"
-  },
-  {
    "id": "foam-roll-adductors",
    "name": "Foam Roll: Adductors",
    "element": "air",
@@ -2053,22 +2021,6 @@
    "thumb": "images/thumbs/inverted-row.webp",
    "imageType": "photo",
    "source": "fedb:Inverted_Row"
-  },
-  {
-   "id": "jm-press",
-   "name": "JM Press",
-   "element": "fire",
-   "category": "Strength",
-   "equipment": "Barbell",
-   "cues": [
-    "Half skull crusher, half close-grip press; bar lowers toward the chin.",
-    "Elbows stay forward; press back up powerfully."
-   ],
-   "image": "images/jm-press.webp",
-   "imageAlt": "images/jm-press-2.webp",
-   "thumb": "images/thumbs/jm-press.webp",
-   "imageType": "photo",
-   "source": "fedb:JM_Press"
   },
   {
    "id": "jump-rope",
@@ -2902,22 +2854,6 @@
    "thumb": "images/thumbs/pigeon-pose.webp",
    "imageType": "photo",
    "source": "external"
-  },
-  {
-   "id": "pin-press",
-   "name": "Pin Press",
-   "element": "fire",
-   "category": "Strength",
-   "equipment": "Barbell + rack",
-   "cues": [
-    "Bar starts on pins an inch off the chest; dead stop.",
-    "Drive explosively off the pins."
-   ],
-   "image": "images/pin-press.webp",
-   "imageAlt": "images/pin-press-2.webp",
-   "thumb": "images/thumbs/pin-press.webp",
-   "imageType": "photo",
-   "source": "fedb:Pin_Presses"
   },
   {
    "id": "plank",

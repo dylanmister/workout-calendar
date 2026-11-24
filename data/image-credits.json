@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-19",
+ "generated": "2026-11-24",
  "images": [
   {
    "id": "back-extension",
@@ -246,24 +246,6 @@
    "licenseUrl": "https://unlicense.org/"
   },
   {
-   "id": "band-bench",
-   "exercise": "Banded Speed Bench",
-   "files": [
-    "images/band-bench.webp",
-    "images/band-bench-2.webp",
-    "images/thumbs/band-bench.webp"
-   ],
-   "source": "free-exercise-db",
-   "sourceUrl": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Bench_Press_-_With_Bands",
-   "imageUrls": [
-    "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bench_Press_-_With_Bands/0.jpg",
-    "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Bench_Press_-_With_Bands/1.jpg"
-   ],
-   "author": "free-exercise-db (yuhonas), from wrkout/exercises.json",
-   "license": "Unlicense (public domain)",
-   "licenseUrl": "https://unlicense.org/"
-  },
-  {
    "id": "back-squat",
    "exercise": "Barbell Back Squat",
    "files": [
@@ -348,24 +330,6 @@
    "imageUrls": [
     "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Curl/0.jpg",
     "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Barbell_Curl/1.jpg"
-   ],
-   "author": "free-exercise-db (yuhonas), from wrkout/exercises.json",
-   "license": "Unlicense (public domain)",
-   "licenseUrl": "https://unlicense.org/"
-  },
-  {
-   "id": "floor-press",
-   "exercise": "Barbell Floor Press",
-   "files": [
-    "images/floor-press.webp",
-    "images/floor-press-2.webp",
-    "images/thumbs/floor-press.webp"
-   ],
-   "source": "free-exercise-db",
-   "sourceUrl": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Floor_Press",
-   "imageUrls": [
-    "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Floor_Press/0.jpg",
-    "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Floor_Press/1.jpg"
    ],
    "author": "free-exercise-db (yuhonas), from wrkout/exercises.json",
    "license": "Unlicense (public domain)",
@@ -2256,24 +2220,6 @@
    "licenseUrl": "https://unlicense.org/"
   },
   {
-   "id": "jm-press",
-   "exercise": "JM Press",
-   "files": [
-    "images/jm-press.webp",
-    "images/jm-press-2.webp",
-    "images/thumbs/jm-press.webp"
-   ],
-   "source": "free-exercise-db",
-   "sourceUrl": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/JM_Press",
-   "imageUrls": [
-    "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/JM_Press/0.jpg",
-    "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/JM_Press/1.jpg"
-   ],
-   "author": "free-exercise-db (yuhonas), from wrkout/exercises.json",
-   "license": "Unlicense (public domain)",
-   "licenseUrl": "https://unlicense.org/"
-  },
-  {
    "id": "jump-rope",
    "exercise": "Jump Rope",
    "files": [
@@ -3060,24 +3006,6 @@
    "author": "Elina Fairytale",
    "license": "Pexels License",
    "licenseUrl": "https://www.pexels.com/license/"
-  },
-  {
-   "id": "pin-press",
-   "exercise": "Pin Press",
-   "files": [
-    "images/pin-press.webp",
-    "images/pin-press-2.webp",
-    "images/thumbs/pin-press.webp"
-   ],
-   "source": "free-exercise-db",
-   "sourceUrl": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Pin_Presses",
-   "imageUrls": [
-    "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Pin_Presses/0.jpg",
-    "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/Pin_Presses/1.jpg"
-   ],
-   "author": "free-exercise-db (yuhonas), from wrkout/exercises.json",
-   "license": "Unlicense (public domain)",
-   "licenseUrl": "https://unlicense.org/"
   },
   {
    "id": "plank",

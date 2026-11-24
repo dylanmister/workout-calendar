@@ -865,6 +865,41 @@ def back_Po(c):
     return [upper_warmup(c, exclude=(B[k][0], SC[k][0])), block("main", "Gym", tagged(main)), fin, mob]
 
 
+# ---------------------------------------------------------------- shoulder-friendly pressing
+# Barbell bench pressing hurts the shoulders, so from Day 27 (Nov 24, 2026) on, every barbell bench variant is
+# swapped for a dumbbell, floor or landmine press. Earlier days keep the lifts that were actually trained: set
+# logs are stored by day and position, so changing those days would relabel the logged barbell numbers.
+NO_BARBELL_BENCH_FROM_DAY = 27
+BENCH_SWAPS = {
+    "bench-press": "neutral-db-bench",     # palms-in dumbbells: the shoulder-friendly flat press
+    "incline-bench": "neutral-incline-db",
+    "close-grip-bench": "db-floor-press",  # elbows tucked; the floor stops the shoulder before the deep stretch
+    "floor-press": "db-floor-press",
+    "pin-press": "db-floor-press",         # dead stop on the floor instead of on the pins
+    "band-bench": "single-arm-landmine",   # speed work on the arcing landmine path, 2 fast reps per arm
+    "jm-press": "tate-press",              # dumbbell lying triceps press instead of the barbell hybrid
+}
+
+
+def shoulder_safe(c, id, sets, reps, load):
+    """(id, sets, reps, load) for a pressing slot, with a barbell bench variant swapped out from Day 27 on.
+
+    Dumbbell bench presses get at least 5 reps (heavy dumbbells are awkward to kick into position for doubles
+    and triples, which is hard on the shoulder); floor presses start from the floor, so they keep 4. Every swap
+    trades the barbell %1RM for an RPE target, capped at RPE 8."""
+    if c.day < NO_BARBELL_BENCH_FROM_DAY or id not in BENCH_SWAPS:
+        return id, sets, reps, load
+    new = BENCH_SWAPS[id]
+    if id == "band-bench":
+        return new, sets, "2/side", "Moderate, max speed"
+    if id == "jm-press":
+        return new, sets, str(max(int(reps), 8)), load
+    pct = re.match(r"(\d+)% 1RM", load or "")
+    if pct:
+        load = "RPE 7" if int(pct.group(1)) <= 72 else "RPE 8"
+    return new, sets, str(max(int(reps), 4 if new == "db-floor-press" else 5)), load
+
+
 # ---------------------------------------------------------------- FIRE builders
 def prehab_item(k, pool):
     id_, reps = pool[k % len(pool)]
@@ -896,7 +931,7 @@ def push_Hy(c):
     FIN = [("push-up", 2, "15"), ("feet-elevated-push-up", 2, "12"), ("svend-press", 2, "15"), ("push-up", 2, "20"),
            ("feet-elevated-push-up", 2, "15"), ("svend-press", 2, "12"), ("push-up", 2, "15"),
            ("feet-elevated-push-up", 2, "12"), ("svend-press", 2, "15")]
-    a = A[k]
+    a = shoulder_safe(c, *A[k])
     main = [M(a[0], a[1], a[2], a[3], "2 min", ramp=a[0] in ("bench-press", "incline-bench")),
             M(B[k][0], 3, B[k][1], "RPE 8", "90 s"),
             pair(M(C[k][0], 3, C[k][1], "RPE 8"), M(LAT[k][0], 3, LAT[k][1], "RPE 8", "75 s"), "C"),
@@ -938,11 +973,11 @@ def push_Ex(c):
     a = A[k]
     con = CON[k]
     main = [M(a[0], a[1], a[2], a[3], "2–3 min", a[4], ramp=True),
-            pair(M(*con[0], ramp=False), M(con[1][0], con[0][1], con[1][1], "Max intent", "2–3 min"), "B",
+            pair(M(*shoulder_safe(c, *con[0]), ramp=False), M(con[1][0], con[0][1], con[1][1], "Max intent", "2–3 min"), "B",
                  note="Contrast: explode within 30 s of racking B1.")]
     cc = C[k]
     sand_c = cc[0] == "chest-push-sprint"
-    tri_item = M(TRI[k][0], 3, TRI[k][1], "RPE 8", "2 min")
+    tri_item = M(*shoulder_safe(c, TRI[k][0], 3, TRI[k][1], "RPE 8"), "2 min")
     cuff = M(CUFF[k][0], 3, CUFF[k][1], "Light, perfect form", "45 s")
     blocks = [upper_warmup(c, exclude=(CUFF[k][0],))]
     if sand_c:
@@ -982,9 +1017,9 @@ def push_Oh(c):
            ("turkish-get-up", 2, "2/side")]
     a = A[k]
     main = [M(a[0], a[1], a[2], a[3], "2–3 min", ramp=True),
-            M(*B[k], "2–3 min", ramp=False),
+            M(*shoulder_safe(c, *B[k]), "2–3 min", ramp=False),
             M(C[k][0], 3, C[k][1], "RPE 8", "2 min"),
-            pair(M(D_[k][0], 3, D_[k][1], "RPE 8"), M(E[k][0], 3, E[k][1], "RPE 8", "75 s"), "D"),
+            pair(M(D_[k][0], 3, D_[k][1], "RPE 8"), M(*shoulder_safe(c, E[k][0], 3, E[k][1], "RPE 8"), "75 s"), "D"),
             prehab_item(k, PRE)]
     f = FIN[k]
     fin = block("finisher", "Gym", [dict(M(f[0], f[1], f[2], "Moderate KB", "60 s", "Slow and perfect; eyes on the bell."), tag="F")],
@@ -1315,6 +1350,9 @@ def build():
         occ[key] = c.k + 1
         occ_phase[(el, fmt, ph)] = c.kp + 1
         blocks = BUILDERS[key](c)
+        if c.day >= NO_BARBELL_BENCH_FROM_DAY:
+            left = {it["id"] for b in blocks for it in b["items"]} & set(BENCH_SWAPS)
+            assert not left, f"day {c.day}: barbell bench variant {left} left after the shoulder swap"
         wheres = {b["where"] for b in blocks if b["kind"] in ("main", "finisher")}
         loc = "Gym + Sand" if len(wheres) > 1 else wheres.pop()
         fid, fname = FORMATS[el][fmt]
